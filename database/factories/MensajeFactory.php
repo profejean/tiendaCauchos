@@ -9,8 +9,9 @@ use App\Mensaje;
 $factory->define(Mensaje::class, function (Faker $faker) {
     return [
         'asunto' => $faker->name,
-    	'usuario_id' => $faker->numberBetween($min = 1, $max = 100),
-    	'cuerpo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true), 
+    	'de' => $faker->numberBetween($min = 1, $max = 3),
+        'para' => $faker->numberBetween($min = 1, $max = 3),
+    	'mensaje' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true), 
     	'status' => $faker->randomElement($array = array ('Nuevo','Leído')),
 	    	
 
@@ -20,3 +21,5 @@ $factory->define(Mensaje::class, function (Faker $faker) {
     	'fecha_edicion' => $faker->date($format = 'Y-m-d', $max = 'now')
     ];
 });
+
+

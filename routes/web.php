@@ -45,6 +45,7 @@ Route::resource('detalle_compras', 'DetalleCompraController');
 
 // Rutas Mensajes
 Route::resource('mensajes', 'MensajeController');
+Route::get('mensaje_status/{id}', 'MensajeController@status');
 
 // Rutas Orden de Compras
 Route::resource('orden_compras', 'OrdenCompraController');

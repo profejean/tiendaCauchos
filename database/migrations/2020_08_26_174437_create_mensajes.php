@@ -17,8 +17,9 @@ class CreateMensajes extends Migration
             $table->id();
 
             $table->text('asunto');
-            $table->integer('usuario_id');
-            $table->text('cuerpo');
+            $table->integer('de');
+            $table->integer('para');
+            $table->text('mensaje');
             $table->text('status');
 
             $table->date('fecha_creacion');

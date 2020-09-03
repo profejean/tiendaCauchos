@@ -27,7 +27,17 @@ class MensajeController extends Controller
        
     public function index()
     {
-    	$mensajes = Mensaje::paginate(20);
+        if(Auth::user()->rol == 'Gerente'){
+
+            $mensajes = Mensaje::orderBy('status','asc')->paginate(20);
+
+        }else{
+
+            $mensajes = Mensaje::where('de','=',Auth::id())->orWhere('para','=',Auth::id())->orderBy('status','asc')->paginate(20);
+
+        }
+    	
+
 
         return view('mensajes.index', compact('mensajes'));
     }
@@ -35,24 +45,29 @@ class MensajeController extends Controller
     public function edit($id)
 
     {   
+        $mensajes=Mensaje::findOrFail($id);
 
-         $mensajes=Mensaje::findOrFail($id);
+        if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
+
+            return view('mensajes.edit', compact('mensajes'));
+
+        }else{
+
+          return Redirect::to('home');
+
+        }
      
-         return view('mensajes.edit', compact('mensajes'));
+         
 
         }
 
   public function update(MensajeRequest $request, $id)
     {
-            try {
-                 DB::beginTransaction();
+           
 
                     $mensajes=Mensaje::findOrFail($id);
 
-        			$input = $request->all();
-
-        			$mensajes->fill($input)->save();
-
+        			$mensajes->status = 'Leído';
 
                     $user = Auth::user()->name;
                     $mensajes->usuario_editor=$user;
@@ -64,16 +79,6 @@ class MensajeController extends Controller
                     $mensajes->save(); 
 
 
-                 DB::commit();
-
-            }catch (\Exception $e) {
-
-                 \DB::rollBack();
-
-                 return Redirect::back();
- 
-            } 
-
         return Redirect::to('mensajes');
 
 
@@ -84,16 +89,22 @@ class MensajeController extends Controller
 
         return view('mensajes.create');
 
-        }
+    }
 
 
      public function store(MensajeRequest $request)
     {
 
-        try {
-                 DB::beginTransaction();
+     
 
                     $mensajes=new Mensaje($request->all());
+
+                    if(Auth::user()->rol == 'Gerente'){
+                       $mensajes->de = 1; 
+                    }else{
+                       $mensajes->de = Auth::id();  
+                       $mensajes->para = 1; 
+                    }
 
                      $user = Auth::user()->name;
                      $mensajes->usuario_creador=$user;
@@ -108,15 +119,6 @@ class MensajeController extends Controller
                      $mensajes->save();
 
 
-                 DB::commit();
-
-            }catch (\Exception $e) {
-
-                 \DB::rollBack();
-
-                 return Redirect::back();
- 
-            }
 
         return Redirect::to('mensajes');
     }
@@ -127,18 +129,62 @@ class MensajeController extends Controller
 
        $mensajes=Mensaje::findOrFail($id);
 
-       $mensajes->delete();
+       if(Auth::user()->rol == 'Gerente'){
+
+            $mensajes->delete();
 
          return Redirect::to('mensajes');
+
+        }else{
+
+          return Redirect::to('home');
+
+        }
+     
+
+       
 
     }
 
 public function show($id){
 
-        $mensajes = Mensaje::findOrFail($id);
+        $mensajes=Mensaje::findOrFail($id);
 
+        if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
 
-          return view('mensajes.show', compact('mensajes'));
-            
+            return view('mensajes.show', compact('mensajes'));
+
+        }else{
+
+          return Redirect::to('home');
+
         }
+            
+    }
+
+    public function status($id){
+
+        $mensajes=Mensaje::findOrFail($id);
+
+        if(Auth::user()->rol == 'Gerente'){
+
+            $mensajes->status = 'Leído';
+
+            $user = Auth::user()->name;
+            $mensajes->usuario_editor=$user;
+            $date = Carbon::now('America/Caracas');
+            $mensajes->fecha_edicion=$date->toDateTimeString();               
+
+
+
+            $mensajes->save(); 
+            return Redirect::to('mensajes');
+
+        }else{
+
+          return Redirect::to('home');
+
+      }
+            
+    }
 }
