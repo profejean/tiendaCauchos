@@ -1,21 +1,31 @@
-@extends ('layouts.admin')
+@extends ('layouts.users')
 
 @section ('content')
 
 
-<div class="container mt-5 mb-5">
-            <div class="jumbotron jumbotron-fluid" style="margin-top: -70px;">
-              <div class="container" style="text-align: center;">
-                <h2>{{ __('Carrito de compras') }}</h2>
+<div class="container" style="margin-top: -50px;">
 
+        <div class="row justify-content-center mb-2">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+          <h2 class="font-weight-bold">
+            Carrito de Compras
+          </h2>    
             </div>
         </div>
-<h4>Icono - Fin del Pedido</h4>
-<div class="container" style="background-color: #968F8F; padding: 20px;">
-        {!! Form::open(array('url'=>'recibo_pago', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
-        {{Form::token()}}
+    <div class="row mb-2">
 
+
+      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
+      <h2 class="ml-2">
+        Fin del Pedido
+    </h2>    
+</div>
+</div>
+
+
+<div class="container-fluid" style="background-color: #968F8F; padding: 20px;">
 
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
@@ -49,7 +59,7 @@
 
         <div class="form-group" style="text-align: center;">
 
-            <button class="btn btn-danger" type="submit">Volver a la tienda</button>
+            <a href="{{url('productos')}}" class="btn btn-danger" style="width: 30%;">Volver a la tienda</a>
 
         </div>
 

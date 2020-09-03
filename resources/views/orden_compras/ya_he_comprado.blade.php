@@ -2,14 +2,20 @@
 
 @section ('content')
 
+@include('css.input_select_center_bg')
 
-<div class="container mt-5 mb-5">
-            <div class="jumbotron jumbotron-fluid" style="margin-top: -70px;">
-              <div class="container" style="text-align: center;">
-                <h2>{{ __('Mi Cuenta') }}</h2>
+<div class="container" style="margin-top: -50px;">
 
+        <div class="row justify-content-center mb-2">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+          <h2 class="font-weight-bold">
+            Mi Cuenta
+          </h2>    
             </div>
-        </div>
+        </div>   
+</div>
+
 
         {!! Form::open(array('url'=>'recibo_pago', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
@@ -55,7 +61,7 @@
 
         <div class="form-group" style="text-align: center;">
 
-            <button class="btn btn-danger" type="submit">Iniciar sección</button>
+            <button class="btn btn-danger" type="submit">Iniciar sesión</button>
 
         </div>
 

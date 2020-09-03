@@ -118,7 +118,7 @@ class OrdenCompraController extends Controller
  
             }
 
-        return Redirect::to('orden_compras');
+        return Redirect::to('fin_pedido');
     }
 
     public function destroy($id)
@@ -142,22 +142,17 @@ public function show($id){
             
         }
 
-  public function recibo(Request $request)
+
+  public function ya_he_comprado()
     {
-          
-        $recibo_pago = $request->get('recibo_pago');
 
-
-        return view('orden_compras.recibo_pago', compact('recibo_pago'));
+        return view('orden_compras.ya_he_comprado');
     }
 
-  public function micuenta(Request $request)
+public function primera_vez()
     {
-          
-        $mi_cuenta = $request->get('mi_cuenta');
 
-
-        return view('orden_compras.mi_cuenta', compact('mi_cuenta'));
+        return view('orden_compras.primera_vez');
     }
 
   public function resumen(Request $request)
