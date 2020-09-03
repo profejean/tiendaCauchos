@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Layout;
+use App\Mensaje;
 
-class LayoutSeeder extends Seeder
+class MensajeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class LayoutSeeder extends Seeder
      */
     public function run()
     {
-        factory(Layout::class, 10)->create();
+        factory(Mensaje::class, 10)->create();
     }
 }

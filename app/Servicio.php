@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Inicio extends Model
+class Servicio extends Model
 {
-    protected $table='inicio'; 
+    protected $table='servicios'; 
 
     protected $primaryKey='id'; 
 

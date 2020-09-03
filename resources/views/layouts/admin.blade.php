@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://kit.fontawesome.com/401dc8b726.js" crossorigin="anonymous"></script>
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
@@ -14,9 +16,10 @@
 </head>
 <body>
   <header>
-    
-<nav class="navbar navbar-expand-lg navbar-light" style="background: white; position: fixed; z-index: 1; width: 100%; padding-top: 0 !important;">
-  <a class="navbar-brand" href="#"><img src="{{asset('')}}" style="max-width: 160px; max-height: 50px;"></a>
+<div class="container" style="fixed-top"><a class="navbar-brand" href="#"><img src="{{asset('img/caucho.jpg')}}" style="max-width: 100px; max-height: 70px;"></a></div>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; position: fixed; z-index: 1; width: 100%; padding-top: 0 !important;">
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,31 +27,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{URL::action('InicioController@index')}}">Inicio<span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url()->previous() }}">Cauchos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('home')}}"> Accesorios y Autopartes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}">Servicios</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}">Mi Cuenta</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}">Ir a Carrito</a>
-      </li>
-      <li class="nav-item">
+        <a class="dropdown-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();"><h5 style="color:#FFFFFF">{{ __('Salir') }}</h5>
+        
       </a>
 
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
       </form>
-    </li>
+ 
     </ul>
     <form class="form-inline my-2 my-lg-0">
     </form>

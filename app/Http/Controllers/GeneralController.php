@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\Latout;
+use App\Http\Requests\GeneralRequest;
 
-use App\Layout;
+use App\General;
 
 use DB;
 
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Hash;
 
-class LayoutController extends Controller
+class GeneralController extends Controller
 {
     public function __construct()
     {
@@ -27,41 +27,41 @@ class LayoutController extends Controller
        
     public function index()
     {
-    	$layouts = Layout::paginate(20);
+    	$general = General::paginate(20);
 
-        return view('layouts.index', compact('layouts'));
+        return view('general.index', compact('general'));
     }
 
     public function edit($id)
 
     {   
 
-         $layouts=Layout::findOrFail($id);
+         $general=General::findOrFail($id);
      
-         return view('layouts.edit', compact('layouts'));
+         return view('general.edit', compact('general'));
 
         }
 
-  public function update(Latout $request, $id)
+  public function update(GeneralRequest $request, $id)
     {
             try {
                  DB::beginTransaction();
 
-                    $layouts=Layout::findOrFail($id);
+                    $general=General::findOrFail($id);
 
         			$input = $request->all();
 
-        			$layouts->fill($input)->save();
+        			$general->fill($input)->save();
 
 
                     $user = Auth::user()->name;
-                    $layouts->usuario_editor=$user;
+                    $general->usuario_editor=$user;
                     $date = Carbon::now('America/Caracas');
-                    $layouts->fecha_edicion=$date->toDateTimeString();               
+                    $general->fecha_edicion=$date->toDateTimeString();               
 
                    
 
-                    $layouts->save(); 
+                    $general->save(); 
 
 
                  DB::commit();
@@ -74,7 +74,7 @@ class LayoutController extends Controller
  
             } 
 
-        return Redirect::to('layouts');
+        return Redirect::to('general');
 
 
     }    
@@ -82,30 +82,30 @@ class LayoutController extends Controller
      public function create()
     {           
 
-        return view('layouts.create');
+        return view('general.create');
 
         }
 
 
-     public function store(Latout $request)
+     public function store(GeneralRequest $request)
     {
 
         try {
                  DB::beginTransaction();
 
-                    $layouts=new Layout($request->all());
+                    $general=new General($request->all());
 
                      $user = Auth::user()->name;
-                     $layouts->usuario_creador=$user;
+                     $general->usuario_creador=$user;
                      $date = Carbon::now('America/Caracas');
-                     $layouts->fecha_creacion=$date->toDateTimeString();    
+                     $general->fecha_creacion=$date->toDateTimeString();    
 
                      $user = Auth::user()->name;
-                     $layouts->usuario_editor=$user;
+                     $general->usuario_editor=$user;
                      $date = Carbon::now('America/Caracas');
-                     $layouts->fecha_edicion=$date->toDateTimeString();        
+                     $general->fecha_edicion=$date->toDateTimeString();        
 
-                     $layouts->save();
+                     $general->save();
 
 
                  DB::commit();
@@ -118,27 +118,27 @@ class LayoutController extends Controller
  
             }
 
-        return Redirect::to('layouts');
+        return Redirect::to('general');
     }
 
     public function destroy($id)
 
     {  
 
-       $layouts=Layout::findOrFail($id);
+       $general=General::findOrFail($id);
 
-       $layouts->delete();
+       $general->delete();
 
-         return Redirect::to('layouts');
+         return Redirect::to('general');
 
     }
 
 public function show($id){
 
-        $layouts = Layout::findOrFail($id);
+        $general = General::findOrFail($id);
 
 
-          return view('layouts.show', compact('layouts'));
+          return view('general.show', compact('general'));
             
         }
 }

@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Inicio;
+use App\DetalleCompra;
 
-class InicioSeeder extends Seeder
+class DetalleCompraSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class InicioSeeder extends Seeder
      */
     public function run()
     {
-        factory(Inicio::class, 10)->create();
+        factory(DetalleCompra::class, 10)->create();
     }
 }

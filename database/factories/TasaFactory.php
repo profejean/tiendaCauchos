@@ -9,10 +9,10 @@ use App\Tasa;
 $factory->define(Tasa::class, function (Faker $faker) {
     return [
        
-        'id_sustrato' => $number ++,
     	'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
     	'hora' => $faker->time($format = 'H:i:s', $max = 'now'),
     	'monto' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 300000, $max = 1000000),
+    	'comentarios' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
 
 
 

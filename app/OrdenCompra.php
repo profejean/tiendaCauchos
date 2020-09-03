@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Layout extends Model
+class OrdenCompra extends Model
 {
-    protected $table='layouts'; 
+    protected $table='orden_compras'; 
 
     protected $primaryKey='id'; 
 

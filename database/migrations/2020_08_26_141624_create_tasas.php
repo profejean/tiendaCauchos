@@ -19,6 +19,7 @@ class CreateTasas extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->decimal('monto', 20,2);
+            $table->text('comentarios');
 
             $table->date('fecha_creacion');
             $table->date('fecha_edicion');

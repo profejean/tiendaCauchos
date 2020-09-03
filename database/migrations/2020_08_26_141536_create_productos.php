@@ -16,10 +16,17 @@ class CreateProductos extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
 
+            $table->text('categoria');
             $table->text('nombre');
-            $table->longText('decripcion');
+            $table->longText('descripcion');
             $table->decimal('precio_dolar', 20,2);
             $table->integer('inventario');
+            $table->text('marca');
+            $table->text('ancho');
+            $table->text('diametro');
+            $table->text('perfil');
+            $table->text('imagen_1')->nullable;
+            $table->text('imagen_2')->nullable;
 
 
             $table->date('fecha_creacion');

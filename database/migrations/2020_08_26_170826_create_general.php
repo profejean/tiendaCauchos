@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLayouts extends Migration
+class CreateGeneral extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLayouts extends Migration
      */
     public function up()
     {
-        Schema::create('layouts', function (Blueprint $table) {
+        Schema::create('general', function (Blueprint $table) {
             $table->id();
 
             $table->text('logo');
@@ -28,11 +28,26 @@ class CreateLayouts extends Migration
             $table->text('pregunta_contactanos');
             $table->text('contactanos');
             $table->text('icono_carrito');
+            $table->text('pregunta_pago_movil');
+            $table->text('pregunta_transferencia');
+            $table->text('pregunta_efectivo');
+            $table->text('pregunta_zelle');
+            $table->text('tel_pago_movil');
+            $table->text('cedula_pago_movil');
+            $table->text('banco_pago_movil');
+            $table->text('nro_cuenta_transferencia');
+            $table->text('ci_transferencia');
+            $table->text('tipo_cuenta_transferencia');
+            $table->text('banco_transferencia');
+            $table->text('nombre_transferencia');
+            $table->text('correo_zelle');
+            $table->text('nombre_zelle');           
+
 
             $table->date('fecha_creacion');
             $table->date('fecha_edicion');
             $table->text('usuario_editor');
-            $table->text('usuario_creador');
+            $table->text('usuario_creador');            
             $table->timestamps();
         });
     }
@@ -44,6 +59,6 @@ class CreateLayouts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('layouts');
+        Schema::dropIfExists('general');
     }
 }

@@ -82,7 +82,7 @@ class ProductoController extends Controller
      public function create()
     {           
 
-        return view('productos.create');
+        return view('productos.tipo');
 
         }
 
@@ -141,4 +141,35 @@ public function show($id){
           return view('productos.show', compact('productos'));
             
         }
+
+  public function tipo(Request $request)
+    {
+          
+        $tipo=$request->get('tipo');
+
+
+        return view('productos.create', compact('tipo'));
+    }    
+
+  public function cauchos(Request $request)
+    {
+
+        
+        $productos = Producto::where('categoria', '=', 'cauchos')->orderBy('id','desc')->paginate(20);   
+        $cauchos=$request->get('cauchos');
+
+
+        return view('productos.cauchos', compact('cauchos', 'productos'));
+    }  
+
+public function accesorios(Request $request)
+    {
+
+        
+        $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(20);   
+        $accesorios=$request->get('accesorios');
+
+
+        return view('productos.accesorios', compact('accesorios', 'productos'));
+    } 
 }
