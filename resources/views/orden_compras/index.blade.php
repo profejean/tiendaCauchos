@@ -5,60 +5,46 @@
 <div class="container-fluid mt-5 mb-5">
 
 
-  <div class="table-responsive-xl">
+  <div class="table-responsive-xl" style="margin-top: -90px;">
     <table class="table table-striped table-bordered table-condensed table-hover">
 
-      <tr>
-        <th colspan="5" style="text-align: center;">
 
-          <h2 class="text-info">
+        <div class="row justify-content-center mb-2">
+          
+
+          <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+          <h2 class="ml-2">
             Pedidos
           </h2>    
-
-        </th>
-      </tr>     
+        </div>
 
 
+  
+@foreach($orden_compras as $a)
+<div class="row text-center">
 
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->id}}</h6>
+  </div>
 
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">FECHA</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->fecha_creacion}}</h6>
+  </div>  
 
-      <tr class="text-center">
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->status}}</h6>
+  </div>
 
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@edit',$a->id)}}" role="button"><h6>Ver Detalle</h6></a>
+  </div>
 
-       <td>ID</td>
-       <td>Nº PEDIDO</td>
-       <td>FECHA</td>
-       
+</div>
 
-
-
-       <td>OPCIONES</td>
-
-     </tr>
-
-
-    
-     @foreach ($orden_compras as $a)
-
-     <tr class="text-center">
-
-      <td>{{ $a->id   }}</td>
-      <td>{{ $a->nro_pedido }}</td>
-      <td>{{ $a->fecha }}</td>
-      
-
-
-
-      <td>
-
-      <a href="{{URL::action('OrdenCompraController@show',$a->id)}}">
-        <button class="btn btn-danger">Ver Detalle</button>
-      </a>
-
-      </td>
-
-    </tr>
-
+  <hr style="border:10px; background: #FFF;">
 
     @endforeach  
 

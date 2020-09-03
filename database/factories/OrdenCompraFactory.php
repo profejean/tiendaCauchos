@@ -19,7 +19,7 @@ $factory->define(OrdenCompra::class, function (Faker $faker) {
     	'referencias' => $faker->name,
     	'capture' => $faker->name,
     	'efectivo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),    	    	
-
+        'status' => $faker->randomElement($array = array ('Por Verificar Pago','Por Preparar', 'Por Entregar', 'Entregado', 'Anulado')),
 
 
         'usuario_creador' => $faker->name,

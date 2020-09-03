@@ -25,6 +25,7 @@ class CreateOrdenCompras extends Migration
             $table->text('referencias');
             $table->text('capture');
             $table->text('efectivo');
+            $table->text('status');            
 
             $table->date('fecha_creacion');
             $table->date('fecha_edicion');

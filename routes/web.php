@@ -49,8 +49,8 @@ Route::get('mensaje_status/{id}', 'MensajeController@status');
 
 // Rutas Orden de Compras
 Route::resource('orden_compras', 'OrdenCompraController');
-Route::get('recibo_pago','OrdenCompraController@recibo')->name('recibo_pago');
-Route::get('mi_cuenta','OrdenCompraController@micuenta')->name('micuenta');
+Route::get('ya_he_comprado','OrdenCompraController@ya_he_comprado')->name('ya_he_comprado');
+Route::get('primera_vez','OrdenCompraController@primera_vez')->name('primera_vez');
 Route::get('resumen_compras','OrdenCompraController@resumen')->name('resumen');
 Route::get('fin_pedido','OrdenCompraController@finpedido')->name('finpedido');
 
