@@ -15,7 +15,7 @@ class UsuarioSeeder extends Seeder
     {
         User::create([
         	'name'  =>  'Jean',
-            'rol'  =>  'Cliente',
+            'rol'  =>  'Gerente',
         	'email'  =>  'profesorjeandiaz@gmail.com',
         	'password'  =>  bcrypt('tikery.27')
      	
