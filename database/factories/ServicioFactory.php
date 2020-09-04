@@ -10,7 +10,7 @@ $factory->define(Servicio::class, function (Faker $faker) {
     return [
         'nombre' => $faker->name,
     	'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
-    	'imagen' => $faker->name,
+    	'imagen' => 'filtro.png',
 
         'usuario_creador' => $faker->name,
     	'usuario_editor' => $faker->name,

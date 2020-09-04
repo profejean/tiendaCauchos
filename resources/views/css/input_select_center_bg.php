@@ -18,5 +18,11 @@
 
   	} 
 
+textarea{
 
+      color: #968F8F;
+        text-align: center;
+
+
+    } 
 </style>

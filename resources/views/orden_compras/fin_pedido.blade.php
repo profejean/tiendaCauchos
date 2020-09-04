@@ -3,7 +3,7 @@
 @section ('content')
 
 
-<div class="container" style="margin-top: -50px;">
+<div class="container mt-5">
 
         <div class="row justify-content-center mb-2">
             <div class="col-lg-12 col-md-12 col-sm-12 text-center">
@@ -59,7 +59,7 @@
 
         <div class="form-group" style="text-align: center;">
 
-            <a href="{{url('productos')}}" class="btn btn-danger" style="width: 30%;">Volver a la tienda</a>
+            <a href="{{url('productos')}}" class="btn btn-danger" style="width: 30%;"><h6>Volver a la tienda</h6></a>
 
         </div>
 
