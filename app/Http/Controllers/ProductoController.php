@@ -151,25 +151,5 @@ public function show($id){
         return view('productos.create', compact('tipo'));
     }    
 
-  public function cauchos(Request $request)
-    {
-
-        
-        $productos = Producto::where('categoria', '=', 'cauchos')->orderBy('id','desc')->paginate(20);   
-        $cauchos=$request->get('cauchos');
-
-
-        return view('productos.cauchos', compact('cauchos', 'productos'));
-    }  
-
-public function accesorios(Request $request)
-    {
-
-        
-        $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(20);   
-        $accesorios=$request->get('accesorios');
-
-
-        return view('productos.accesorios', compact('accesorios', 'productos'));
-    } 
+ 
 }

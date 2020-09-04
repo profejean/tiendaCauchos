@@ -24,8 +24,8 @@ Route::get('/', 'InicioController@index');
 // Rutas Productos
 Route::POST('tipo', 'ProductoController@tipo')->name('tipo');
 Route::post('cargar_productos','ProductoController@store')->name('cargar_productos');
-Route::get('cauchos','ProductoController@cauchos')->name('cauchos');
-Route::get('accesorios','ProductoController@accesorios')->name('accesorios');
+Route::get('cauchos','InicioController@cauchos')->name('cauchos');
+Route::get('accesorios','InicioController@accesorios')->name('accesorios');
 Route::resource('productos', 'ProductoController');
 
 // Rutas Tasas
