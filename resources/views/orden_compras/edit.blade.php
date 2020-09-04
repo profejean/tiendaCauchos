@@ -2,150 +2,160 @@
 
 @section ('content')
 
-@include('css.input_select_center_bg')
+<div class="container-fluid mt-5 mb-5">
 
-<div class="container" style="margin-top: -50px;">
+  <div class="row justify-content-center">
+    <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+    <h2 class="ml-2">
+      Pedidos
+    </h2>    
+  </div>
+  
+{!! Form::model($orden_compras, ['method'=>'PATCH','route'=>['orden_compras.update',$orden_compras->id],'files'=>'true']) !!}
 
-        <div class="row justify-content-center mb-2">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                
-          <h2 class="font-weight-bold">
-            Carrito de Compras
-          </h2>    
-            </div>
+{{Form::token()}} 
+
+<div class="row text-center" style="background-color: #d9534f">
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> ###### </h6>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">FECHA</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+  </div>  
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">MONEDA</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+  </div> 
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
+
+      <div class="input-group mb-3">
+
+        <select class="custom-select @error('status') is-invalid @enderror" name="status" id="status">
+          <option value="{{$orden_compras->status}}">{{$orden_compras->status}}</option>
+          @if(($orden_compras->status) != 'Por Verificar Pago')
+          <option value="Por Verificar Pago">Por Verificar Pago</option>
+          @endif
+          @if(($orden_compras->status) != 'Por Preparar')
+          <option value="Por Preparar">Por Preparar</option>
+          @endif
+          @if(($orden_compras->status) != 'Por Entregar')
+          <option value="Por Entregar">Por Entregar</option>
+          @endif
+          @if(($orden_compras->status) != 'Entregado')
+          <option value="Entregado">Entregado</option>
+          @endif
+          @if(($orden_compras->status) != 'Anulado')
+          <option value="Anulado">Anulado</option>
+          @endif                   
+          </select>
+
+          @error('status')
+          <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+          </div>
+    </div>
+  </div>
+
+
+<div class="row text-center" style="background-color: #968F8F">
+  
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">Nombre del Producto</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> ###### </h6>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">Cantidad</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+  </div>  
+
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">Precio BsS:</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+  </div>
+  
+</div>
+
+<div class="row" style="background-color: #968F8F;"><br></div>  
+
+
+<div class="row"style="background-color: #968F8F;">
+
+  <div class="col-lg-6 col-md-6 col-sm-12"></div>
+
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="row"> 
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h6 style="color: #FFFFFF;">Sub Total:</h6>
+
+          <h6 style="color: #FFFFFF;">BsS IVA:</h6>
+
+          <h6 style="color: #FFFFFF;">Flete:</h6>
+
+          <h6 style="color: #FFFFFF;">TOTAL:</h6>
+                   
         </div>
 
-    <div class="row mb-2">
 
+        <div class="col-lg-3 col-md-3 col-sm-12">
 
-      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
-      <h2 class="ml-2">
-        Recibo de Pago
-    </h2>    
-</div>
-</div>
-        {!! Form::open(array('url'=>'recibo_pago', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+          <h6 style="color: #FFFFFF;"> ###### </h6>
 
-        {{Form::token()}}
-<div class="container-fluid" style="background-color: #968F8F">
-    
-<div class="col-12 text-center">
-  <h4 style="color: #FFFFFF">Primera Vez que Compro</h4>
+          <h6 style="color: #FFFFFF;"> ###### </h6>
+
+          <h6 style="color: #FFFFFF;"> ###### </h6>
+
+          <h6 style="color: #FFFFFF;"> ###### </h6>             
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12 mb-3">    
+
+          <img src="{{asset('img/filtro.jpg')}}" alt="" style="max-width: 150px; max-height: 150px;">    
+        </div>
+
+    </div>
+  </div>
 </div> 
 
-         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
 
-                <div class="input-group mb-3">
-                    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre y Apellido" />
-                 @error('nombre')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+
+    <div class="row m-4">
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+            <div class="form-group">
+
+                <button class="btn btn-danger" type="submit" style="float: right;">Guardar</button>
+
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>  
+
         </div>
 
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+        {{ Form::close() }}
 
-                <div class="input-group mb-3">
-                    <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" id="cedula_rif" placeholder="Cédula - RIF" />
-                 @error('cedula_rif')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+            <div class="form-group">
+
+                <a class="btn btn-danger" href="{{url('servicios')}}" role="button">Regresar</a>
+
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+
         </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                    <div class="form-group row" style="margin-left: 5px;">
-
-                        <textarea class="form-control  @error('direccion') is-invalid @enderror" type="text" name="direccion" rows="4" id="direccion" placeholder="Dirección" style="width: 95%;"></textarea>
-
-                            @error('direccion')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                    </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="input-group mb-3">
-                    <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Teléfono" />
-                 @error('telefono')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        </div>
-
-        <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="input-group mb-3">
-                    <input type="text" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror" id="contrasena" placeholder="Contraseña" />
-                 @error('contrasena')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        </div>
-
-    <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="input-group mb-3">
-                    <input type="text" name="moneda" class="form-control @error('moneda') is-invalid @enderror" id="moneda" placeholder="Moneda" />
-                 @error('moneda')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-<div class="col-lg-4 col-md-4 col-sm-12"></div>
-    </div>
-</div>                  
-
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 mt-3 mb-5" style="text-align: center;">
-            
-           <button class="btn btn-danger" type="submit"><h5>Guardar</h5></button>
-
-                
-        </div> 
-
     </div>
 
-        {{Form::close()}}
+</div>
 
-@push('scripts')
-
-
-
-@endpush
-
-
+ @push('scripts')
+ 
+ @endpush
 @endsection

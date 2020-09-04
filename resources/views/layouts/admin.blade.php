@@ -37,7 +37,6 @@
         <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();"><h5 style="color:#FFFFFF">{{ __('Salir') }}</h5>
-        
       </a>
 
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -56,17 +55,6 @@
   @yield('content')
   
 </div>  
-
-<br><br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
     <!-- Optional JavaScript -->

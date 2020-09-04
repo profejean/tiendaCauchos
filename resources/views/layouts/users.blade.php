@@ -15,10 +15,51 @@
 
 </head>
 <body>
-  <header>
-<div class="container" style="fixed-top"><a class="navbar-brand" href="#"><img src="{{asset('img/caucho.jpg')}}" style="max-width: 100px; max-height: 70px;"></a></div>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; position: fixed; z-index: 1; width: 100%; padding-top: 0 !important;">
+<div class="container-fluid fixed-top" style="z-index: 1; background-color: #FFF">
+<div class="row"> 
+  <div class="col-3 text-center"> 
+    <div style="width: 100%;background: white;">
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('img/caucho.jpg')}}" style="max-width: 100px; max-height: 70px;">
+      </a> 
+    </div>
+  </div>
+
+  <div class="col-3 text-center"> 
+    <div style="width: 100%;background: white;">
+      <h6>  Siguenos:</h6>
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('img/instagram.png')}}" style="max-width: 30px; max-height: 40px;">
+      </a>
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('img/facebook.png')}}" style="max-width: 30px; max-height: 40px;">
+      </a>
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('img/twitter.png')}}" style="max-width: 30px; max-height: 40px;">
+      </a>             
+    </div>
+  </div>
+
+  <div class="col-3 text-center"> 
+    <div style="width: 100%;background: white;">
+      <h6>  Contáctanos:</h6>
+      <h6>  ########</h6>       
+    </div>
+  </div>         
+
+  <div class="col-3 text-center"> 
+    <div style="width: 100%;background: white;">
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('img/carro.png')}}" style="max-width: 100px; max-height: 70px;">
+          <span class="badge badge-light">#</span>
+          <span class="sr-only">unread messages</span>
+      </a> 
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; width: 100%;">
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -48,19 +89,15 @@
       </li>  
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Ir al carrito</h5></a>
-      </li>
+        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Ir al carrito</h5>
 
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-      </form>
+        </a>
+      </li>
  
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-    </form>
   </div>
 </nav>
-  </header>
+</div>
 
 <div class="container-fluid" style="padding-top:100px;">
   

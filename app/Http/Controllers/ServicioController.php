@@ -135,7 +135,7 @@ class ServicioController extends Controller
 
 public function show($id){
 
-        $servicios = Servicio::orderBy('id', 'asc')->get();
+        $servicios = Servicio::findOrFail($id);
 
 
           return view('servicios.show', compact('servicios'));

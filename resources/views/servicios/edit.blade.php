@@ -2,83 +2,80 @@
 
 @section ('content')
 
+@include ('css.input_select_center_bg')
 
-<div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="jumbotron jumbotron-fluid">
-              <div class="container" style="text-align: center;">
-                <h2>{{ __('Servicios') }}</h2>
+<div class="row justify-content-center mt-5 mb-2">
+  <img src="{{asset('img/llave.png')}}" alt="" style="width: 50px;">
+  <h2 class="ml-2">
+    Servicios
+</h2>    
+</div>
 
-            </div>
+{!! Form::model($servicios, ['method'=>'PATCH','route'=>['servicios.update',$servicios->id],'files'=>'true']) !!}
+
+{{Form::token()}}        
+  
+<div class="container-fluid" style="background-color: #968F8F">
+    
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+
+        <div class="input-group mt-3">
+            <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" value="{{$servicios->nombre}}">
+            @error('nombre')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
-
-        {!! Form::model($servicios, ['method'=>'PATCH','route'=>['servicios.update',$servicios->id],'files'=>'true']) !!}
-
-        {{Form::token()}}
-
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-
-                <div class="input-group mb-3">
-
-                   <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Servicio" value="{{$servicios->nombre}}">
-                   @error('nombre')
-                   <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>  
     </div>
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+</div>
 
-    <div class="row">
+  <div class="row mt-3 text-center">
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
 
-        <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="form-group row">
 
-            <div class="form-group row" style="margin-left: 70px;">
+            <textarea class=" @error('descripcion') is-invalid @enderror" type="text" name="descripcion" id="descripcion" placeholder="Descripción" style="width: 100%;"></textarea>
 
-                <textarea class="@error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" class="centerta" placeholder="Descripción" style="width: 80%;">{{$servicios->descripcion}}</textarea>
-
-                @error('descripcion')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
+            @error('descripcion')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
-    </div> 
-
-    <div class="row">
-
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label for="imagen" class="mr-2">{{ __('Imagen') }}</label>
-                    <img src="{{asset('img/'.$servicios->imagen)}}" height="100" width="100">
-                </div>
-            </div>  
-        </div>
-        <hr> 
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <label for="imagen" class="mr-2"> <h5>{{ __('Cargar Imagen') }}</h5></label>
-            <div class="input-group mb-3">
-
-
-                <input type="file" name="imagen" class="form-control @error('imagen') is-invalid @enderror" id="imagen" class="centerip" placeholder="" value="{{$servicios->nombre}}">
-                @error('imagen')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div> 
-
     </div>
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+</div>
 
-    <div class="row">
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
 
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="input-group mb-3 justify-content-center">
+          <img src="{{asset('img/'.$servicios->imagen)}}" alt="" width="150" height="150">
+      <input type="file" name="imagen" class="form-control ml-2 @error('imagen') is-invalid @enderror" id="imagen" placeholder="" value="{{$servicios->imagen}}" style="background-color: #FFF; color: #968F8F;">
+      @error('imagen')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+      </div>
+</div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+
+</div>    
+
+
+</div>
+
+    <div class="row m-4">
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
             <div class="form-group">
 
@@ -90,7 +87,7 @@
 
         {{ Form::close() }}
 
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
             <div class="form-group">
 
@@ -103,16 +100,7 @@
 
 
 
-</div>
-</div>
-
-</div>
-
-@push('scripts')
-
-@include('js.servicios')
-
-@endpush
-
-
+ @push('scripts')
+ 
+ @endpush
 @endsection
