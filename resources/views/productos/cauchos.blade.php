@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<div class="container-fluid">
+
 	     <div class="col-12 text-center">
           <h3>CAUCHOS</h3>
         </div> 
@@ -176,4 +176,6 @@
 
 
 </div>
+
+
 @endsection

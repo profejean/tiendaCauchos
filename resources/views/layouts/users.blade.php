@@ -59,6 +59,8 @@
   </div>
 </div>
 
+<div class="row">
+
 <nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; width: 100%;">
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,6 +99,7 @@
     </ul>
   </div>
 </nav>
+</div>
 </div>
 
 <div class="container-fluid" style="padding-top:100px;">
