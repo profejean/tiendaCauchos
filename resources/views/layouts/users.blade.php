@@ -69,19 +69,19 @@
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Inicio</h5><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #FFFFFF">Inicio</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Cauchos</h5></a>
+        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #FFFFFF">Cauchos</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Accesorios y Autopartes</h5></a>
+        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #FFFFFF">Accesorios y Autopartes</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Servicios</h5></a>
+        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #FFFFFF">Servicios</h5></a>
       </li>
 
       <li class="nav-item">
@@ -89,7 +89,7 @@
       </li>  
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Ir al carrito</h5>
+        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #FFFFFF">Ir al carrito</h5>
 
         </a>
       </li>

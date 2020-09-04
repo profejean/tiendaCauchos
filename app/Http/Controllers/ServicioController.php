@@ -133,12 +133,5 @@ class ServicioController extends Controller
 
     }
 
-public function show($id){
 
-        $servicios = Servicio::findOrFail($id);
-
-
-          return view('servicios.show', compact('servicios'));
-            
-        }
 }

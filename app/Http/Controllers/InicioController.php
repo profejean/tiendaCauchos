@@ -8,6 +8,8 @@ use App\Http\Requests\InicioRequest;
 
 use App\General;
 
+use App\Servicio;
+
 use DB;
 
 use App\Producto;
@@ -44,6 +46,13 @@ class InicioController extends Controller
         $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(20); 
         return view('productos.accesorios', compact('productos'));
     } 
+
+    public function servicios_ver(){
+
+        $servicios = Servicio::findOrFail(1);
+        return view('servicios.show', compact('servicios'));
+            
+    }
 
 
 }
