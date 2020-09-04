@@ -2,9 +2,10 @@
 
 @section ('content')
 
-<div class="container-fluid">
-	     <div class="col-12 text-center">
-          <h3>ACEESORIOS Y AUTOPARTES</h3>
+@include('css.input_select_center_bg')
+
+	     <div class="col-12 text-center mt-5">
+          <h3 class="font-weight-bold">Accesorios y Autopartes</h3>
         </div> 
 
         {!! Form::open(array('url'=>'accesorios', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
@@ -14,7 +15,7 @@
 <div class="row"  style="background-color: #968F8F; margin-top: 10px">
 	<div class="col-lg-3 col-md-3 col-sm-12 mt-2">
 		
-    <div class="input-group mb-3">
+    <div class="input-group mt-2 mb-3">
       <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
       @error('nombre')
       <span class="invalid-feedback" role="alert">
@@ -23,27 +24,26 @@
       @enderror
     </div>
 
-<div class="row" style="text-align: center; margin-top: 10px;">
+    <div class="row" style="text-align: center; margin-top: 10px;">
 
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
+      <div class="form-group">
+       <button class="btn btn-danger" type="haiden"><h6>Buscar</h6></button>
 
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+     </div>
 
-		<div class="form-group">
-			<button class="btn btn-danger" type="haiden"><h6>Buscar</h6></button>
-
-		</div>
-
-	</div>
-        {{Form::close()}}
-	</div>
-
+   </div>
+   {{Form::close()}}
+    </div>
 </div>
 
-
+  <div class="col-lg-9 col-md-9 col-sm-12 mt-2">
+    <div class="row">
+      
     @foreach($productos as $p)
-	   <div class="col-lg-3 col-md-3 col-sm-12 mt-2">
-        <div class="card mb-2" style="width: 18rem;">
+	   <div class="col-lg-4 col-md-4 col-sm-12 mt-2 mb-2">
+        <div class="card" style="width: 18rem;">
           <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{$p->nombre}}</h5>
@@ -61,7 +61,8 @@
         </div>
     </div>
     @endforeach
-
+    </div>
+</div>
 </div>
 
   
@@ -74,5 +75,5 @@
 
 
 
-</div>
+
 @endsection

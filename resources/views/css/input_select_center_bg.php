@@ -15,7 +15,6 @@
   		color: #968F8F;
     		text-align: center;
 
-
   	} 
 
 textarea{
@@ -23,6 +22,13 @@ textarea{
       color: #968F8F;
         text-align: center;
 
-
     } 
+
+.card{
+
+        text-align: center;
+        height: 100%;
+    }    
+
+        
 </style>

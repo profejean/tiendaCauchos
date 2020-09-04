@@ -143,17 +143,6 @@ public function show($id){
         }
 
 
-  public function ya_he_comprado()
-    {
-
-        return view('orden_compras.ya_he_comprado');
-    }
-
-public function primera_vez()
-    {
-
-        return view('orden_compras.primera_vez');
-    }
 
   public function resumen(Request $request)
     {
@@ -171,5 +160,7 @@ public function primera_vez()
 
 
         return view('orden_compras.fin_pedido', compact('fin_pedido'));
-    }                         
+    }
+
+                          
 }

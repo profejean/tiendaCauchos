@@ -2,18 +2,21 @@
 
 @section ('content')
 
-<div class="container-fluid mt-5 mb-5">
 
- <div class="jumbotron jumbotron-fluid" style="background-color: #FFFFFF; margin-top: -150px">
-  <div class="container" style="text-align: center;">
-    <h2>{{ __('Carrito de Compras') }}</h2>
+<div class="row justify-content-center mt-5 mb-2">
+  <h2 class="ml-2 font-weight-bold">
+    Carrito de Compras
+</h2>    
+</div> 
+
+  <div class="row ml-2">
+    <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+    <h2 class="ml-2">
+      Pedido
+    </h2>    
   </div>
-</div>
-
   
-<div class="row" style="margin-top: -100px;">
-  Carrito <img src="..." class="card-img-top" alt="...">
-</div>
+
 <div class="row"  style="background-color: #968F8F; padding-bottom: 30px;">
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
     <img src="..." class="card-img-top" alt="...">
@@ -40,7 +43,7 @@
   
   <div class="mt-5">
     
-          <a href="" data-target="#modal-delete-{{}}" data-toggle="modal" data-backdrop="false">
+          <a href="" data-target="#modal-delete-" data-toggle="modal" data-backdrop="false">
           <button class="btn bg-danger mr-5" data-toggle="tooltip" data-placement="top" title="Eliminar Producto">
             <i class="fas fa-trash text-white"></i>
           </button>
@@ -56,14 +59,14 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
           <div class="form-group">
-            <button class="btn btn-danger" type="submit" style="text-align: center;"><h6>Ir a pagar</h6></button>
+                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;">Ir a pagar</a>
 
           </div>
 
         </div>
 </div>
 
-</div>
+
 
  @push('scripts')
  

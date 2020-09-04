@@ -54,5 +54,22 @@ class InicioController extends Controller
             
     }
 
+  public function pregunta()
+    { 
+
+        return view('orden_compras.pregunta_compra');
+    }  
+
+  public function ya_he_comprado()
+    {
+
+        return view('orden_compras.ya_he_comprado');
+    }
+
+public function primera_vez()
+    {
+
+        return view('orden_compras.primera_vez');
+    }
 
 }
