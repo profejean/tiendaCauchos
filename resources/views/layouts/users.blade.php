@@ -89,7 +89,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#inicio"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
+        <a class="nav-link" href="{{url('ya_he_comprado')}}"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
       </li>  
 
       <li class="nav-item">
