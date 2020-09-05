@@ -49,10 +49,10 @@ Route::resource('mensajes', 'MensajeController');
 Route::get('mensaje_status/{id}', 'MensajeController@status');
 
 // Rutas Orden de Compras
+Route::post('resumen_compras','OrdenCompraController@resumen')->name('resumen');
 Route::resource('orden_compras', 'OrdenCompraController');
 Route::get('ya_he_comprado','InicioController@ya_he_comprado')->name('ya_he_comprado');
 Route::get('primera_vez','InicioController@primera_vez')->name('primera_vez');
-Route::get('resumen_compras','OrdenCompraController@resumen')->name('resumen');
 Route::get('fin_pedido','OrdenCompraController@finpedido')->name('finpedido');
 Route::get('pregunta','InicioController@pregunta')->name('pregunta');
 

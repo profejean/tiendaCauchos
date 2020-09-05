@@ -13,13 +13,13 @@
 </div>
 
 <div class="row ml-2">
-      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
+      <img src="{{asset('img/10.png')}}" alt="" style="width: 50px;">
         <h2 class="ml-2">
             Recibo de Pago
         </h2>    
 </div>
 
-        {!! Form::open(array('url'=>'recibo_pago', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+        {!! Form::open(array('url'=>'resumen_compras', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
         {{Form::token()}}
 
@@ -98,23 +98,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="input-group mb-3">
-                <input type="text" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror" id="contrasena" placeholder="Contraseña" />
+                <input type="password" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror" id="contrasena" placeholder="Contraseña" />
                 @error('contrasena')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-    </div>
-
-    <div class="row" style="background-color: #968F8F">
-        <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="input-group mb-3">
-                <input type="text" name="moneda" class="form-control @error('moneda') is-invalid @enderror" id="moneda" placeholder="Moneda" />
-                @error('moneda')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -127,7 +112,7 @@
 
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 mt-3 mb-5" style="text-align: center;">
-           <button class="btn btn-danger" type="submit" style="width: 20%;"><h6>Pagar</h6></button>    
+           <button class="btn btn-danger" type="submit" style="width: 20%;"><h6>Confirmar</h6></button>    
        </div> 
    </div>
 

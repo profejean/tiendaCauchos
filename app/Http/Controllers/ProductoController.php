@@ -8,6 +8,8 @@ use App\Http\Requests\ProductoRequest;
 
 use App\Producto;
 
+use Cart;
+
 use DB;
 
 use Illuminate\Support\Facades\Redirect;
@@ -27,13 +29,13 @@ class ProductoController extends Controller
        
     public function index()
     {
-    	$productos = Producto::paginate(20);
+    	$productos = Producto::orderBy('categoria', 'desc')->paginate(20);
 
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-
+      
         return view('productos.index', compact('productos','cantidad_carrito'));
     }
 

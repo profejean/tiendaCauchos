@@ -8,6 +8,8 @@ use App\Http\Requests\MensajeRequest;
 
 use App\Mensaje;
 
+use Cart;
+
 use DB;
 
 use Illuminate\Support\Facades\Redirect;

@@ -13,7 +13,7 @@
 </div>
 
 <div class="row ml-2">
-      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
+      <img src="{{asset('img/10.png')}}" alt="" style="width: 50px;">
           <h2 class="ml-2">
             Recibo de Pago
         </h2>    

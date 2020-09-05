@@ -29,7 +29,7 @@
 		</div>
 	</div>
 </div>
-		<div class="col-lg-4 col-md-4 col-sm-12 mt-3" style="background-color: #968F8F">
+		<div class="col-lg-4 col-md-4 col-sm-12 mt-3 mb-3" style="background-color: #968F8F">
 	<div class="card" style="width: 18rem;">
 		<img src="{{asset('img/filtro.jpg')}}" alt="" style="max-width: 300px; max-height: 170px;">
 		<div class="card-body" style="background-color: #d9534f;">
