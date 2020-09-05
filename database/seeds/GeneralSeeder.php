@@ -13,6 +13,6 @@ class GeneralSeeder extends Seeder
      */
     public function run()
     {
-        factory(General::class, 10)->create();
+        factory(General::class, 1)->create();
     }
 }
