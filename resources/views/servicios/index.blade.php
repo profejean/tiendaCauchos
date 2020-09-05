@@ -7,7 +7,7 @@
         <div class="row justify-content-center mt-5 mb-2">
           
 
-          <img src="{{asset('img/llave.png')}}" alt="" style="width: 50px;">
+          <img src="{{asset('img/servicios.png')}}" alt="" style="width: 50px;">
           <h2 class="ml-2">
             Servicios
           </h2>    

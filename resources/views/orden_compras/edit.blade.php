@@ -5,7 +5,7 @@
 @include('css.input_select_center_bg')
 
   <div class="row justify-content-center mt-5">
-    <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+    <img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;">
     <h2 class="ml-2">
       Pedidos
     </h2>    
@@ -144,7 +144,7 @@
 
         {{ Form::close() }}
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
 
             <div class="form-group">
 

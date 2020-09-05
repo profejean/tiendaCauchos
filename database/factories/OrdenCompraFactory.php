@@ -15,11 +15,11 @@ $factory->define(OrdenCompra::class, function (Faker $faker) {
     	'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
     	'hora' => $faker->time($format = 'H:i:s', $max = 'now'),
     	'usuario_id' => $faker->numberBetween($min = 1, $max = 100),
-    	'metodo_pago' => $faker->randomElement($array = array ('Efectivo','Transferencia', 'Pago Móvil', 'Zelle')),
+    	'metodo_pago' => $faker->randomElement($array = array ('A convenir','Paypal', 'Efectivo')),
     	'referencias' => $faker->name,
     	'capture' => $faker->name,
     	'efectivo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),    	    	
-        'status' => $faker->randomElement($array = array ('Por Verificar Pago','Por Preparar', 'Por Entregar', 'Entregado', 'Anulado')),
+        'status' => $faker->randomElement($array = array ('Solicitado','Entregado', 'Anulado')),
 
 
         'usuario_creador' => $faker->name,

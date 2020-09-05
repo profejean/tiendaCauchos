@@ -8,7 +8,7 @@ use App\Producto;
 
 $factory->define(Producto::class, function (Faker $faker) {
     return [
-       	'categoria' => $faker->randomElement($array = array ('cauchos', 'accesorios')),
+       	'categoria' => $faker->randomElement($array = array ('Cauchos', 'Accesorios')),
         'nombre' => $faker->name,
     	'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
     	'precio_dolar' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 100000, $max = 5000000),

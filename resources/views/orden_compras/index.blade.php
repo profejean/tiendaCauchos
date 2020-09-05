@@ -53,7 +53,7 @@
 </div>
 <div class="row" style="text-align: center;">
   
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
 
             <div class="form-group">
 

@@ -21,7 +21,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
 
             <div class="form-group" style="text-align: center;">
-                <input type="hidden" name="tipo" value="cauchos">
+                <input type="hidden" name="tipo" value="Cauchos">
                 <button type="submit" class="btn btn-danger">
                     <h5>Caucho</h5>
                 </button>
@@ -37,7 +37,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
             <div class="form-group" style="text-align: center;">
-                <input type="hidden" name="tipo" value="accesorios">
+                <input type="hidden" name="tipo" value="Accesorios">
                 <button type="submit" class="btn btn-danger">
                     <h5>Accesorio o Repuesto</h5>
                 </button>

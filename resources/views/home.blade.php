@@ -25,11 +25,6 @@
         </div>
 
         <div class="row justify-content-center mt-4">
-            <img src="{{asset('img/tasa.png')}}" alt="" style="width: 50px;">
-            <a href="{{url('tasas')}}" class="ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Tasa</h5></a>             
-        </div>
-
-        <div class="row justify-content-center mt-4">
             <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
             <a href="{{url('productos')}}" class=" ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Cauchos y Accesorios</h5></a>             
         </div>        
