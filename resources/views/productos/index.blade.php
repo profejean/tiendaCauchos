@@ -2,88 +2,44 @@
 
 @section ('content')
 
-<div class="container-fluid mt-5 mb-5">
 
 
-  <div class="table-responsive-xl">
-    <table class="table table-striped table-bordered table-condensed table-hover">
+        <div class="row justify-content-center mt-5 mb-2">
+          
 
-      <tr>
-        <th colspan="5" style="text-align: center;">
-
-          <h2 class="text-info">
+          <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
+          <h2 class="ml-2">
             Cauchos y Accesorios
-          </h2>
+          </h2>    
+        </div>
+
 
   
-          <span> 
+@foreach($productos as $a)
+<div class="row text-center">
 
-            <a href="{{url('productos/create')}}">
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">CATEGORÍA</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->categoria}}</h6>
+  </div> 
 
-              <button class="btn btn-info mr-5 float-right" data-toggle="tooltip" data-placement="top" title="Crear Producto">
-                <i class="fa fa-plus" aria-hidden="true" style="width: 15px;height: 24px;"></i>
-              </button>
-            </a>
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">PRODUCTO</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->nombre}}</h6>
+  </div>  
 
-          </span>
-       
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <h6 class="text-center" style="color: #FFFFFF;">INVENTARIO DISPONIBLE</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->inventario}}</h6>
+  </div> 
 
-        </th>
-      </tr>     
-
-
-
-
-
-      <tr class="text-center">
-
-
-       <td>ID</td>
-       <td>NOMBRE</td>
-       <td>INVENTARIO DISPONIBLE</td>
-       
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <a class="btn btn-danger mt-2 mb-2"  href="{{URL::action('ProductoController@edit',$a->id)}}" role="button"><h6>Ver / Modificar</h6></a>
+  </div>
+  </div>
 
 
-
-       <td>OPCIONES</td>
-
-     </tr>
-
-
-    
-     @foreach ($productos as $a)
-
-     <tr class="text-center">
-
-      <td>{{ $a->id   }}</td>
-      <td>{{ $a->nombre }}</td>
-      <td>{{ $a->inventario }}</td>
-      
-
-
-
-      <td>
-
-        <a href="{{URL::action('ProductoController@edit',$a->id)}}" >
-          <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Editar Servicio">
-            <i class="fa fa-pencil text-white" style="width: 20px;height: 24px;"></i>
-
-          </button>
-
-
-        </a>
-
-        <a href="" data-target="#modal-delete-{{$a->id}}" data-toggle="modal" data-backdrop="false">
-          <button class="btn bg-danger mr-5" data-toggle="tooltip" data-placement="top" title="Eliminar Producto">
-            <i class="fas fa-trash text-white"></i>
-          </button>
-        </a>
-      </td>
-
-    </tr>
-
-    @include('productos.modal')
-
+  <hr style="border:10px; background: #FFF;">
 
     @endforeach  
 
@@ -91,9 +47,18 @@
     {{ $productos->render()}}  
   </div>
 
-  </table>
-</div>
+<div class="row" style="text-align: center;">
+  
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
 
+            <div class="form-group">
+
+                <a class="btn btn-danger" href="{{url('home')}}" role="button"><h6> Regresar</h6></a>
+
+            </div>
+
+        </div>
+</div>
 
 </div>
 

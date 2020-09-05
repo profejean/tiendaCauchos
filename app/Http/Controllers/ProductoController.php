@@ -8,7 +8,11 @@ use App\Http\Requests\ProductoRequest;
 
 use App\Producto;
 
+
 use App\General;
+
+use Cart;
+
 
 use DB;
 
@@ -29,7 +33,7 @@ class ProductoController extends Controller
        
     public function index()
     {
-    	$productos = Producto::paginate(20);
+    	$productos = Producto::orderBy('categoria', 'desc')->paginate(20);
 
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
@@ -39,6 +43,8 @@ class ProductoController extends Controller
         $inicio = General::findOrFail(1);
 
         return view('productos.index', compact('productos','cantidad_carrito','inicio'));
+
+    
     }
 
     public function edit($id)

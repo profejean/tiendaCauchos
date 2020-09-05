@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Cart;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\Hash;

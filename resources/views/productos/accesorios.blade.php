@@ -55,7 +55,7 @@
         </div>
         <ul class="list-group">
                  
-          <li class="list-group-item" style="border-bottom: none;">Precio $: {{$p->precio_dolar}}</li>
+          <li class="list-group-item" style="border-bottom: none;">Precio $: {{formato_numero($p->precio_dolar)}}</li>
           
           <li class="list-group-item">Inventario Disponible: {{$p->inventario}}</li>        
         </ul>

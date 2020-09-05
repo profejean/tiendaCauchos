@@ -34,7 +34,7 @@
   </div>
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
-<<<<<<< HEAD
+
     <h6 style="color: #FFFFFF">{{$c->name}}</h6>
   </div>
 
@@ -73,26 +73,14 @@
             </div>
 
         {{Form::close()}}
-=======
-    <h6 style="color: #FFFFFF">Nombre del Producto</h6>
-    <h6 style="color: #FFFFFF"> ###### </h6>
-  </div>
 
-  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-5">
-    <button style="background-color: #d9534f; width: 40px;"><h5 style="color: #FFFFFF">-</h5></button> X 
-    <button style="background-color: #d9534f; width: 40px;" ><h5 style="color: #FFFFFF">+</h5></button>
->>>>>>> 570f55fe903d7638758face62972d2fce0200709
   </div>
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
     <h6 style="color: #FFFFFF">Precio $</h6>
-    <h6 style="color: #FFFFFF">{{$c->price}}</h6>
+    <h6 style="color: #FFFFFF">{{formato_Numero($c->price)}}</h6>
   </div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 570f55fe903d7638758face62972d2fce0200709
   
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
 
@@ -111,24 +99,12 @@
 
 
 
-<<<<<<< HEAD
-<div class="row mb-5" style="text-align: center; margin-top: 10px;">
-=======
-          <div class="form-group">
+<div class="row mb-5 justify-content-center" style="text-align: center; margin-top: 10px;">
+
                   <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Confirmar</h6></a>
->>>>>>> 570f55fe903d7638758face62972d2fce0200709
 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-    <div class="form-group">
-      <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Ir a pagar</h6></a>
-
-    </div>
-
-  </div>
 </div>
-
-
 
 @push('scripts')
 @include('js.add_carrito')

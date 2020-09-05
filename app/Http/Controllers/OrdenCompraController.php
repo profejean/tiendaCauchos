@@ -14,6 +14,8 @@ use App\DetalleCompra;
 
 use DB;
 
+use Cart;
+
 use Illuminate\Support\Facades\Redirect;
 
 use Carbon\Carbon;
