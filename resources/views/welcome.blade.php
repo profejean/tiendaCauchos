@@ -112,7 +112,7 @@
 </div>
 </div>
 
-<div class="container-fluid baner" style="padding-top:100px;">
+<div class="container-fluid baner" style="margin-top:140px;">
   
   @yield('content')
   

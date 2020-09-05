@@ -3,7 +3,7 @@
 	.baner{
 		background: url({{asset('img/'.$inicio->logo)}}) center;
 		width: 100%;
-		height: 100vh;
+		height: 480px;
 		background-size: cover;
 		position: relative;
 
