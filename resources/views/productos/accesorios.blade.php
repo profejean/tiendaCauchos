@@ -16,7 +16,7 @@
 
 {{Form::token()}}
 
-<div class="row"  style="background-color: #968F8F; margin-top: 10px">
+<div class="row mb-5"  style="background-color: #968F8F; margin-top: 10px">
 	<div class="col-lg-3 col-md-3 col-sm-12 mt-1">
 		
     <div class="input-group mt-2 mb-3">

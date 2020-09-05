@@ -39,17 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember" style="color: #FFFFFF">
-                                        <h4>{{ __('Recuérdame') }}</h4>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    
 
                         <div class="form-group row mb-0">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center">

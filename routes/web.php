@@ -59,6 +59,8 @@ Route::get('pregunta','InicioController@pregunta')->name('pregunta');
 // Rutas Carrito
 Route::get('carrito', 'CarritoController@index')->name('carrito');
 Route::post('agregar_carrito', 'CarritoController@agregar_carrito')->name('agregar_carrito');
+Route::post('actualizar_carrito', 'CarritoController@actualizar_carrito')->name('actualizar_carrito');
+Route::get('remover/{id}', 'CarritoController@remover')->name('remover');
 
 
 // Rutas Usuarios

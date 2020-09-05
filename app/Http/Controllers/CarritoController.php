@@ -42,16 +42,29 @@ class CarritoController extends Controller
         $img = $producto->imagen_1;
         $nombre = $producto->nombre;         
 
-        $carro = Cart::add(['id' => $producto_id, 'name' => $nombre, 'qty' => $cantidad, 'price' => $precio_dolar, 'options' => ['img' => $img, 'inv' => $inventario]]);     
-
-       
-
-     
-       
-
+        $carro = Cart::add(['id' => $producto_id, 'name' => $nombre, 'qty' => $cantidad, 'price' => $precio_dolar, 'options' => ['img' => $img, 'inv' => $inventario]]); 
      
 
-        return Redirect::to('cauchos');
+        return back()->withInput(); 
     }
+
+    public function remover($id){
+
+        $remover = Cart::remove($id);       
+        return Redirect::to('carrito');
+
+
+    }
+
+    public function actualizar_carrito(Request $request){
+
+        $rowId = $request->get('rowId');
+        $cantidad = $request->get('cantidad');
+        $editar = Cart::update($rowId, ['qty' => $cantidad]);
+      
+        return Redirect::to('carrito');
+
+
+    } 
 
 }

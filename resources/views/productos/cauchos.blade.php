@@ -137,7 +137,7 @@
 
 </div>
 
-<div class="row" style="text-align: center; margin-top: 10px;">
+<div class="row mb-5" style="text-align: center; margin-top: 10px;">
 
 
 
