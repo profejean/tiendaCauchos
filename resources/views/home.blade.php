@@ -46,7 +46,7 @@
 
         <div class="row justify-content-center mt-4 mb-5">
             <img src="{{asset('img/casa.png')}}" alt="" style="width: 50px;">
-            <a href="{{URL::action('GeneralController@edit',1)}}" class="ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Inicio</h5></a>             
+            <a href="{{URL::action('GeneralController@edit',1)}}" class="ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Configuración</h5></a>             
         </div>             
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12"></div>
