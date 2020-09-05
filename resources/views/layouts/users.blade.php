@@ -27,7 +27,7 @@
   <div class="col-4"> 
     <div style="width: 100%;background: white;">
       <a class="navbar-brand" href="{{url('/')}}">
-        <img src="{{asset('img/caucho.png')}}" style="max-width: 200px;">
+        <img src="{{asset('img/'.$inicio->logo)}}" style="max-width: 200px;">
       </a> 
     </div>
   </div>
@@ -37,7 +37,7 @@
   <div class="col-4 text-center"> 
     <div style="width: 100%;background: white;">
       <h6>  Contáctanos:</h6>
-      <h6> (0212-632-8106) / (0414-197-8215) / (0412-900-5163)</h6>
+      <h6> {{$inicio->contactanos}}</h6>
                    
     </div>
   </div>         
@@ -127,12 +127,35 @@
       <h6 class="mt-3" style="font-size: 15px;">Todos los derechos reservados</h6>    
     </span>
 
-        <h6 class="mt-3 ml-5">Síguenos:</h6>  
+    <h6 class="mt-3 ml-5">Síguenos:</h6>  
     <span class="ml-1 mt-1 mb-1">
 
-      <a target="_blank" href="https://www.instagram.com/juancaucho2018"><img src="{{asset('img/instagram.png')}}" height="40" alt=""></a> 
-      <a target="_blank" href="https://www.facebook.com/JUAN-Caucho-2018-CA-110198903916526"><img src="{{asset('img/facebook.png')}}"  height="40"alt=""></a> 
-      <a target="_blank" href="https://vm.tiktok.com/ZSPxqKU3"><img src="{{asset('img/tik-tok.png')}}"  height="40"alt=""></a> 
+      @if($inicio->pregunta_instagram == 'SI')
+
+      <a target="_blank" href="{{$inicio->instagram}}"><img src="{{asset('img/instagram.png')}}" height="40" alt=""></a> 
+
+      @endif
+      @if($inicio->pregunta_facebook == 'SI')
+
+      <a target="_blank" href="{{$inicio->facebook}}"><img src="{{asset('img/facebook.png')}}"  height="40"alt=""></a> 
+
+      @endif
+
+      @if($inicio->pregunta_tiktok == 'SI')
+
+      <a target="_blank" href="{{$inicio->tiktok}}"><img src="{{asset('img/tik-tok.png')}}"  height="40"alt=""></a> 
+
+      @endif
+      @if($inicio->pregunta_whatsapp == 'SI')
+
+      <a target="_blank" href="{{$inicio->whatsapp}}"><img src="{{asset('img/whatsapp.png')}}"  height="40"alt=""></a> 
+
+      @endif
+      @if($inicio->pregunta_twitter == 'SI')
+
+      <a target="_blank" href="{{$inicio->twitter}}"><img src="{{asset('img/twitter.png')}}"  height="40"alt=""></a> 
+
+      @endif
       
     </span>
 

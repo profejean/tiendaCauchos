@@ -44,9 +44,10 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
         $productos = Producto::where('categoria', '=', 'cauchos')->orderBy('id','desc')->paginate(9);    
 
-        return view('productos.cauchos', compact('productos','cantidad_carrito'));
+        return view('productos.cauchos', compact('productos','cantidad_carrito','inicio'));
     }  
 
 	public function accesorios()
@@ -56,9 +57,10 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
         $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(9); 
-        return view('productos.accesorios', compact('productos','cantidad_carrito'));
+        return view('productos.accesorios', compact('productos','cantidad_carrito','inicio'));
     } 
 
     public function servicios_ver(){
@@ -67,9 +69,10 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
         $servicios = Servicio::findOrFail(1);
-        return view('servicios.show', compact('servicios','cantidad_carrito'));
+        return view('servicios.show', compact('servicios','cantidad_carrito','inicio'));
             
     }
 
@@ -80,8 +83,9 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('orden_compras.pregunta_compra', compact('cantidad_carrito'));
+        return view('orden_compras.pregunta_compra', compact('cantidad_carrito','inicio'));
     }  
 
   public function ya_he_comprado()
@@ -90,8 +94,9 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('orden_compras.ya_he_comprado',compact('cantidad_carrito'));
+        return view('orden_compras.ya_he_comprado',compact('cantidad_carrito','inicio'));
     }
 
 public function primera_vez()
@@ -101,8 +106,9 @@ public function primera_vez()
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('orden_compras.primera_vez', compact('cantidad_carrito'));
+        return view('orden_compras.primera_vez', compact('cantidad_carrito','inicio'));
     }
 
 }

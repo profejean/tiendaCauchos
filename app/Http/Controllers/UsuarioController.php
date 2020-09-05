@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\Hash;
 
+use App\General;
+
 class UsuarioController extends Controller
 {
     public function index(){
@@ -18,8 +20,9 @@ class UsuarioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('usuarios.index', compact('usuarios','cantidad_carrito'));
+        return view('usuarios.index', compact('usuarios','cantidad_carrito','inicio'));
     }
     
     public function edit($id)
@@ -30,11 +33,12 @@ class UsuarioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
          $usuarios = User::findOrFail($id);	
     	   		
 
-         return view('usuarios.edit',compact('usuarios','cantidad_carrito'));
+         return view('usuarios.edit',compact('usuarios','cantidad_carrito','inicio'));
 
    }
 	public function update(UsuarioRequest $request, $id)
@@ -64,8 +68,9 @@ class UsuarioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('usuarios.create', compact('cantidad_carrito'));
+        return view('usuarios.create', compact('cantidad_carrito','inicio'));
     }
 
     public function store(UsuarioRequest $request)
@@ -106,8 +111,9 @@ class UsuarioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('usuarios.usuario_nuevo', compact('nuevo','cantidad_carrito'));
+        return view('usuarios.usuario_nuevo', compact('nuevo','cantidad_carrito','inicio'));
 
     }
       

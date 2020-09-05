@@ -27,17 +27,7 @@ class GeneralController extends Controller
         $this->middleware('auth');
     }
        
-    public function index()
-    {
-    	$general = General::paginate(20);
-
-        $cantidad_carrito = 0;
-        foreach(Cart::content() as $c){
-        $cantidad_carrito += $c->qty;
-        }
-
-        return view('general.index', compact('general','cantidad_carrito'));
-    }
+    
 
     public function edit($id)
 
@@ -46,9 +36,9 @@ class GeneralController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-         $general=General::findOrFail($id);
+        $inicio = General::findOrFail(1);
      
-         return view('general.edit', compact('general','cantidad_carrito'));
+         return view('general.edit', compact('inicio','cantidad_carrito'));
 
         }
 
@@ -86,74 +76,5 @@ class GeneralController extends Controller
 
     }    
 
-     public function create()
-    {           
-        $cantidad_carrito = 0;
-        foreach(Cart::content() as $c){
-        $cantidad_carrito += $c->qty;
-        }
-        return view('general.create', compact('cantidad_carrito'));
-
-        }
-
-
-     public function store(GeneralRequest $request)
-    {
-
-        try {
-                 DB::beginTransaction();
-
-                    $general=new General($request->all());
-
-                     $user = Auth::user()->name;
-                     $general->usuario_creador=$user;
-                     $date = Carbon::now('America/Caracas');
-                     $general->fecha_creacion=$date->toDateTimeString();    
-
-                     $user = Auth::user()->name;
-                     $general->usuario_editor=$user;
-                     $date = Carbon::now('America/Caracas');
-                     $general->fecha_edicion=$date->toDateTimeString();        
-
-                     $general->save();
-
-
-                 DB::commit();
-
-            }catch (\Exception $e) {
-
-                 \DB::rollBack();
-
-                 return Redirect::back();
  
-            }
-
-        return Redirect::to('general');
-    }
-
-    public function destroy($id)
-
-    {  
-
-       $general=General::findOrFail($id);
-
-       $general->delete();
-
-        return Redirect::to('general');
-
-    }
-
-public function show($id){
-
-        $general = General::findOrFail($id);
-
-        $cantidad_carrito = 0;
-        foreach(Cart::content() as $c){
-        $cantidad_carrito += $c->qty;
-        }
-
-
-          return view('general.show', compact('general','cantidad_carrito'));
-            
-        }
 }

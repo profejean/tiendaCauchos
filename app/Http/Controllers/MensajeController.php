@@ -10,6 +10,8 @@ use App\Mensaje;
 
 use DB;
 
+use App\General;
+
 use Illuminate\Support\Facades\Redirect;
 
 use Carbon\Carbon;
@@ -41,10 +43,11 @@ class MensajeController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
     	
 
 
-        return view('mensajes.index', compact('mensajes','cantidad_carrito'));
+        return view('mensajes.index', compact('mensajes','cantidad_carrito','inicio'));
     }
 
     public function edit($id)
@@ -57,9 +60,11 @@ class MensajeController extends Controller
         $cantidad_carrito += $c->qty;
         }
 
+        $inicio = General::findOrFail(1);
+
         if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
 
-            return view('mensajes.edit', compact('mensajes','cantidad_carrito'));
+            return view('mensajes.edit', compact('mensajes','cantidad_carrito','inicio'));
 
         }else{
 
@@ -101,8 +106,9 @@ class MensajeController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         } 
+        $inicio = General::findOrFail(1);
 
-        return view('mensajes.create', compact('cantidad_carrito'));
+        return view('mensajes.create', compact('cantidad_carrito','inicio'));
 
     }
 
@@ -169,10 +175,11 @@ public function show($id){
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
         if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
 
-            return view('mensajes.show', compact('mensajes','cantidad_carrito'));
+            return view('mensajes.show', compact('mensajes','cantidad_carrito','inicio'));
 
         }else{
 

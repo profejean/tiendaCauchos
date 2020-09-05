@@ -8,6 +8,8 @@ use App\Http\Requests\ServicioRequest;
 
 use App\Servicio;
 
+use App\General;
+
 use DB;
 
 use Illuminate\Support\Facades\Redirect;
@@ -33,8 +35,9 @@ class ServicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('servicios.index', compact('servicios','cantidad_carrito'));
+        return view('servicios.index', compact('servicios','cantidad_carrito','inicio'));
     }
 
     public function edit($id)
@@ -47,8 +50,10 @@ class ServicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+
+        $inicio = General::findOrFail(1);
      
-         return view('servicios.edit', compact('servicios','cantidad_carrito'));
+         return view('servicios.edit', compact('servicios','cantidad_carrito','inicio'));
 
         }
 
@@ -97,7 +102,9 @@ class ServicioController extends Controller
         $cantidad_carrito += $c->qty;
         }
 
-        return view('servicios.create','cantidad_carrito');
+        $inicio = General::findOrFail(1);
+
+        return view('servicios.create','cantidad_carrito','inicio');
 
         }
 

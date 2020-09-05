@@ -19,7 +19,8 @@ class WecolmeController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
-        return view('welcome', compact('general', 'productos', 'servicios','cantidad_carrito' ));
+        return view('welcome', compact('general', 'productos', 'servicios','cantidad_carrito','inicio' ));
     }
 }

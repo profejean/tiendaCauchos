@@ -18,6 +18,9 @@
 	if($('#pregunta_tiktok').val() == 'SI'){
 		$('#activar_tiktok').css('display','inline');
 	}
+	if($('#pregunta_contactanos').val() == 'SI'){
+		$('#activar_contactanos').css('display','inline');
+	}
 
 	
 	$('#pregunta_twitter').change(function() {
@@ -57,6 +60,13 @@
 			$('#activar_tiktok').css('display','inline');
 		}else{
 			$('#activar_tiktok').css('display','none');
+		}
+	});
+	$('#pregunta_contactanos').change(function() {
+		if($(this).val() == 'SI'){
+			$('#activar_contactanos').css('display','inline');
+		}else{
+			$('#activar_contactanos').css('display','none');
 		}
 	});
 </script>

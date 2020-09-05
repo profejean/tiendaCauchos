@@ -8,6 +8,8 @@ use App\Http\Requests\CarritoRequest;
 
 use DB;
 
+use App\General;
+
 use App\Producto;
 
 use Illuminate\Support\Facades\Redirect;
@@ -28,7 +30,9 @@ class CarritoController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-        return view('carrito.index', compact('cantidad_carrito'));
+
+        $inicio = General::findOrFail(1);
+        return view('carrito.index', compact('cantidad_carrito','inicio'));
     }
 
     public function agregar_carrito(Request $request){

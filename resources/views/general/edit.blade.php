@@ -12,7 +12,7 @@
 
 
     </div>
-        {!! Form::model($general, ['method'=>'PATCH','route'=>['general.update',$general->id],'files'=>'true']) !!}
+        {!! Form::model($inicio, ['method'=>'PATCH','route'=>['general.update',$inicio->id],'files'=>'true']) !!}
 
         {{Form::token()}}
 
@@ -23,7 +23,7 @@
                     <div class="input-group-prepend">
                         <label for="ver_logo" class="mr-2">{{ __('Logo') }}</label>                    
                     </div>
-                    <img src="{{asset('img/'.$general->logo)}}" height="100" width="100">
+                    <img src="{{asset('img/'.$inicio->logo)}}" height="100" width="100">
                 </div>  
             </div>
         </div>
@@ -37,7 +37,7 @@
                 
 
 
-                    <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" id="logo" class="centerip" placeholder="" value="{{$general->logo}}">
+                    <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" id="logo" class="centerip" placeholder="" value="{{$inicio->logo}}">
                     @error('logo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
                         <label for="ver_banner" class="mr-2">{{ __('Banner') }}</label>
                         
                     </div>
-                    <img src="{{asset('img/'.$general->banner)}}" height="100" width="100">
+                    <img src="{{asset('img/'.$inicio->banner)}}" height="100" width="100">
                 </div>  
             </div>
         </div>
@@ -70,7 +70,7 @@
                 
 
 
-                    <input type="file" name="banner" class="form-control @error('banner') is-invalid @enderror" id="banner" class="centerip" placeholder="" value="{{$general->banner}}">
+                    <input type="file" name="banner" class="form-control @error('banner') is-invalid @enderror" id="banner" class="centerip" placeholder="" value="{{$inicio->banner}}">
                     @error('banner')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -89,11 +89,11 @@
                 </div>
 
                 <select class="custom-select @error('pregunta_twitter') is-invalid @enderror" name="pregunta_twitter" id="pregunta_twitter">
-                    <option value="{{$general->pregunta_twitter}}">{{$general->pregunta_twitter}}</option>
-                    @if(($general->pregunta_twitter) != 'NO')
+                    <option value="{{$inicio->pregunta_twitter}}">{{$inicio->pregunta_twitter}}</option>
+                    @if(($inicio->pregunta_twitter) != 'NO')
                     <option value="NO">NO</option>
                     @endif
-                    @if(($general->pregunta_twitter) != 'SI')
+                    @if(($inicio->pregunta_twitter) != 'SI')
                     <option value="SI">SI</option>
                     @endif
 
@@ -134,11 +134,11 @@
         </div>
 
         <select class="custom-select @error('pregunta_instagram') is-invalid @enderror" name="pregunta_instagram" id="pregunta_instagram">
-            <option value="{{$general->pregunta_instagram}}">{{$general->pregunta_instagram}}</option>
-            @if(($general->pregunta_instagram) != 'NO')
+            <option value="{{$inicio->pregunta_instagram}}">{{$inicio->pregunta_instagram}}</option>
+            @if(($inicio->pregunta_instagram) != 'NO')
             <option value="NO">NO</option>
             @endif
-            @if(($general->pregunta_instagram) != 'SI')
+            @if(($inicio->pregunta_instagram) != 'SI')
             <option value="SI">SI</option>
             @endif
 
@@ -181,11 +181,11 @@
         </div>
 
         <select class="custom-select @error('pregunta_facebook') is-invalid @enderror" name="pregunta_facebook" id="pregunta_facebook">
-            <option value="{{$general->pregunta_facebook}}">{{$general->pregunta_facebook}}</option>
-            @if(($general->pregunta_facebook) != 'NO')
+            <option value="{{$inicio->pregunta_facebook}}">{{$inicio->pregunta_facebook}}</option>
+            @if(($inicio->pregunta_facebook) != 'NO')
             <option value="NO">NO</option>
             @endif
-            @if(($general->pregunta_facebook) != 'SI')
+            @if(($inicio->pregunta_facebook) != 'SI')
             <option value="SI">SI</option>
             @endif
 
@@ -227,11 +227,11 @@
         </div>
 
         <select class="custom-select @error('pregunta_whatsapp') is-invalid @enderror" name="pregunta_whatsapp" id="pregunta_whatsapp">
-            <option value="{{$general->pregunta_whatsapp}}">{{$general->pregunta_whatsapp}}</option>
-            @if(($general->pregunta_whatsapp) != 'NO')
+            <option value="{{$inicio->pregunta_whatsapp}}">{{$inicio->pregunta_whatsapp}}</option>
+            @if(($inicio->pregunta_whatsapp) != 'NO')
             <option value="NO">NO</option>
             @endif
-            @if(($general->pregunta_whatsapp) != 'SI')
+            @if(($inicio->pregunta_whatsapp) != 'SI')
             <option value="SI">SI</option>
             @endif
 
@@ -276,11 +276,11 @@
         </div>
 
         <select class="custom-select @error('pregunta_tiktok') is-invalid @enderror" name="pregunta_tiktok" id="pregunta_tiktok">
-            <option value="{{$general->pregunta_tiktok}}">{{$general->pregunta_tiktok}}</option>
-            @if(($general->pregunta_tiktok) != 'NO')
+            <option value="{{$inicio->pregunta_tiktok}}">{{$inicio->pregunta_tiktok}}</option>
+            @if(($inicio->pregunta_tiktok) != 'NO')
             <option value="NO">NO</option>
             @endif
-            @if(($general->pregunta_tiktok) != 'SI')
+            @if(($inicio->pregunta_tiktok) != 'SI')
             <option value="SI">SI</option>
             @endif
 
@@ -326,11 +326,11 @@
         </div>
 
         <select class="custom-select @error('pregunta_contactanos') is-invalid @enderror" name="pregunta_contactanos" id="pregunta_contactanos">
-            <option value="{{$general->pregunta_contactanos}}">{{$general->pregunta_contactanos}}</option>
-            @if(($general->pregunta_contactanos) != 'NO')
+            <option value="{{$inicio->pregunta_contactanos}}">{{$inicio->pregunta_contactanos}}</option>
+            @if(($inicio->pregunta_contactanos) != 'NO')
             <option value="NO">NO</option>
             @endif
-            @if(($general->pregunta_contactanos) != 'SI')
+            @if(($inicio->pregunta_contactanos) != 'SI')
             <option value="SI">SI</option>
             @endif
 
@@ -376,7 +376,7 @@
                 <label for="icono_carrito" class="mr-2">{{ __('Icono Carrito') }}</label>
                 
             </div>
-            <img src="{{asset('img/'.$general->icono_carrito)}}" height="100" width="100">
+            <img src="{{asset('img/'.$inicio->icono_carrito)}}" height="100" width="100">
         </div>  
     </div>
 </div>
@@ -390,7 +390,7 @@
        
 
 
-            <input type="file" name="icono_carrito" class="form-control @error('icono_carrito') is-invalid @enderror" id="icono_carrito" class="centerip" placeholder="" value="{{$general->icono_carrito}}">
+            <input type="file" name="icono_carrito" class="form-control @error('icono_carrito') is-invalid @enderror" id="icono_carrito" class="centerip" placeholder="" value="{{$inicio->icono_carrito}}">
             @error('icono_carrito')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

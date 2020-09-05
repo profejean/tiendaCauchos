@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Cart;
 
+use App\General;
+
 class HomeController extends Controller
 {
     /**
@@ -29,6 +31,7 @@ class HomeController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-        return view('home',compact('cantidad_carrito'));
+        $inicio = General::findOrFail(1);
+        return view('home',compact('cantidad_carrito','inicio'));
     }
 }

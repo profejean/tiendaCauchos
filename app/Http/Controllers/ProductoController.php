@@ -8,6 +8,8 @@ use App\Http\Requests\ProductoRequest;
 
 use App\Producto;
 
+use App\General;
+
 use DB;
 
 use Illuminate\Support\Facades\Redirect;
@@ -34,7 +36,9 @@ class ProductoController extends Controller
         $cantidad_carrito += $c->qty;
         }
 
-        return view('productos.index', compact('productos','cantidad_carrito'));
+        $inicio = General::findOrFail(1);
+
+        return view('productos.index', compact('productos','cantidad_carrito','inicio'));
     }
 
     public function edit($id)
@@ -47,8 +51,10 @@ class ProductoController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+
+        $inicio = General::findOrFail(1);
      
-         return view('productos.edit', compact('productos','cantidad_carrito'));
+         return view('productos.edit', compact('productos','cantidad_carrito','inicio'));
 
         }
 
@@ -97,7 +103,9 @@ class ProductoController extends Controller
         $cantidad_carrito += $c->qty;
         }
 
-        return view('productos.tipo','cantidad_carrito');
+        $inicio = General::findOrFail(1);
+
+        return view('productos.tipo','cantidad_carrito','inicio');
 
         }
 
@@ -157,8 +165,10 @@ public function show($id){
         $cantidad_carrito += $c->qty;
         }
 
+        $inicio = General::findOrFail(1);
 
-          return view('productos.show', compact('productos','cantidad_carrito'));
+
+          return view('productos.show', compact('productos','cantidad_carrito','inicio'));
             
         }
 
@@ -171,9 +181,10 @@ public function show($id){
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
+        $inicio = General::findOrFail(1);
 
 
-        return view('productos.create', compact('tipo','cantidad_carrito'));
+        return view('productos.create', compact('tipo','cantidad_carrito','inicio'));
     }    
 
  
