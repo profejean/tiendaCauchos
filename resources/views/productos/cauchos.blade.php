@@ -158,16 +158,16 @@
     <input type="hidden" id="cantidad_producto"  value="{{count($productos)}}">
     <?php $cont = 0; ?>
     @foreach($productos as $p)
-    <div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
       <div class="card mb-2" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
         </div>
         <ul class="list-group">
                  
           <li class="list-group-item" style="border-bottom: none;">Precio $: {{$p->precio_dolar}}</li>
-          <li class="list-group-item" style="border-bottom: none;">Precio Bs: {{$p->precio_dolar}}</li>
+          
           <li class="list-group-item">Inventario Disponible: {{$p->inventario}}</li>        
         </ul>
 
@@ -198,7 +198,7 @@
       <div class="card-body" style="text-align: center;">
         <button type="submit" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">
         Agregar al carrito
-        <span class="badge badge-light">{{count(Cart::content())}}</span>
+        <span class="badge badge-light">{{$cantidad_carrito}}</span>
           <span class="sr-only">unread messages</span>
       </button>
       </div>

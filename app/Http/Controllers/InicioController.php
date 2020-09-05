@@ -44,7 +44,7 @@ class InicioController extends Controller
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-        $productos = Producto::orderBy('id','desc')->paginate(9);   
+        $productos = Producto::where('categoria', '=', 'cauchos')->orderBy('id','desc')->paginate(9);    
 
         return view('productos.cauchos', compact('productos','cantidad_carrito'));
     }  
@@ -57,7 +57,7 @@ class InicioController extends Controller
         $cantidad_carrito += $c->qty;
         }
 
-        $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(20); 
+        $productos = Producto::where('categoria', '=', 'accesorios')->orderBy('id','desc')->paginate(9); 
         return view('productos.accesorios', compact('productos','cantidad_carrito'));
     } 
 
