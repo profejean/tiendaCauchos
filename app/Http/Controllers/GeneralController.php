@@ -54,8 +54,7 @@ class GeneralController extends Controller
 
   public function update(GeneralRequest $request, $id)
     {
-            try {
-                 DB::beginTransaction();
+
 
                     $general=General::findOrFail($id);
 
@@ -69,22 +68,20 @@ class GeneralController extends Controller
                     $date = Carbon::now('America/Caracas');
                     $general->fecha_edicion=$date->toDateTimeString();               
 
-                   
+                    if ($request->hasFile('logo')){
+                    $file=$request->file('logo');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $general->logo=$name;
+
+                    }                     
 
                     $general->save(); 
 
 
-                 DB::commit();
 
-            }catch (\Exception $e) {
-
-                 \DB::rollBack();
-
-                 return Redirect::back();
- 
-            } 
-
-        return Redirect::to('general');
+        return Redirect::to('home');
 
 
     }    

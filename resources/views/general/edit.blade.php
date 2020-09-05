@@ -22,19 +22,19 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label for="id_logo" class="mr-2">{{ __('Logo') }}</label>
-                        <img src="{{asset('img/'.$general->id_logo)}}" height="100" width="100">
+                        <label for="logo" class="mr-2">{{ __('Logo') }}</label>
+                        <img src="{{asset('img/'.$general->logo)}}" height="100" width="100">
                     </div>
                 </div>  
             </div>
             <hr> 
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <label for="id_logo" class="mr-2"> <h5>{{ __('Cargar Logo') }}</h5></label>
+                <label for="logo" class="mr-2"> <h5>{{ __('Cargar Logo') }}</h5></label>
                 <div class="input-group mb-3">
 
 
-                    <input type="file" name="id_logo" class="form-control @error('id_logo') is-invalid @enderror" id="id_logo" class="centerip" placeholder="" value="{{$general->id_logo}}">
-                    @error('id_logo')
+                    <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" id="logo" class="centerip" placeholder="" value="{{$general->logo}}">
+                    @error('logo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -74,7 +74,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                        <label for="twitter" class="mr-2">{{ __('Twitter') }}</label>
+                        <label for="twitter" class="mr-2">{{ __('twitter') }}</label>
                         </div>
                             <input type="text" name="twitter" class="form-control @error('twitter') is-invalid @enderror" id="twitter" placeholder="" />
                             @error('twitter')
@@ -115,10 +115,10 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                        <label for="istagram" class="mr-2">{{ __('Instagram') }}</label>
+                        <label for="instagram" class="mr-2">{{ __('Instagram') }}</label>
                         </div>
-                            <input type="text" name="istagram" class="form-control @error('istagram') is-invalid @enderror" id="istagram" placeholder="" />
-                            @error('istagram')
+                            <input type="text" name="instagram" class="form-control @error('instagram') is-invalid @enderror" id="instagram" placeholder="" />
+                            @error('instagram')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -315,10 +315,10 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                        <label for="tlf_pago_movil" class="mr-2">{{ __('Teléfono') }}</label>
+                        <label for="tel_pago_movil" class="mr-2">{{ __('Teléfono') }}</label>
                         </div>
-                            <input type="text" name="tlf_pago_movil" class="form-control @error('tlf_pago_movil') is-invalid @enderror" id="tlf_pago_movil" placeholder="" />
-                            @error('tlf_pago_movil')
+                            <input type="text" name="tel_pago_movil" class="form-control @error('tel_pago_movil') is-invalid @enderror" id="tel_pago_movil" placeholder="" />
+                            @error('tel_pago_movil')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -578,7 +578,6 @@
 
 @push('scripts')
 
-@include('js.servicios')
 
 @endpush
 

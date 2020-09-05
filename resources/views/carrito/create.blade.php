@@ -117,6 +117,22 @@
 <div class="col-lg-4 col-md-4 col-sm-12"></div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="input-group mb-3">
+
+                            <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
+                            @error('imagen_3')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                    </div>
+            </div>
+<div class="col-lg-4 col-md-4 col-sm-12"></div>
+    </div>
+
 <div class="col-12 text-center">
   <h4>Cauchos</h4>
 </div> 
@@ -212,6 +228,22 @@
 
                             <input type="file" name="imagen_2" class="form-control @error('imagen_2') is-invalid @enderror" id="imagen_2" placeholder="Cargar Imagen 2">
                             @error('imagen_2')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                    </div>
+            </div>
+<div class="col-lg-4 col-md-4 col-sm-12"></div>
+    </div> 
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="input-group mb-3">
+
+                            <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
+                            @error('imagen_3')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

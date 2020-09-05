@@ -100,7 +100,9 @@
     </div>
     <?php  $cont = $cont + 1;  ?>
     @endforeach
+
   </div>
+
 
    <div class="row justify-content-center mb-5">
   
