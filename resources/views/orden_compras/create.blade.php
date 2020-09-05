@@ -31,7 +31,7 @@
 <div class="container-fluid" style="background-color: #968F8F">
 
     <div class="row justify-content-center">
-        <h6 class="mt-3" style="color: #FFF;">Sub Total BsS: </h6> <h4 class="mt-3" style="color: #FFF;">######</h4>
+        <h6 class="mt-3" style="color: #FFF;">Sub Total $: </h6> <h4 class="mt-3" style="color: #FFF;">######</h4>
     </div>
 
     <div class="row justify-content-center">
@@ -43,7 +43,11 @@
     </div>
 
     <div class="row justify-content-center">
-        <h6 style="color: #FFF;">TOTAL BsS: </h6> <h4 style="color: #FFF;">######</h4>        
+        <h6 style="color: #FFF;">TOTAL $: </h6> <h4 style="color: #FFF;">######</h4>        
+    </div>
+
+    <div class="row justify-content-center">
+        <p style="color: #FFF;">"NOTA: El despacho en la zona de Caracas tiene un costo de 5$, para otras zonas debe consultar el precio" </p>      
     </div>
 
     <div class="row justify-content-center">

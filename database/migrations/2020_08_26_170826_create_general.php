@@ -16,32 +16,32 @@ class CreateGeneral extends Migration
         Schema::create('general', function (Blueprint $table) {
             $table->id();
 
-            $table->text('logo');
-            $table->text('pregunta_twitter');
-            $table->text('pregunta_instagram');
-            $table->text('pregunta_facebook');
-            $table->text('pregunta_whatsapp');
-            $table->text('twitter');
-            $table->text('instagram');
-            $table->text('facebook');
-            $table->text('whatsapp');
-            $table->text('pregunta_contactanos');
-            $table->text('contactanos');
-            $table->text('icono_carrito');
-            $table->text('pregunta_pago_movil');
-            $table->text('pregunta_transferencia');
-            $table->text('pregunta_efectivo');
-            $table->text('pregunta_zelle');
-            $table->text('tel_pago_movil');
-            $table->text('cedula_pago_movil');
-            $table->text('banco_pago_movil');
-            $table->text('nro_cuenta_transferencia');
-            $table->text('ci_transferencia');
-            $table->text('tipo_cuenta_transferencia');
-            $table->text('banco_transferencia');
-            $table->text('nombre_transferencia');
-            $table->text('correo_zelle');
-            $table->text('nombre_zelle');           
+            $table->text('logo')->nullable();
+            $table->text('pregunta_twitter')->nullable();
+            $table->text('pregunta_instagram')->nullable();
+            $table->text('pregunta_facebook')->nullable();
+            $table->text('pregunta_whatsapp')->nullable();
+            $table->text('twitter')->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('facebook')->nullable();
+            $table->text('whatsapp')->nullable();
+            $table->text('pregunta_contactanos')->nullable();
+            $table->text('contactanos')->nullable();
+            $table->text('icono_carrito')->nullable();
+            $table->text('pregunta_pago_movil')->nullable();
+            $table->text('pregunta_transferencia')->nullable();
+            $table->text('pregunta_efectivo')->nullable();
+            $table->text('pregunta_zelle')->nullable();
+            $table->text('tel_pago_movil')->nullable();
+            $table->text('cedula_pago_movil')->nullable();
+            $table->text('banco_pago_movil')->nullable();
+            $table->text('nro_cuenta_transferencia')->nullable();
+            $table->text('ci_transferencia')->nullable();
+            $table->text('tipo_cuenta_transferencia')->nullable();
+            $table->text('banco_transferencia')->nullable();
+            $table->text('nombre_transferencia')->nullable();
+            $table->text('correo_zelle')->nullable();
+            $table->text('nombre_zelle')->nullable();           
 
 
             $table->date('fecha_creacion');

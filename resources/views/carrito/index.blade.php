@@ -10,7 +10,7 @@
 </div> 
 
   <div class="row ml-2">
-    <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+    <img src="{{asset('img/10.png')}}" alt="" style="width: 50px;">
     <h2 class="ml-2">
       Pedido
     </h2>    
@@ -24,9 +24,10 @@
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
     <h6 style="color: #FFFFFF">Nombre del Producto</h6>
+    <h6 style="color: #FFFFFF"> ###### </h6>
   </div>
 
-  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
+  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-5">
     <button style="background-color: #d9534f; width: 40px;"><h5 style="color: #FFFFFF">-</h5></button> X 
     <button style="background-color: #d9534f; width: 40px;" ><h5 style="color: #FFFFFF">+</h5></button>
   </div>
@@ -36,10 +37,6 @@
     <h6 style="color: #FFFFFF">#####</h6>
   </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
-    <h6 style="color: #FFFFFF">Precio Bs</h6>
-    <h6 style="color: #FFFFFF">#####</h6>
-  </div>
   
   <div class="mt-5">
     
@@ -59,7 +56,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
           <div class="form-group">
-                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Ir a pagar</h6></a>
+                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Confirmar</h6></a>
 
           </div>
 

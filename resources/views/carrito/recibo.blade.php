@@ -31,11 +31,6 @@
     <h6>Precio $</h6>
     <h6>#####</h6>
   </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-    <h6>Precio Bs</h6>
-    <h6>#####</h6>
-  </div>
   
   <div>
     
