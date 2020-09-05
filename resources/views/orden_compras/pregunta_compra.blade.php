@@ -36,7 +36,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
     <div class="col-lg-4 col-md-4 col-sm-12 text-center mb-5">
       <div class="form-group">
-          <a href="{{url('ya_he_comprado')}}" class="btn btn-danger" style="width: 60%;"><h6>Ya he comprado</h6></a>
+          <a href="{{url('login')}}" class="btn btn-danger" style="width: 60%;"><h6>Ya he comprado</h6></a>
       </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12"></div>

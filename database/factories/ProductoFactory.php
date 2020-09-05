@@ -17,8 +17,8 @@ $factory->define(Producto::class, function (Faker $faker) {
         'ancho' =>  $faker->randomElement($array = array ('60', '70', '80')),
         'diametro' =>  $faker->randomElement($array = array ('13', '14', '15')),
         'perfil' =>  $faker->randomElement($array = array ('Bajo', 'Medio', 'Alto')),
-        'imagen_1' => $faker->name,
-        'imagen_2' => $faker->name,
+        'imagen_1' => 'filtro.png',
+        'imagen_2' => 'filtro.png',
 
 
         'usuario_creador' => $faker->name,

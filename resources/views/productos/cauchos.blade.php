@@ -3,15 +3,15 @@
 @section ('content')
 
 
-	     <div class="col-12 text-center">
-          <h3>CAUCHOS</h3>
+	     <div class="col-12 text-center mt-5">
+          <h3 class="font-weight-bold">Cauchos</h3>
         </div> 
 
         {!! Form::open(array('url'=>'cauchos', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
         {{Form::token()}}
 <div class="row"  style="background-color: #968F8F">
-	<div class="col-lg-3 col-md-3 col-sm-12">
+	<div class="col-lg-3 col-md-3 col-sm-12 mt-2">
 		
     <div class="accordion" id="accordionExample">
   <div class="card mt-2">

@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.users')
 
 @section ('content')
 
@@ -17,8 +17,8 @@
 <div class="row justify-content-center">
   
   <div class="col-lg-12 col-md-12 col-sm-12 ml-5">
-    <a class="btn btn-danger" href="{{url('tasas/create')}}" role="button">Nuevo</a>
-     <a class="btn btn-danger" href="{{url('home')}}" role="button">Regresar</a>
+    <a class="btn btn-danger" href="{{url('tasas/create')}}" role="button"><h6>Nuevo</h6></a>
+     <a class="btn btn-danger" href="{{url('home')}}" role="button"><h6>Regresar</h6></a>
   </div> 
 </div>
 
@@ -41,7 +41,7 @@
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
     <h6 class="text-center" style="color: #FFFFFF;">MONTO</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">{{$a->monto}}</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{formato_numero($a->monto)}}</h6>
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">

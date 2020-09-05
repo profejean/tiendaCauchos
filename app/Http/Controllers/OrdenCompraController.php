@@ -8,6 +8,8 @@ use App\Http\Requests\OrdenCompraRequest;
 
 use App\OrdenCompra;
 
+use App\DetalleCompra;
+
 use DB;
 
 use Illuminate\Support\Facades\Redirect;
@@ -36,9 +38,10 @@ class OrdenCompraController extends Controller
 
     {   
 
-         $orden_compras=OrdenCompra::findOrFail($id);
+        $orden_compras=OrdenCompra::findOrFail($id);
+        $detalle_compras = DetalleCompra::where('pedido_id','=',$id)->get();
      
-         return view('orden_compras.edit', compact('orden_compras'));
+         return view('orden_compras.edit', compact('orden_compras', 'detalle_compras'));
 
         }
 
@@ -133,12 +136,16 @@ class OrdenCompraController extends Controller
 
     }
 
-public function show($id){
+public function show($id)
 
-        $orden_compras = OrdenCompra::findOrFail($id);
+    {
+
+        $orden_compras = OrdenCompra::findOrFail($id); 
+
+        $detalle_compras = DetalleCompra::where('pedido_id','=',$id)->get();
 
 
-          return view('orden_compras.show', compact('orden_compras'));
+          return view('orden_compras.show', compact('orden_compras', 'detalle_compras'));
             
         }
 

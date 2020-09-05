@@ -23,7 +23,7 @@
   </div>
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
-    <h6>Nombre del Producto</h6>
+    <h6 style="color: #FFFFFF">Nombre del Producto</h6>
   </div>
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
@@ -32,13 +32,13 @@
   </div>
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
-    <h6>Precio $</h6>
-    <h6>#####</h6>
+    <h6 style="color: #FFFFFF">Precio $</h6>
+    <h6 style="color: #FFFFFF">#####</h6>
   </div>
 
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
-    <h6>Precio Bs</h6>
-    <h6>#####</h6>
+    <h6 style="color: #FFFFFF">Precio Bs</h6>
+    <h6 style="color: #FFFFFF">#####</h6>
   </div>
   
   <div class="mt-5">
@@ -59,7 +59,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
           <div class="form-group">
-                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;">Ir a pagar</a>
+                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Ir a pagar</h6></a>
 
           </div>
 

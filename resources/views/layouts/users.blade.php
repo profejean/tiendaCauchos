@@ -19,37 +19,25 @@
 
 <div class="row"> 
 
-  <div class="col-3 text-center"> 
+  <div class="col-4"> 
     <div style="width: 100%;background: white;">
-      <a class="navbar-brand" href="#">
-        <img src="{{asset('img/caucho.jpg')}}" style="max-width: 100px; max-height: 70px;">
+      <a class="navbar-brand" href="{{url('/')}}">
+        <img src="{{asset('img/caucho.png')}}" style="max-width: 200px;">
       </a> 
     </div>
   </div>
 
-  <div class="col-3 text-center"> 
-    <div style="width: 100%;background: white;">
-      <h6>  Siguenos:</h6>
-      <a class="navbar-brand" href="#">
-        <img src="{{asset('img/instagram.png')}}" style="max-width: 30px; max-height: 40px;">
-      </a>
-      <a class="navbar-brand" href="#">
-        <img src="{{asset('img/facebook.png')}}" style="max-width: 30px; max-height: 40px;">
-      </a>
-      <a class="navbar-brand" href="#">
-        <img src="{{asset('img/twitter.png')}}" style="max-width: 30px; max-height: 40px;">
-      </a>             
-    </div>
-  </div>
 
-  <div class="col-3 text-center"> 
+
+  <div class="col-4 text-center"> 
     <div style="width: 100%;background: white;">
       <h6>  Contáctanos:</h6>
-      <h6>  ########</h6>       
+      <h6> (0212-632-8106) / (0414-197-8215) / (0412-900-5163)</h6>
+                   
     </div>
   </div>         
 
-  <div class="col-3 text-center"> 
+  <div class="col-4" style="text-align: right;"> 
     <div style="width: 100%;background: white;">
       <a class="navbar-brand" href="#">
         <img src="{{asset('img/carro.png')}}" style="max-width: 100px; max-height: 70px;">
@@ -89,7 +77,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('ya_he_comprado')}}"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
+        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
       </li>  
 
       <li class="nav-item">
@@ -98,6 +86,16 @@
         </a>
       </li>
  
+       <li class="nav-item">
+        <a class="dropdown-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();"><h5 style="color:#FFFFFF; margin-top: 5px;">{{ __('Salir') }}</h5>
+      </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+      </li>
+
     </ul>
   </div>
   
@@ -111,7 +109,29 @@
   
 </div>  
 
+   <div class="container-fluid fixed-bottom" style="background: #FFF;z-index: 1;">
 
+  
+  <div class="row justify-content-center">
+
+    <span>
+      <h6 class="mt-3" style="font-size: 15px;">Todos los derechos reservados</h6>    
+    </span>
+
+        <h6 class="mt-3 ml-5">Síguenos:</h6>  
+    <span class="ml-1 mt-1 mb-1">
+
+      <a target="_blank" href="https://www.instagram.com/juancaucho2018"><img src="{{asset('img/instagram.png')}}" height="40" alt=""></a> 
+      <a target="_blank" href="https://www.facebook.com/JUAN-Caucho-2018-CA-110198903916526"><img src="{{asset('img/facebook.png')}}"  height="40"alt=""></a> 
+      <a target="_blank" href="https://vm.tiktok.com/ZSPxqKU3"><img src="{{asset('img/tik-tok.png')}}"  height="40"alt=""></a> 
+      
+    </span>
+
+
+  </div>
+
+
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

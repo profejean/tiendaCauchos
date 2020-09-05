@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.users')
 
 @section ('content')
 
@@ -9,7 +9,7 @@
         <div class="row justify-content-center mb-2">
           
 
-          <img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
+          <img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;">
           <h2 class="ml-2">
             Pedidos
           </h2>    
@@ -37,8 +37,8 @@
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
     <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@edit',$a->id)}}" role="button"><h6>Ver Detalle</h6></a>
-  </div>
     <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@show',$a->id)}}" role="button"><h6>Ver</h6></a>
+  </div>
   </div>
 
 

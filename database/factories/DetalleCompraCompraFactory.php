@@ -13,7 +13,7 @@ $factory->define(DetalleCompra::class, function (Faker $faker) {
     	'precio_bs' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 3000000, $max = 3000000000),
     	'precio_dolar' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 10, $max = 1000),
     	'cantidad' => $faker->numberBetween($min = 1, $max = 100),
-
+        'pedido_id' => 1,
 
         'usuario_creador' => $faker->name,
     	'usuario_editor' => $faker->name,

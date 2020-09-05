@@ -20,50 +20,55 @@
 		</h2>    
 	</div>
   
-@foreach($orden_compras as $a)
+
 
 <div class="row text-center" style="background-color: #d9534f">
 
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> ###### </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->nro_pedido}} </h6>
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">FECHA</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->fecha}} </h6>
   </div>  
 
   <div class="col-lg-3 col-md-3 col-sm-12">
-    <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">MÉTODO DE PAGO</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->metodo_pago}} </h6>
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->status}} </h6>
   </div>
 
 </div>
+
+
+@foreach($detalle_compras as $b)
 
 <div class="row" style="background-color: #968F8F">
 	
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nombre del Producto</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> ###### </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{buscar_nombre_producto($b->producto_id)}} </h6>
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Cantidad</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$b->cantidad}} </h6>
   </div>  
 
   <div class="col-lg-3 col-md-3 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Precio BsS:</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">######</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_bs)}} </h6>
   </div>
-	
+
 </div>
+<hr style="background-color: #FFF;">
+    @endforeach  
 
 <div class="row" style="background-color: #968F8F;"><br></div>	
 
@@ -88,13 +93,13 @@
 
 			  <div class="col-lg-3 col-md-3 col-sm-12">
 
-			    <h6 style="color: #FFFFFF;"> ###### </h6>
+			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
 
-			    <h6 style="color: #FFFFFF;"> ###### </h6>
+			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
 
-			    <h6 style="color: #FFFFFF;"> ###### </h6>
+			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
 
-			    <h6 style="color: #FFFFFF;"> ###### </h6>             
+			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>             
 			  </div>
 
 			  <div class="col-lg-3 col-md-3 col-sm-12 mb-3">  	
@@ -106,18 +111,18 @@
 	</div>
 </div> 
 
+<div class="row"><br></div>
 
 
-    @endforeach  
 
 
 <div class="row" style="text-align: center;">
   
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
 
             <div class="form-group">
 
-                <a class="btn btn-danger" href="{{url('home')}}" role="button">Regresar</a>
+                <a class="btn btn-danger" href="{{url('home')}}" role="button"><H6>Regresar</H6></a>
 
             </div>
 
