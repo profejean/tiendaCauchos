@@ -16,6 +16,7 @@ class CreateDetalleCompras extends Migration
         Schema::create('detalle_compras', function (Blueprint $table) {
             $table->id();
 
+            $table->integer('pedido_id');
             $table->integer('producto_id');
             $table->decimal('precio_bs', 20,2);
             $table->decimal('precio_dolar', 20,2);

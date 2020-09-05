@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.users')
 
 @section('content')
-<div class="container">
-    <div style="text-align: center;"> <h2><strong>{{ __('Panel Administrativo') }}</strong></h2></div>
+
+@include('css.input_select_center_bg')
+<div class="container mt-5">
+    <div style="text-align: center;"> <h2><strong>{{ __('Mi Cuenta') }}</strong></h2></div>
     <div class="row justify-content-center" style="background: #968F8F;">
         <div class="col-md-8">
                 <div class="card-body">

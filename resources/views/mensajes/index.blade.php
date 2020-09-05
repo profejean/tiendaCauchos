@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.users')
 
 @section ('content')
 
@@ -9,14 +9,14 @@
       <h2 style="text-align: center;">
             Mi Cuenta
           </h2> 
-      
     </div>
-    <div class="row justify-content-center mt-3">
-      <h2 class="text-info">
-            Mensajes
-          </h2> 
-      
-    </div>
+
+<div class="row justify-content-center mt-5 mb-2">
+  <img src="{{asset('img/mensaje.png')}}" alt="" style="width: 50px;">
+  <h2 class="ml-2">
+    Mensajes
+</h2>    
+</div>
 
 @foreach ($mensajes as $m)
     <div class="row jus mb-3 mt-3" style="background: #968F8F;color: white;">
