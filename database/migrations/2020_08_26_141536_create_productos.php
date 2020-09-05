@@ -25,8 +25,9 @@ class CreateProductos extends Migration
             $table->text('ancho');
             $table->text('diametro');
             $table->text('perfil');
-            $table->text('imagen_1')->nullable;
-            $table->text('imagen_2')->nullable;
+            $table->text('imagen_1')->nullable();
+            $table->text('imagen_2')->nullable();
+            $table->text('imagen_3')->nullable();
 
 
             $table->date('fecha_creacion');

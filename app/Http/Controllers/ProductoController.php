@@ -29,7 +29,12 @@ class ProductoController extends Controller
     {
     	$productos = Producto::paginate(20);
 
-        return view('productos.index', compact('productos'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('productos.index', compact('productos','cantidad_carrito'));
     }
 
     public function edit($id)
@@ -37,8 +42,13 @@ class ProductoController extends Controller
     {   
 
          $productos=Producto::findOrFail($id);
+
+         $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
      
-         return view('productos.edit', compact('productos'));
+         return view('productos.edit', compact('productos','cantidad_carrito'));
 
         }
 
@@ -82,7 +92,12 @@ class ProductoController extends Controller
      public function create()
     {           
 
-        return view('productos.tipo');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('productos.tipo','cantidad_carrito');
 
         }
 
@@ -137,8 +152,13 @@ public function show($id){
 
         $productos = Producto::findOrFail($id);
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-          return view('productos.show', compact('productos'));
+
+          return view('productos.show', compact('productos','cantidad_carrito'));
             
         }
 
@@ -147,8 +167,13 @@ public function show($id){
           
         $tipo=$request->get('tipo');
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-        return view('productos.create', compact('tipo'));
+
+        return view('productos.create', compact('tipo','cantidad_carrito'));
     }    
 
  

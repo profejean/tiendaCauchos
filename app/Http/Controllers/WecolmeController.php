@@ -15,6 +15,11 @@ class WecolmeController extends Controller
     	$productos = Producto::paginate(5);
     	$servicios = Servicio::paginate(5);
 
-        return view('welcome', compact('general', 'productos', 'servicios' ));
+    	$cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('welcome', compact('general', 'productos', 'servicios','cantidad_carrito' ));
     }
 }

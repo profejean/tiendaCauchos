@@ -29,7 +29,12 @@ class ServicioController extends Controller
     {
     	$servicios = Servicio::paginate(20);
 
-        return view('servicios.index', compact('servicios'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('servicios.index', compact('servicios','cantidad_carrito'));
     }
 
     public function edit($id)
@@ -37,8 +42,13 @@ class ServicioController extends Controller
     {   
 
          $servicios=Servicio::findOrFail($id);
+
+         $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
      
-         return view('servicios.edit', compact('servicios'));
+         return view('servicios.edit', compact('servicios','cantidad_carrito'));
 
         }
 
@@ -82,7 +92,12 @@ class ServicioController extends Controller
      public function create()
     {           
 
-        return view('servicios.create');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('servicios.create','cantidad_carrito');
 
         }
 

@@ -29,7 +29,12 @@ class TasaController extends Controller
     {
     	$tasas = Tasa::paginate(20);
 
-        return view('tasas.index', compact('tasas'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('tasas.index', compact('tasas','cantidad_carrito'));
     }
 
     public function edit($id)
@@ -37,8 +42,13 @@ class TasaController extends Controller
     {   
 
          $tasas=Tasa::findOrFail($id);
+
+         $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
      
-         return view('tasas.edit', compact('tasas'));
+         return view('tasas.edit', compact('tasas','cantidad_carrito'));
 
         }
 
@@ -82,7 +92,12 @@ class TasaController extends Controller
      public function create()
     {           
 
-        return view('tasas.create');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('tasas.create','cantidad_carrito');
 
         }
 
@@ -137,8 +152,13 @@ public function show($id){
 
         $tasas = Tasa::findOrFail($id);
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-          return view('tasas.show', compact('tasas'));
+
+          return view('tasas.show', compact('tasas','cantidad_carrito'));
             
         }
 }

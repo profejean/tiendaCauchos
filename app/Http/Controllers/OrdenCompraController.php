@@ -31,7 +31,12 @@ class OrdenCompraController extends Controller
     {
     	$orden_compras = OrdenCompra::paginate(20);
 
-        return view('orden_compras.index', compact('orden_compras'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('orden_compras.index', compact('orden_compras','cantidad_carrito'));
     }
 
     public function edit($id)
@@ -40,8 +45,13 @@ class OrdenCompraController extends Controller
 
         $orden_compras=OrdenCompra::findOrFail($id);
         $detalle_compras = DetalleCompra::where('pedido_id','=',$id)->get();
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
      
-         return view('orden_compras.edit', compact('orden_compras', 'detalle_compras'));
+         return view('orden_compras.edit', compact('orden_compras', 'detalle_compras','cantidad_carrito'));
 
         }
 
@@ -85,7 +95,12 @@ class OrdenCompraController extends Controller
      public function create()
     {           
 
-        return view('orden_compras.create');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('orden_compras.create', compact('cantidad_carrito'));
 
         }
 
@@ -144,8 +159,13 @@ public function show($id)
 
         $detalle_compras = DetalleCompra::where('pedido_id','=',$id)->get();
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-          return view('orden_compras.show', compact('orden_compras', 'detalle_compras'));
+
+          return view('orden_compras.show', compact('orden_compras', 'detalle_compras','cantidad_carrito'));
             
         }
 
@@ -156,8 +176,13 @@ public function show($id)
           
         $resumen_compras = $request->get('resumen_compras');
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-        return view('orden_compras.resumen_compras', compact('resumen_compras'));
+
+        return view('orden_compras.resumen_compras', compact('resumen_compras','cantidad_carrito'));
     } 
 
   public function finpedido(Request $request)
@@ -165,8 +190,13 @@ public function show($id)
           
         $fin_pedido = $request->get('fin_pedido');
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-        return view('orden_compras.fin_pedido', compact('fin_pedido'));
+
+        return view('orden_compras.fin_pedido', compact('fin_pedido','cantidad_carrito'));
     }
 
                           

@@ -14,16 +14,27 @@ class UsuarioController extends Controller
 
         $usuarios = User::orderBy('id','asc')->paginate(20);
 
-        return view('usuarios.index',['usuarios'=>$usuarios]);
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('usuarios.index', compact('usuarios','cantidad_carrito'));
     }
     
     public function edit($id)
 
     { 
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
          $usuarios = User::findOrFail($id);	
     	   		
 
-         return view('usuarios.edit',['usuarios'=>$usuarios]);
+         return view('usuarios.edit',compact('usuarios','cantidad_carrito'));
 
    }
 	public function update(UsuarioRequest $request, $id)
@@ -47,8 +58,14 @@ class UsuarioController extends Controller
 
      public function create()
 
-    {                         
-        return view('usuarios.create');
+    {        
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('usuarios.create', compact('cantidad_carrito'));
     }
 
     public function store(UsuarioRequest $request)
@@ -85,7 +102,12 @@ class UsuarioController extends Controller
           
         $nuevo = $request->get('nuevo');
 
-        return view('usuarios.usuario_nuevo', compact('nuevo'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('usuarios.usuario_nuevo', compact('nuevo','cantidad_carrito'));
 
     }
       

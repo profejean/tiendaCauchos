@@ -36,10 +36,15 @@ class MensajeController extends Controller
             $mensajes = Mensaje::where('de','=',Auth::id())->orWhere('para','=',Auth::id())->orderBy('status','asc')->paginate(20);
 
         }
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
     	
 
 
-        return view('mensajes.index', compact('mensajes'));
+        return view('mensajes.index', compact('mensajes','cantidad_carrito'));
     }
 
     public function edit($id)
@@ -47,9 +52,14 @@ class MensajeController extends Controller
     {   
         $mensajes=Mensaje::findOrFail($id);
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
         if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
 
-            return view('mensajes.edit', compact('mensajes'));
+            return view('mensajes.edit', compact('mensajes','cantidad_carrito'));
 
         }else{
 
@@ -85,9 +95,14 @@ class MensajeController extends Controller
     }    
 
      public function create()
-    {           
+    {          
 
-        return view('mensajes.create');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        } 
+
+        return view('mensajes.create', compact('cantidad_carrito'));
 
     }
 
@@ -150,9 +165,14 @@ public function show($id){
 
         $mensajes=Mensaje::findOrFail($id);
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
         if(Auth::id() == $mensajes->de or Auth::id() == $mensajes->de or Auth::user()->rol == 'Gerente'){
 
-            return view('mensajes.show', compact('mensajes'));
+            return view('mensajes.show', compact('mensajes','cantidad_carrito'));
 
         }else{
 
@@ -165,6 +185,8 @@ public function show($id){
     public function status($id){
 
         $mensajes=Mensaje::findOrFail($id);
+
+       
 
         if(Auth::user()->rol == 'Gerente'){
 

@@ -186,6 +186,7 @@
           <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="0" style="width: 60px;" data="{{$cont}}">
           <input type="hidden" id="producto_id_{{$cont}}" name="producto_id"  value="{{$p->id}}">
           <input type="hidden" id="inventario_{{$cont}}" name="inventario"  value="{{$p->inventario}}">
+          <input type="hidden" id="precio_dolar{{$cont}}" name="precio_dolar"  value="{{$p->precio_dolar}}">
 
           <div class="input-group-append">
             <span class="input-group-text" id="disminuir_{{$cont}}" data="{{$cont}}">                   
@@ -210,6 +211,11 @@
     </div>
     <?php  $cont = $cont + 1;  ?>
     @endforeach
+  </div>
+
+   <div class="row justify-content-center mb-5">
+  
+    {{ $productos->withQueryString()->links() }}
   </div>
 
 </div>

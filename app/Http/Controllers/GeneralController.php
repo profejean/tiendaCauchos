@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Hash;
 
+use Cart;
+
 class GeneralController extends Controller
 {
     public function __construct()
@@ -29,16 +31,24 @@ class GeneralController extends Controller
     {
     	$general = General::paginate(20);
 
-        return view('general.index', compact('general'));
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        return view('general.index', compact('general','cantidad_carrito'));
     }
 
     public function edit($id)
 
     {   
-
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
          $general=General::findOrFail($id);
      
-         return view('general.edit', compact('general'));
+         return view('general.edit', compact('general','cantidad_carrito'));
 
         }
 
@@ -81,8 +91,11 @@ class GeneralController extends Controller
 
      public function create()
     {           
-
-        return view('general.create');
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+        return view('general.create', compact('cantidad_carrito'));
 
         }
 
@@ -129,7 +142,7 @@ class GeneralController extends Controller
 
        $general->delete();
 
-         return Redirect::to('general');
+        return Redirect::to('general');
 
     }
 
@@ -137,8 +150,13 @@ public function show($id){
 
         $general = General::findOrFail($id);
 
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
 
-          return view('general.show', compact('general'));
+
+          return view('general.show', compact('general','cantidad_carrito'));
             
         }
 }

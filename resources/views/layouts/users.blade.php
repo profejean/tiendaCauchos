@@ -44,9 +44,9 @@
 
   <div class="col-4" style="text-align: right;"> 
     <div style="width: 100%;background: white;">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{url('carrito')}}">
         <img src="{{asset('img/carro.png')}}" style="max-width: 100px; max-height: 70px;">
-          <span class="badge badge-light">#</span>
+          <span class="badge badge-light">{{$cantidad_carrito}}</span>
           <span class="sr-only">unread messages</span>
       </a> 
     </div>
@@ -90,6 +90,8 @@
 
         </a>
       </li>
+
+      @if(Auth::check())
  
        <li class="nav-item">
         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -100,6 +102,8 @@
         @csrf
       </form>
       </li>
+
+      @endif
 
     </ul>
   </div>
