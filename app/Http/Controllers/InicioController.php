@@ -95,8 +95,9 @@ class InicioController extends Controller
         $cantidad_carrito += $c->qty;
         }
         $inicio = General::findOrFail(1);
+        $existe= ' ';
 
-        return view('orden_compras.ya_he_comprado',compact('cantidad_carrito','inicio'));
+        return view('orden_compras.ya_he_comprado',compact('cantidad_carrito','inicio','existe'));
     }
 
 public function primera_vez()
