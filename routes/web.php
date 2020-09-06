@@ -67,3 +67,7 @@ Route::get('nuevo','UsuarioController@nuevo')->name('nuevo');
 Route::get('cambio_pass/{id}', 'UsuarioController@cambio_pass')->name('cambio_pass');
 Route::PATCH('actualizar_pass', 'UsuarioController@actualizar_pass')->name('actualizar_pass');
 Route::resource('usuarios', 'UsuarioController');
+Route::get('pass_lost', 'UsuarioController@pass_lost')->name('pass_lost');
+Route::post('pass_lost_email', 'UsuarioController@pass_lost_email')->name('pass_lost_email');
+Route::get('pass_lost_clientes', 'UsuarioController@pass_lost_clientes')->name('pass_lost_clientes');
+Route::post('pass_lost_email_clientes', 'UsuarioController@pass_lost_email_clientes')->name('pass_lost_email_clientes');

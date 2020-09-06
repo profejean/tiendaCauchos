@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\Hash;
-
+use App\Mail\OlvidarPasswordMail;
+use Illuminate\Support\Str;
 use App\General;
 
 class UsuarioController extends Controller
@@ -147,6 +148,123 @@ class UsuarioController extends Controller
         $usuarios->save();
 
         return Redirect::to('usuarios/'.$usuarios->id.'/edit');
+
+    }
+
+    public function pass_lost()
+    {
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+        $inicio = General::findOrFail(1);
+
+        return view('usuarios.pass_lost', compact('cantidad_carrito','inicio'));
+
+    }
+
+    public function pass_lost_email(Request $request)
+    {
+
+        $email = $request->get('email');
+        $password = Str::random(8);
+
+
+         $usuarios=User::where('email','=',$email)->get();
+
+         if (count($usuarios) > 0) {
+
+            $user=User::findOrFail($usuarios[0]->id);
+
+            $user->password = Hash::make($password);
+
+            $user->save();
+
+            $details = [
+
+                'password' => $password,                  
+
+            ];
+
+            \Mail::to($email)->send(new OlvidarPasswordMail($details)); 
+
+            $cantidad_carrito = 0;
+            foreach(Cart::content() as $c){
+            $cantidad_carrito += $c->qty;
+            }             
+            $existe = 'Si';
+            $inicio = General::findOrFail(1);
+            return view('auth.login', compact('cantidad_carrito','inicio','existe'));
+            
+        }else{
+            $cantidad_carrito = 0;
+            foreach(Cart::content() as $c){
+            $cantidad_carrito += $c->qty;
+            }             
+            $existe = 'No';
+            $inicio = General::findOrFail(1);
+            return view('auth.login', compact('cantidad_carrito','inicio','existe'));
+        } 
+
+    }
+
+
+    public function pass_lost_clientes()
+    {
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+        $inicio = General::findOrFail(1);
+
+        return view('usuarios.pass_lost_clientes', compact('cantidad_carrito','inicio'));
+
+    }
+
+    public function pass_lost_email_clientes(Request $request)
+    {
+
+        $email = $request->get('email');
+        $password = Str::random(8);
+
+
+         $usuarios=User::where('email','=',$email)->get();
+
+         if (count($usuarios) > 0) {
+
+            $user=User::findOrFail($usuarios[0]->id);
+
+            $user->password = Hash::make($password);
+
+            $user->save();
+
+            $details = [
+
+                'password' => $password,                  
+
+            ];
+
+            \Mail::to($email)->send(new OlvidarPasswordMail($details)); 
+
+            $cantidad_carrito = 0;
+            foreach(Cart::content() as $c){
+            $cantidad_carrito += $c->qty;
+            }             
+            $existe = 'Si';
+            $inicio = General::findOrFail(1);
+            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe'));
+            
+        }else{
+            $cantidad_carrito = 0;
+            foreach(Cart::content() as $c){
+            $cantidad_carrito += $c->qty;
+            }             
+            $existe = 'No';
+            $inicio = General::findOrFail(1);
+            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe'));
+        } 
 
     }
       

@@ -54,6 +54,9 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
         </div>
 
+
+      
+
 <div class="row" style="background-color: #968F8F;">
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
@@ -68,7 +71,23 @@
 
     {{ Form::close() }}
 
-</div>                  
+</div>  
+
+  <div class="row justify-content-center mb-5" style="background-color: #968F8F;">
+        @if($existe == 'No')
+        <h3>No existe el email suministrado</h3>
+        @endif
+        @if($existe == 'Si')
+        <h3>Hemos enviado un email con su nueva contraseña</h3>
+        @endif
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" align="center">
+                @if (Route::has('password.request'))
+                    <a class="btn btn-danger" href="{{ route('pass_lost_clientes') }}">
+                        {{ __('Olvidastes tu contraseña?') }}
+                    </a>
+                @endif
+        </div>
+    </div>                
 
 @push('scripts')
 
