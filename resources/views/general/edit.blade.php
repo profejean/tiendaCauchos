@@ -411,7 +411,7 @@
 
     <div class="form-group mr-5">
 
-        <button class="btn btn-danger" type="submit" style="float: right;">Guardar</button>
+        <button class="btn btn-danger" type="submit" style="float: right;"><h6>Guardar</h6></button>
 
     </div>
 
@@ -423,7 +423,7 @@
 
     <div class="form-group">
 
-        <a class="btn btn-danger" href="{{url('home')}}" role="button">Regresar</a>
+        <a class="btn btn-danger" href="{{url('home')}}" role="button"><h6>Regresar</h6></a>
 
     </div>
 

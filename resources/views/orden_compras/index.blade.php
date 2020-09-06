@@ -2,11 +2,7 @@
 
 @section ('content')
 
-<div class="container-fluid mt-5 mb-5">
-
-
-
-        <div class="row justify-content-center mb-2">
+        <div class="row justify-content-center mb-2 mt-5">
           
 
           <img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;">
@@ -34,11 +30,16 @@
     <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
     <h6 class="text-center" style="color: #FFFFFF;">{{$a->status}}</h6>
   </div>
-
+        @if(Auth::user()->rol == 'Gerente')
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
-    <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@edit',$a->id)}}" role="button"><h6>Ver Detalle</h6></a>
+    <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@edit',$a->id)}}" role="button"><h6>Editar</h6></a>
     <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@show',$a->id)}}" role="button"><h6>Ver</h6></a>
   </div>
+          @else
+  <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
+    <a class="btn btn-danger mt-2"  href="{{URL::action('OrdenCompraController@show',$a->id)}}" role="button"><h6>Ver</h6></a>
+  </div>
+          @endif
   </div>
 
 
@@ -50,14 +51,14 @@
     {{ $orden_compras->render()}}  
   </div>
 
-</div>
+
 <div class="row" style="text-align: center;">
   
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
 
             <div class="form-group">
 
-                <a class="btn btn-danger" href="{{url('home')}}" role="button">Regresar</a>
+                <a class="btn btn-danger" href="{{url('home')}}" role="button"><h6>Regresar</h6></a>
 
             </div>
 

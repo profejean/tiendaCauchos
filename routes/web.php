@@ -64,4 +64,6 @@ Route::get('remover/{id}', 'CarritoController@remover')->name('remover');
 
 // Rutas Usuarios
 Route::get('nuevo','UsuarioController@nuevo')->name('nuevo');
+Route::get('cambio_pass/{id}', 'UsuarioController@cambio_pass')->name('cambio_pass');
+Route::PATCH('actualizar_pass', 'UsuarioController@actualizar_pass')->name('actualizar_pass');
 Route::resource('usuarios', 'UsuarioController');

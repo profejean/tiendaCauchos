@@ -51,19 +51,19 @@
 
 <div class="row" style="background-color: #968F8F">
 	
-  <div class="col-lg-3 col-md-3 col-sm-12">
+  <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nombre del Producto</h6>
     <h6 class="text-center" style="color: #FFFFFF;"> {{buscar_nombre_producto($b->producto_id)}} </h6>
   </div>
 
-  <div class="col-lg-3 col-md-3 col-sm-12">
+  <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Cantidad</h6>
     <h6 class="text-center" style="color: #FFFFFF;"> {{$b->cantidad}} </h6>
   </div>  
 
-  <div class="col-lg-3 col-md-3 col-sm-12">
-    <h6 class="text-center" style="color: #FFFFFF;">Precio BsS:</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_bs)}} </h6>
+  <div class="col-lg-4 col-md-4 col-sm-12">
+    <h6 class="text-center" style="color: #FFFFFF;">Precio $:</h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_total_dolares)}} </h6>
   </div>
 
 </div>
@@ -78,28 +78,17 @@
 	<div class="col-lg-6 col-md-6 col-sm-12"></div>
 
 	<div class="col-lg-6 col-md-6 col-sm-12">
+
 		<div class="row">	
 			  <div class="col-lg-3 col-md-3 col-sm-12">
-			    <h6 style="color: #FFFFFF;">Sub Total:</h6>
 
-			    <h6 style="color: #FFFFFF;">BsS IVA:</h6>
-
-			    <h6 style="color: #FFFFFF;">Flete:</h6>
-
-			    <h6 style="color: #FFFFFF;">TOTAL:</h6>
+			    <h4 style="color: #FFFFFF; margin-top: 40px;">TOTAL $:</h4>
 			             
 			  </div>
 
-
 			  <div class="col-lg-3 col-md-3 col-sm-12">
 
-			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
-
-			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
-
-			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>
-
-			    <h6 style="color: #FFFFFF;"> {{formato_numero($orden_compras->precio_total_bs)}} </h6>             
+			    <h4 style="color: #FFFFFF; margin-top: 40px;"> {{formato_numero($orden_compras->precio_total_dolares)}} </h4>             
 			  </div>
 
 			  <div class="col-lg-3 col-md-3 col-sm-12 mb-3">  	
@@ -122,7 +111,7 @@
 
             <div class="form-group">
 
-                <a class="btn btn-danger" href="{{url('home')}}" role="button"><H6>Regresar</H6></a>
+                <a class="btn btn-danger" href="{{url('orden_compras')}}" role="button"><H6>Regresar</H6></a>
 
             </div>
 

@@ -3,21 +3,18 @@
 @section ('content')
 
 
-<div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-  
-            <div class="jumbotron jumbotron-fluid" style="width: 50%;">
-              
-                    <h2 class="text-center">{{ __('Mensajes') }}</h2>
-
-             
-            </div>
-  
-    </div>
+  <div class="row justify-content-center mt-5">
+    <img src="{{asset('img/mensajes.png')}}" alt="" style="width: 50px;">
+    <h2 class="ml-2">
+      Mensajes
+    </h2>    
+  </div>
 
       {!! Form::model($mensajes, ['method'=>'PATCH','route'=>['mensajes.update',$mensajes->id],'files'=>'true']) !!}
 
         {{Form::token()}}
+
+<div class="container mt-5 mb-5">
 
 
      <div class="row">

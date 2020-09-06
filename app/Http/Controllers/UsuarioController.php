@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\Hash;
@@ -115,6 +116,37 @@ class UsuarioController extends Controller
         $inicio = General::findOrFail(1);
 
         return view('usuarios.usuario_nuevo', compact('nuevo','cantidad_carrito','inicio'));
+
+    }
+ 
+    public function cambio_pass($id)
+    {  
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+
+        if((Auth::user()->id) == $id or (Auth::user()->rol)== 'Gerente'){
+
+        $usuarios=User::findOrFail($id);
+        $inicio = General::findOrFail(1);
+        return view('usuarios.cambio_pass', compact('usuarios','inicio', 'cantidad_carrito'));
+
+        }else{
+            return Redirect::to('home');
+        }
+    }    
+
+    public function actualizar_pass(Request $request)
+    {
+
+        $usuarios=User::findOrFail($request->get('id'));
+
+        $usuarios->password = Hash::make($request->get('password'));
+        
+        $usuarios->save();
+
+        return Redirect::to('usuarios/'.$usuarios->id.'/edit');
 
     }
       
