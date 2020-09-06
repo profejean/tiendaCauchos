@@ -2,24 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests\CarritoRequest;
-
 use DB;
-
 use App\General;
-
 use App\Producto;
-
 use Illuminate\Support\Facades\Redirect;
-
 use Carbon\Carbon;
-
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Hash;
-
 use Cart;
 
 class CarritoController extends Controller

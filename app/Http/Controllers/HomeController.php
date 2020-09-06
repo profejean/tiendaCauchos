@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use Cart;
-
+use App\Http\Requests\GeneralRequest;
 use App\General;
+use DB;
+use Illuminate\Support\Facades\Redirect;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Cart;
 
 class HomeController extends Controller
 {

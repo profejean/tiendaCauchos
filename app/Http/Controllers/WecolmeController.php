@@ -7,6 +7,7 @@ use App\General;
 use App\Producto;
 use App\Servicio;
 use Cart;
+
 class WecolmeController extends Controller
 {
         public function index()
