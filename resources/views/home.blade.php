@@ -18,7 +18,7 @@
 
         <div class="row justify-content-center">
             <img src="{{asset('img/usuarios.png')}}" alt="" style="width: 50px;">
-            <a href="#" class=" ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Usuarios</h5></a>             
+            <a href="{{url('usuarios')}}" class=" ml-2 btn btn-danger btn-block" style="width: 80%;"><h5>Usuarios</h5></a>             
         </div>
         
         <div class="row justify-content-center mt-4">

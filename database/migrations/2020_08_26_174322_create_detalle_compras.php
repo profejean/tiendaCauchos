@@ -17,16 +17,12 @@ class CreateDetalleCompras extends Migration
             $table->id();
 
             $table->integer('pedido_id');
-            $table->integer('producto_id');
-            $table->decimal('precio_bs', 20,2);
+            $table->integer('producto_id');            
             $table->decimal('precio_dolar', 20,2);
             $table->integer('cantidad');
+            $table->text('img');
 
-            $table->date('fecha_creacion');
-            $table->date('fecha_edicion');
-            $table->text('usuario_editor');
-            $table->text('usuario_creador');
-
+           
             $table->timestamps();
         });
     }

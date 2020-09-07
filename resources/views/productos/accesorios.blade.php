@@ -85,7 +85,7 @@
         </div>
 
       <div class="card-body" style="text-align: center;">
-        <button type="submit" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">
+        <button type="button" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">
         Agregar al carrito
         <span class="badge badge-light">{{$cantidad_carrito}}</span>
           <span class="sr-only">unread messages</span>
@@ -117,6 +117,7 @@
 
 @push('scripts')
 @include('js.incrementar_cantidad')
+@include('js.add_carrito_caucho')
 @endpush
 
 

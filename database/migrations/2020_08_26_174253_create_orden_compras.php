@@ -15,17 +15,17 @@ class CreateOrdenCompras extends Migration
     {
         Schema::create('orden_compras', function (Blueprint $table) {
             $table->id();
-            $table->integer('nro_pedido');
-            $table->decimal('precio_total_bs', 20,2);
-            $table->decimal('precio_total_dolares', 20,2);
-            $table->date('fecha');
-            $table->time('hora');
-            $table->integer('usuario_id');
-            $table->text('metodo_pago');
-            $table->text('referencias');
-            $table->text('capture');
-            $table->text('efectivo');
-            $table->text('status');            
+            $table->decimal('total', 20, 2);
+            $table->text('forma_pago');
+            $table->text('nombre');
+            $table->text('ci');
+            $table->text('tlf');
+            $table->longtext('direccion');
+            $table->text('llave');
+            $table->text('status');
+
+   
+                       
 
             $table->date('fecha_creacion');
             $table->date('fecha_edicion');

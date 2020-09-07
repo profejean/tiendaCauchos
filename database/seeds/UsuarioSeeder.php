@@ -15,7 +15,10 @@ class UsuarioSeeder extends Seeder
     {
         User::create([
         	'name'  =>  'Jean',
-            'rol'  =>  'Gerente',
+            'rol'  =>  'Gerente',  
+            'cedula_rif'  =>  '123',   
+            'direccion'  =>  '124',
+            'telefono'  =>  '124',
         	'email'  =>  'profesorjeandiaz@gmail.com',
         	'password'  =>  bcrypt('tikery.27')
      	
@@ -23,6 +26,9 @@ class UsuarioSeeder extends Seeder
         User::create([
         	'name'  =>  'leonel',
             'rol'  =>  'Gerente',
+            'cedula_rif'  =>  '125',
+            'direccion'  =>  '124',
+            'telefono'  =>  '124',
         	'email'  =>  'leonel.camero@gmail.com',
         	'password'  =>  bcrypt('Password09')
      	
@@ -30,6 +36,9 @@ class UsuarioSeeder extends Seeder
         User::create([
             'name'  =>  'cliente',
             'rol'  =>  'Cliente',
+            'cedula_rif'  =>  '124',
+            'direccion'  =>  '124',
+            'telefono'  =>  '124',
             'email'  =>  'cliente@gmail.com',
             'password'  =>  bcrypt('1234')
         
