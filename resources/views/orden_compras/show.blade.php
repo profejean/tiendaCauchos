@@ -13,9 +13,9 @@
 		</div>
 	</div>
 
-	<div class="row justify-content-center" style="background-color: #968F8F">
-		<img src="{{asset('img/carro.png')}}" alt="" style="width: 50px;">
-		<h2 class="ml-2" style="color: #FFF">
+	<div class="row justify-content-center">
+		<img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;">
+		<h2 class="ml-2">
 			Tus Pedidos
 		</h2>    
 	</div>
@@ -24,22 +24,17 @@
 
 <div class="row text-center" style="background-color: #d9534f">
 
-  <div class="col-lg-3 col-md-3 col-sm-12">
+  <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->nro_pedido}} </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->id}} </h6>
   </div>
 
-  <div class="col-lg-3 col-md-3 col-sm-12">
+  <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">FECHA</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->fecha}} </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->fecha_creacion}} </h6>
   </div>  
 
-  <div class="col-lg-3 col-md-3 col-sm-12">
-    <h6 class="text-center" style="color: #FFFFFF;">MÉTODO DE PAGO</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->metodo_pago}} </h6>
-  </div>
-
-  <div class="col-lg-3 col-md-3 col-sm-12">
+  <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">ESTATUS</h6>
     <h6 class="text-center" style="color: #FFFFFF;"> {{$orden_compras->status}} </h6>
   </div>
@@ -75,29 +70,28 @@
 
 <div class="row"style="background-color: #968F8F;">
 
-	<div class="col-lg-6 col-md-6 col-sm-12"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-12 text-center">
+          <h6 class="text-center" style="color: #FFFFFF;">Nombre:</h6>
+          <h6 class="text-center" style="color: #FFFFFF;">CI:</h6>
+          <h6 class="text-center" style="color: #FFFFFF;">Forma de Pago:</h6>
+          <h6 class="text-center" style="color: #FFFFFF;">Teléfono:</h6>
+          <h6 class="text-center" style="color: #FFFFFF;">Dirección:</h6>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-12">
+          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->nombre}} </h6>          
+          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->ci}} </h6> 
+          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->forma_pago}} </h6>                    
+          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->tlf}} </h6> 
+          <p class="text-left" style="color: #FFFFFF;"> {{$orden_compras->direccion}} </p> 
+        </div>
 
-	<div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-12 text-center">
+          <h4 style="color: #FFFFFF;">TOTAL $:</h4>         
+          <h4 style="color: #FFFFFF;"> {{formato_numero($orden_compras->total)}} </h4>             
+        </div>
 
-		<div class="row">	
-			  <div class="col-lg-3 col-md-3 col-sm-12">
 
-			    <h4 style="color: #FFFFFF; margin-top: 40px;">TOTAL $:</h4>
-			             
-			  </div>
 
-			  <div class="col-lg-3 col-md-3 col-sm-12">
-
-			    <h4 style="color: #FFFFFF; margin-top: 40px;"> {{formato_numero($orden_compras->precio_total_dolares)}} </h4>             
-			  </div>
-
-			  <div class="col-lg-3 col-md-3 col-sm-12 mb-3">  	
-
-			  	<img src="{{asset('img/filtro.jpg')}}" alt="" style="max-width: 150px; max-height: 150px;">    
-			  </div>
-
-		</div>
-	</div>
 </div> 
 
 <div class="row"><br></div>

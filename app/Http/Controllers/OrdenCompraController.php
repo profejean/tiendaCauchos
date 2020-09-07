@@ -3,31 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests\OrdenCompraRequest;
-
 use App\OrdenCompra;
-
 use App\User;
-
 use App\Producto;
-
 use App\General;
-
 use App\DetalleCompra;
-
 use DB;
-
 use Illuminate\Support\Str;
-
 use Cart;
-
 use Illuminate\Support\Facades\Redirect;
-
 use Carbon\Carbon;
-
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Hash;
 
 class OrdenCompraController extends Controller
