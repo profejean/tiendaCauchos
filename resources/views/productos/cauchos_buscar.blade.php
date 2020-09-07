@@ -40,12 +40,7 @@
                 <div class="input-group">
                  
                   <select class="custom-select" id="inputGroupSelect01" name="marca">
-                    @if($obtener_marca == 'No')                    
                     <option selected>Elije una opción</option>
-                    @else
-                    <option selected>{{$obtener_marca}}</option>   
-                    <option value="No">No</option>                   
-                    @endif
                     @foreach($marca as $marca)
                     <option value="{{$marca}}">{{$marca}}</option>
                     @endforeach
@@ -74,12 +69,7 @@
             <div class="input-group">
                  
                   <select class="custom-select" id="inputGroupSelect02" name="ancho">
-                    @if($obtener_ancho == 'No')                    
                     <option selected>Elije una opción</option>
-                    @else
-                    <option selected>{{$obtener_ancho}}</option>  
-                    <option value="No">No</option>                    
-                    @endif
                     @foreach($ancho as $ancho)
                     <option value="{{$ancho}}">{{$ancho}}</option>
                     @endforeach
@@ -104,12 +94,7 @@
           <div class="input-group">
                  
                   <select class="custom-select" id="inputGroupSelect03" name="diametro">
-                    @if($obtener_diametro == 'No')                    
                     <option selected>Elije una opción</option>
-                    @else
-                    <option selected>{{$obtener_diametro}}</option> 
-                    <option value="No">No</option>                     
-                    @endif
                     @foreach($diametro as $diametro)
                     <option value="{{$diametro}}">{{$diametro}}</option>
                     @endforeach
@@ -122,24 +107,19 @@
     <div class="card">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             <h5 style="color: #968F8F; text-align: center;">Perfil</h5>
           </button>
         </h2>
       </div>
-      <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
         <div class="card-body">
          <div class="col-md-12">
 
           <div class="input-group">
                  
                   <select class="custom-select" id="inputGroupSelect04" name="perfil">
-                    @if($obtener_perfil == 'No')                    
                     <option selected>Elije una opción</option>
-                    @else
-                    <option selected>{{$obtener_perfil}}</option>  
-                    <option value="No">No</option>                  
-                    @endif
                     @foreach($perfil as $perfil)
                     <option value="{{$perfil}}">{{$perfil}}</option>
                     @endforeach
@@ -174,22 +154,26 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
   <div class="row mt-2">
     <input type="hidden" id="cantidad_producto"  value="{{count($productos)}}">
-    <?php $cont = 0; ?>
+    <?php 
+    $cont = 0;
+    for ($i=0; $i < count($productos); $i++) {     
+        
+    ?>
     @foreach($productos as $p)
     <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
       <div class="card mb-2" style="width: 18rem;">
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200">
+        <img src="{{asset('img/'.$p[$i]->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200">
         <div class="card-body">
-          <h5 class="card-title">{{$p->nombre}}</h5>
+          <h5 class="card-title">{{$p[$i]->nombre}}</h5>
         </div>
         <ul class="list-group">
                  
-          <li class="list-group-item" style="border-bottom: none;">Precio $: {{formato_numero($p->precio_dolar)}}</li>
+          <li class="list-group-item" style="border-bottom: none;">Precio $: {{formato_numero($p[$i]->precio_dolar)}}</li>
           
-          <li class="list-group-item">Inventario Disponible: {{$p->inventario}}</li>        
+          <li class="list-group-item">Inventario Disponible: {{$p[$i]->inventario}}</li>        
         </ul>
 
-        {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_'.$cont, 'files'=>'true')) !!}
+        {!! Form::open(array('url'=>'agregar_carrito', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_'.$cont, 'files'=>'true')) !!}
 
         {{Form::token()}} 
 
@@ -202,9 +186,9 @@
             </span>
           </div>
           <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="0" style="width: 60px;" data="{{$cont}}">
-          <input type="hidden" id="producto_id_{{$cont}}" name="producto_id"  value="{{$p->id}}">
-          <input type="hidden" id="inventario_{{$cont}}" name="inventario"  value="{{$p->inventario}}">
-          <input type="hidden" id="precio_dolar{{$cont}}" name="precio_dolar"  value="{{$p->precio_dolar}}">
+          <input type="hidden" id="producto_id_{{$cont}}" name="producto_id"  value="{{$p[$i]->id}}">
+          <input type="hidden" id="inventario_{{$cont}}" name="inventario"  value="{{$p[$i]->inventario}}">
+          <input type="hidden" id="precio_dolar{{$cont}}" name="precio_dolar"  value="{{$p[$i]->precio_dolar}}">
 
           <div class="input-group-append">
             <span class="input-group-text" id="disminuir_{{$cont}}" data="{{$cont}}">                   
@@ -229,12 +213,15 @@
     </div>
     <?php  $cont = $cont + 1;  ?>
     @endforeach
+
+    <?php
+        
+     } 
+
+    ?>
   </div>
 
-   <div class="row justify-content-center mb-5">
-  
-    {{ $productos->withQueryString()->links() }}
-  </div>
+   
 
 </div>
 

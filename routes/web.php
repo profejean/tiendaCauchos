@@ -27,6 +27,8 @@ Route::get('cauchos','InicioController@cauchos')->name('cauchos');
 Route::get('accesorios','InicioController@accesorios')->name('accesorios');
 Route::get('servicios_ver','InicioController@servicios_ver')->name('servicios_ver');
 Route::resource('productos', 'ProductoController');
+Route::post('buscar_cauchos','InicioController@buscar_cauchos')->name('buscar_cauchos');
+Route::post('buscar_accesorios','InicioController@buscar_accesorios')->name('buscar_accesorios');
 
 // Rutas Tasas
 Route::resource('tasas', 'TasaController');
@@ -61,7 +63,8 @@ Route::post('crear_cliente','InicioController@crear_cliente')->name('crear_clien
 
 // Rutas Carrito
 Route::get('carrito', 'CarritoController@index')->name('carrito');
-Route::post('agregar_carrito', 'CarritoController@agregar_carrito')->name('agregar_carrito');
+Route::post('agregar_carrito_cauchos', 'CarritoController@agregar_carrito_cauchos')->name('agregar_carrito_cauchos');
+Route::post('agregar_carrito_accesorios', 'CarritoController@agregar_carrito_accesorios')->name('agregar_carrito_accesorios');
 Route::post('actualizar_carrito', 'CarritoController@actualizar_carrito')->name('actualizar_carrito');
 Route::get('remover/{id}', 'CarritoController@remover')->name('remover');
 

@@ -35,7 +35,7 @@ class CarritoController extends Controller
         return view('carrito.index', compact('cantidad_carrito','inicio'));
     }
 
-    public function agregar_carrito(Request $request){
+    public function agregar_carrito_cauchos(Request $request){
 
 
         $cantidad = $request->get('cantidad'); 
@@ -49,7 +49,24 @@ class CarritoController extends Controller
         $carro = Cart::add(['id' => $producto_id, 'name' => $nombre, 'qty' => $cantidad, 'price' => $precio_dolar, 'options' => ['img' => $img, 'inv' => $inventario]]); 
      
 
-        return back()->withInput(); 
+        return Redirect::to('cauchos'); 
+    }
+
+    public function agregar_carrito_accesorios(Request $request){
+
+
+        $cantidad = $request->get('cantidad'); 
+        $producto_id = $request->get('producto_id'); 
+        $inventario = $request->get('inventario'); 
+        $precio_dolar = $request->get('precio_dolar'); 
+        $producto = Producto::findOrFail($producto_id);   
+        $img = $producto->imagen_1;
+        $nombre = $producto->nombre;         
+
+        $carro = Cart::add(['id' => $producto_id, 'name' => $nombre, 'qty' => $cantidad, 'price' => $precio_dolar, 'options' => ['img' => $img, 'inv' => $inventario]]); 
+     
+
+        return Redirect::to('accesorios'); 
     }
 
     public function remover($id){

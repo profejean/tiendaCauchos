@@ -12,7 +12,7 @@
   <h3 class="font-weight-bold">Accesorios y Autopartes</h3>
 </div> 
 
-{!! Form::open(array('url'=>'accesorios', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+{!! Form::open(array('url'=>'buscar_accesorios', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
 {{Form::token()}}
 
@@ -20,8 +20,8 @@
 	<div class="col-lg-3 col-md-3 col-sm-12 mt-1">
 		
     <div class="input-group mt-2 mb-3">
-      <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
-      @error('nombre')
+      <input type="text" name="buscar" class="form-control @error('buscar') is-invalid @enderror" id="buscar" placeholder="Nombre del Producto" value="{{$obtener}}" />
+      @error('buscar')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
       </span>
@@ -33,7 +33,7 @@
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
       <div class="form-group">
-       <button class="btn btn-danger" type="haiden"><h6>Buscar</h6></button>
+       <button class="btn btn-danger" type="submit"><h6>Buscar</h6></button>
 
      </div>
 
@@ -60,7 +60,7 @@
           <li class="list-group-item">Inventario Disponible: {{$p->inventario}}</li>        
         </ul>
 
-        {!! Form::open(array('url'=>'agregar_carrito', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_'.$cont, 'files'=>'true')) !!}
+        {!! Form::open(array('url'=>'agregar_carrito_accesorios', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_'.$cont, 'files'=>'true')) !!}
 
         {{Form::token()}} 
 
