@@ -20,8 +20,8 @@ class CreateOrdenCompras extends Migration
             $table->text('nombre');
             $table->text('ci');
             $table->text('tlf');
-            $table->longtext('direccion');
             $table->text('llave');
+            $table->longtext('direccion');
             $table->text('status');
 
    

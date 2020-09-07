@@ -9,11 +9,11 @@ use App\DetalleCompra;
 $factory->define(DetalleCompra::class, function (Faker $faker) {
     static $number = 1;
     return [
+        'pedido_id' => 1,
         'producto_id' => $number ++,
-    	'precio_bs' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 3000000, $max = 3000000000),
     	'precio_dolar' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 10, $max = 1000),
     	'cantidad' => $faker->numberBetween($min = 1, $max = 100),
-        'pedido_id' => 1,
+    	'imagen' => $faker->name,
 
         'usuario_creador' => $faker->name,
     	'usuario_editor' => $faker->name,

@@ -22,8 +22,8 @@
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
-    <h6 class="text-center" style="color: #FFFFFF;">FECHA</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">{{$a->fecha_creacion}}</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">NOMBRE</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->nombre}}</h6>
   </div>  
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
