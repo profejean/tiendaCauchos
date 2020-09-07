@@ -19,7 +19,7 @@
         </h2>    
 </div>
 
-        {!! Form::open(array('url'=>'resumen_compras', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+        {!! Form::open(array('url'=>'crear_cliente', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
         {{Form::token()}}
 
@@ -34,8 +34,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
 
             <div class="input-group mb-3">
-                <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre y Apellido" />
-                @error('nombre')
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nombre y Apellido" required />
+                @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -50,12 +50,12 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
 
             <div class="input-group mb-3">
-                <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" id="cedula_rif" placeholder="Cédula - RIF" />
+                <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" id="cedula_rif" placeholder="Cédula - RIF" required />
                 @error('cedula_rif')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-                @enderror
+                @enderror  
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
@@ -67,13 +67,13 @@
 
             <div class="form-group row" style="margin-left: 5px;">
 
-                <textarea class="form-control  @error('direccion') is-invalid @enderror" type="text" name="direccion" rows="4" id="direccion" placeholder="Dirección" style="width: 95%;"></textarea>
+                <textarea class="form-control  @error('direccion') is-invalid @enderror" type="text" name="direccion" rows="4" id="direccion" placeholder="Dirección" style="width: 95%;" required></textarea>
 
                 @error('direccion')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-                @enderror
+                @enderror  
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
@@ -83,8 +83,23 @@
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="input-group mb-3">
-                <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Teléfono" />
+                <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Teléfono"  required/>
                 @error('telefono')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror 
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    </div>
+
+    <div class="row" style="background-color: #968F8F">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="input-group mb-3">
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Contraseña"  required/>
+                @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -98,8 +113,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="input-group mb-3">
-                <input type="password" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror" id="contrasena" placeholder="Contraseña" />
-                @error('contrasena')
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" required placeholder="Contraseña" />
+                @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

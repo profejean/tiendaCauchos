@@ -7,20 +7,19 @@ use Faker\Generator as Faker;
 use App\OrdenCompra;
 
 $factory->define(OrdenCompra::class, function (Faker $faker) {
-	static $number = 1;
+	
     return [
-        'nro_pedido' => $number ++,
-    	'precio_total_bs' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 3000000, $max = 3000000000),
-    	'precio_total_dolares' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 10, $max = 1000),
-    	'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
-    	'hora' => $faker->time($format = 'H:i:s', $max = 'now'),
-    	'usuario_id' => $faker->numberBetween($min = 1, $max = 100),
-    	'metodo_pago' => $faker->randomElement($array = array ('A convenir','Paypal', 'Efectivo')),
-    	'referencias' => $faker->name,
-    	'capture' => $faker->name,
-    	'efectivo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),    	    	
-        'status' => $faker->randomElement($array = array ('Solicitado','Entregado', 'Anulado')),
+        
+    	'total' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 3000000, $max = 3000000000),
+        'forma_pago' => $faker->name,
+        'nombre' => $faker->name,
+        'ci' => $faker->name,
+        'tlf' => $faker->name,
+        'llave' => $faker->name,
+        'img' => $faker->name,
+   
 
+   
 
         'usuario_creador' => $faker->name,
     	'usuario_editor' => $faker->name,

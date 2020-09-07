@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrdenCompraRequest;
 use App\OrdenCompra;
+use App\User;
+use App\Producto;
 use App\General;
 use App\DetalleCompra;
 use DB;
+use Illuminate\Support\Str;
 use Cart;
 use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
@@ -107,35 +110,93 @@ class OrdenCompraController extends Controller
      public function store(OrdenCompraRequest $request)
     {
 
-        try {
+
+             try {
                  DB::beginTransaction();
+       
+
+                 $cantidad_carrito = 0;
+                foreach(Cart::content() as $c){
+                $cantidad_carrito += $c->qty;
+                }
+
+                $inicio = General::findOrFail(1);
+
+                 $clave = Str::random(40); 
+                 $llave = Auth::id() .'_' .$clave;   
 
                     $orden_compras=new OrdenCompra($request->all());
 
-                     $user = Auth::user()->name;
+                    $orden_compras->llave = $llave;
+                    $orden_compras->total = floatval(Cart::total());
+                    $orden_compras->status = 'Solicitado';
+           
+                  
+
+                    if ($request->hasFile('img')){
+                      $file=$request->file('img');
+                      $cadena=time().$file->getClientOriginalName();
+                      $name =str_replace(' ', '', $cadena);
+                      $file->move(base_path().'/../comprobante/', $name);
+                      $orden_compras->img=$name;
+
+                    }
+
+                     $user = $request->get('nombre');
                      $orden_compras->usuario_creador=$user;
                      $date = Carbon::now('America/Caracas');
                      $orden_compras->fecha_creacion=$date->toDateTimeString();    
 
-                     $user = Auth::user()->name;
+              
                      $orden_compras->usuario_editor=$user;
                      $date = Carbon::now('America/Caracas');
                      $orden_compras->fecha_edicion=$date->toDateTimeString();        
 
                      $orden_compras->save();
 
+                     $orden_compras_nuevo = OrdenCompra::where('llave','=',$llave)->get();
 
-                 DB::commit();
+                     foreach(Cart::content() as $c){
+
+                        $detalle = new DetalleCompra();
+
+                        $detalle->pedido_id= $orden_compras_nuevo[0]->id;
+                        $detalle->producto_id= $c->id;
+                        $detalle->cantidad= $c->qty;
+                        $detalle->precio_dolar= $c->price;
+                        $detalle->img=$c->options->img;
+
+                        $detalle->save(); 
+
+                        $producto = Producto::findOrFail($c->id);
+                        $cantidad_actual = $producto->inventario;
+                        $producto->inventario = $cantidad_actual - $c->qty;
+                        $producto->save(); 
+
+
+                      }
+
+                      $borrar_carrito = Cart::destroy();
+
+
+               DB::commit();
 
             }catch (\Exception $e) {
 
                  \DB::rollBack();
 
-                 return Redirect::back();
+                return view('orden_compras.pregunta_compra', compact('cantidad_carrito','inicio'));
  
-            }
+            } 
 
-        return Redirect::to('fin_pedido');
+        
+
+        $numero_pedido = $orden_compras_nuevo[0]->id;
+
+
+            return view('orden_compras.fin_pedido', compact('numero_pedido','cantidad_carrito','inicio'));
+
+        
     }
 
     public function destroy($id)
@@ -203,6 +264,8 @@ public function show($id)
 
         return view('orden_compras.fin_pedido', compact('fin_pedido','cantidad_carrito','inicio'));
     }
+
+   
 
                           
 }

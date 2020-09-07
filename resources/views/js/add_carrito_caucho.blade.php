@@ -1,11 +1,11 @@
 <script>
-	var cantidad = $('#cantidad_producto').val();
+	var cantidad = $('#cantidad_producto').val();  
 	for (var i = 0; i <= cantidad; i++) {		
 	
-	$('#add_carrito_'+i+'').click(function(){	
+	$('#add_carrito_'+i+'').click(function() {	
 		var indice = $(this).attr('data');
-	   
-	    if (cantidad > 0) {
+	  
+	    if ($('#cantidad_'+indice+'').val() > 0) {
 	    	$('#agregar_carrito_'+indice+'').submit();
 	    }else{
 	    	$('#plus_'+indice+'').popover('show');

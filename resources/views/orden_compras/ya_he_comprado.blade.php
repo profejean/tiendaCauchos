@@ -16,7 +16,7 @@
 
 
 
-        {!! Form::open(array('url'=>'recibo_pago', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+        {!! Form::open(array('url'=>'login_cliente', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
 
         {{Form::token()}}
 
@@ -26,8 +26,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="input-group mt-5 mb-3">
-                    <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" id="cedula_rif" placeholder="Cédula - RIF" />
-                 @error('cedula_rif')
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" />
+                 @error('email')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                     </span>
@@ -37,14 +37,23 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
         </div>
 
+        <div class="row justify-content-center">
+            @if($status == 'negado_password')
+            <h5>Se equivoco de contraseña</h5>
+            @endif
+            @if($status == 'negado_email')
+            <h5>Se equivoco de email</h5>
+            @endif
+        </div>
+
 
 
         <div class="row" style="background-color: #968F8F;">
                     <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-5">
-                    <input type="text" name="contrasena" class="form-control @error('contrasena') is-invalid @enderror" id="contrasena" placeholder="Contraseña" />
-                 @error('contrasena')
+                    <input type="text" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Contraseña" />
+                 @error('password')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                     </span>

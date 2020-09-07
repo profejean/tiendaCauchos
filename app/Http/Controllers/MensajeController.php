@@ -75,7 +75,7 @@ class MensajeController extends Controller
 
                     $mensajes=Mensaje::findOrFail($id);
 
-        			$mensajes->status = 'Leído';
+        			     $mensajes->status = 'Leído';
 
                     $user = Auth::user()->name;
                     $mensajes->usuario_editor=$user;

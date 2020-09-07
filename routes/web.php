@@ -54,6 +54,10 @@ Route::get('ya_he_comprado','InicioController@ya_he_comprado')->name('ya_he_comp
 Route::get('primera_vez','InicioController@primera_vez')->name('primera_vez');
 Route::get('fin_pedido','OrdenCompraController@finpedido')->name('finpedido');
 Route::get('pregunta','InicioController@pregunta')->name('pregunta');
+Route::post('login_cliente','InicioController@login_cliente')->name('login_cliente');
+Route::post('crear_cliente','InicioController@crear_cliente')->name('crear_cliente');
+
+
 
 // Rutas Carrito
 Route::get('carrito', 'CarritoController@index')->name('carrito');

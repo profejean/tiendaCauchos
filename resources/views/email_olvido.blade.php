@@ -18,7 +18,7 @@
 
       <a href="https://www.app.tubarajita.com">
 
-      <img src="{{asset('img/1599282559firestone.png.jpg')}}" width="400">
+      <img src="{{asset('img/1599282559firestone.png')}}" width="400">
 
       </a>
 

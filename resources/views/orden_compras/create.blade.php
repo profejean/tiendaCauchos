@@ -3,25 +3,17 @@
 @section ('content')
 
 
-<div class="container" style="margin-top: -50px;">
+<div class="container mt-5" >
 
-        <div class="row justify-content-center mb-2">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                
-          <h2 class="font-weight-bold">
-            Carrito de Compras
-          </h2>    
-            </div>
+    <div class="row justify-content-center mb-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <h2 class="font-weight-bold">
+                Orden de pedido
+            </h2>    
         </div>
+    </div>
 
-    <div class="row mb-2">
 
-
-      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
-      <h2 class="ml-2">
-        Recibo de Pago
-    </h2>    
-</div>
 </div>
 
         {!! Form::open(array('url'=>'orden_compras', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
@@ -31,42 +23,89 @@
 <div class="container-fluid" style="background-color: #968F8F">
 
     <div class="row justify-content-center">
-        <h6 class="mt-3" style="color: #FFF;">Sub Total $: </h6> <h4 class="mt-3" style="color: #FFF;">######</h4>
+        <h6 class="mt-3 text-white" style="color: #FFF;">Productos del pedido</h6> 
     </div>
-
-    <div class="row justify-content-center">
-        <h6 style="color: #FFF;">BsS. IVA: </h6> <h4 style="color: #FFF;">######</h4>        
+    @foreach(Cart::content() as $c)
+    <div class="row justify-content-center mt-5">
+      
+           <img src="{{asset('img/'.$c->options->img)}}" class="card-img-top mr-4" alt="..." style="width: 150px;">
+           <h6 class="mr-5" style="color: #FFF;">Nombre del producto:<span class="ml-3">{{$c->name}}<span></span></h6>
+           <h6 class="" style="color: #FFF;">cantidad:<span class="ml-3">{{$c->qty}}</span></h6>  
+    
     </div>
+    @endforeach
 
-    <div class="row justify-content-center">
-        <h6 style="color: #FFF;">Flete BsS: </h6> <h4 style="color: #FFF;">######</h4>        
+    <div class="row mt-3 justify-content-center">
+        <h6 class="mt-3" style="color: #FFF;">Datos del pedido</h6> 
     </div>
+    <div class="row mt-3 justify-content-center">
 
-    <div class="row justify-content-center">
-        <h6 style="color: #FFF;">TOTAL $: </h6> <h4 style="color: #FFF;">######</h4>        
-    </div>
-
-    <div class="row justify-content-center">
-        <p style="color: #FFF;">"NOTA: El despacho en la zona de Caracas tiene un costo de 5$, para otras zonas debe consultar el precio" </p>      
-    </div>
-
-    <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 justify-content-center">
-        <div class="custom-file">
-            <input type="file" class="custom-file-input archivo" name="img" id="img" required style="width: 10%;">
-            <label class="custom-file-label" for="img" data-browse="Cargar" style="width: 90%;">Adjuntar Pago</label>
+    <div class="col-lg-6 col-md-6 col-sm-12"> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+          </div>
+          <input type="text" class="form-control" name="nombre" value="{{Auth::user()->name}}">
         </div>
-        </div>        
-    </div>        
+
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cédula o rif</span>
+          </div>
+          <input type="text" class="form-control" name="ci" value="{{Auth::user()->cedula_rif}}">
+        </div>
+
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Teléfono</span>
+          </div>
+          <input type="text" class="form-control" name="tlf" value="{{Auth::user()->telefono}}">
+        </div>
+        
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Dirección</span>
+          </div>
+          <textarea class="form-control" name="direccion" aria-label="With textarea">{{Auth::user()->direccion}}</textarea>  
+        </div>
+
+         <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Forma de pago</label>
+          </div>
+          <select class="custom-select" name="forma_pago" id="inputGroupSelect01">
+            <option value="Zelle">Zelle</option>
+            <option value="Paypal">Paypal</option>
+            <option value="A convenir">A convenir</option>
+          </select>
+        </div>
+       
+   </div>
+
+   
+
+        
 </div>
 
-        <div class="row mt-5">
+ <div class="row justify-content-center">
+        <h4 class="text-white">Total $: {{Cart::total()}}</h4> 
+
+     
+    </div>
+
+    <div class="row justify-content-center">
+        <p style="color: #FFF;text-align: justify;">"NOTA: El despacho en la zona de Caracas tiene un costo de 5$, para otras zonas debe consultar el precio" </p>      
+    </div>
+
+
+        <div class="row mt-5 mb-5">
       
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="form-group" style="text-align: center;">
 
-                    <a class="btn btn-danger" href="{{url('fin_pedido')}}" role="button"><h5>Pagar</h5></a>
+                    <button type="submit" class="btn btn-danger">Finalizar</button>
 
                 </div>
 

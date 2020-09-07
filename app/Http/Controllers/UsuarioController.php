@@ -48,17 +48,50 @@ class UsuarioController extends Controller
 
     { 
 
-					$usuarios=User::findOrFail($id);
-                    $usuarios->email=$request->get('email');
-                    $usuarios->name=$request->get('name');
-                    $usuarios->password = Hash::make($request->get('password'));
-                    $usuarios->save();
+				if(Auth::user()->rol != 'Cliente'){
 
+                $users=User::findOrFail($id);
+
+                $input = $request->all();
+
+                $users->fill($input)->save();               
+
+                          
+
+                $users->save();                    
+
+            }else{
+                
+
+                $users=User::findOrFail($id);
+
+                    $input = $request->all();
+
+                    $users->fill($input)->save();
+
+                    $users->rol = 'Cliente';
+
+                                      
+
+                    $users->save(); 
+
+            }     
+
+
+                    
+
+
+        if (Auth::user()->rol != 'Cliente') {
+
+            return Redirect::to('usuarios');
+                      
+        }else{
+
+            return Redirect::to('home');
+
+        }       
+ 
         
-
-         $usuarios->save();
-
-         return Redirect::to('usuarios');
 
        
     }
@@ -80,16 +113,12 @@ class UsuarioController extends Controller
 
     {   
 
-       $usuarios=new User;
-	        $usuarios->email=$request->get('email');
-	        $usuarios->name=$request->get('name');
-	        $usuarios->password = Hash::make($request->get('password'));
-	        $usuarios->save();
-        
+                    $users=new User($request->all());
+                    $users->password = Hash::make($request->get('password'));                             
 
-      
+                     $users->save();             
 
-       return Redirect::to('usuarios');                   
+                    return Redirect::to('usuarios');                
         
     }
 
@@ -254,7 +283,8 @@ class UsuarioController extends Controller
             }             
             $existe = 'Si';
             $inicio = General::findOrFail(1);
-            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe'));
+            $status=' ';
+            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe','status'));
             
         }else{
             $cantidad_carrito = 0;
@@ -263,7 +293,8 @@ class UsuarioController extends Controller
             }             
             $existe = 'No';
             $inicio = General::findOrFail(1);
-            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe'));
+            $status=' ';
+            return view('orden_compras.ya_he_comprado', compact('cantidad_carrito','inicio','existe','status'));
         } 
 
     }
