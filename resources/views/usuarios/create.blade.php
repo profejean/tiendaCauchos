@@ -27,7 +27,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF">Nombre:</h6>
                 <div class="input-group mb-3">
-                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" value="">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nombre" value="">
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF">Correo:</h6>                
                 <div class="input-group mb-3">
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Cedula-RIF" value="">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Correo" value="">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -110,7 +110,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF">Teléfono:</h6>                
                 <div class="input-group mb-3">
-                    <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Cedula-RIF" value="">
+                    <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Teléfono" value="">
                     @error('telefono')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

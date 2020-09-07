@@ -28,7 +28,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF">Nombre:</h6>
                 <div class="input-group mb-3">
-                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" value="{{$usuarios->email}}">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" value="{{$usuarios->name}}">
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

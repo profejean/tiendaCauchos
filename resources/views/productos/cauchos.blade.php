@@ -45,9 +45,11 @@
                     @else
                     <option selected>{{$obtener_marca}}</option>   
                     <option value="No">No</option>                   
-                    @endif
+                    @endif  
                     @foreach($marca as $marca)
+                    @if($obtener_marca != $marca)
                     <option value="{{$marca}}">{{$marca}}</option>
+                    @endif
                     @endforeach
                   </select>
                 </div>       
@@ -81,7 +83,9 @@
                     <option value="No">No</option>                    
                     @endif
                     @foreach($ancho as $ancho)
+                    @if($obtener_ancho!= $ancho) 
                     <option value="{{$ancho}}">{{$ancho}}</option>
+                    @endif
                     @endforeach
                   </select>
                 </div>   
@@ -111,7 +115,9 @@
                     <option value="No">No</option>                     
                     @endif
                     @foreach($diametro as $diametro)
+                    @if($obtener_diametro != $diametro)                    
                     <option value="{{$diametro}}">{{$diametro}}</option>
+                    @endif
                     @endforeach
                   </select>
                 </div>   
@@ -141,7 +147,9 @@
                     <option value="No">No</option>                  
                     @endif
                     @foreach($perfil as $perfil)
+                    @if($obtener_perfil != $perfil)                      
                     <option value="{{$perfil}}">{{$perfil}}</option>
+                    @endif
                     @endforeach
                   </select>
                 </div>   
