@@ -5,7 +5,7 @@
 @include('css.input_select_center_bg')
 
 <div class="row justify-content-center mt-5">
-    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center" style="margin-top: 50px;">
           <h2 class="font-weight-bold">
             Carrito de Compras
         </h2>    

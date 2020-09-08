@@ -8,13 +8,13 @@
 
 
 <div class="row justify-content-center mt-5 mb-2">
-  <h2 class="ml-2 font-weight-bold">
+  <h2 class="ml-2 font-weight-bold" style="margin-top: 50px;">
     Carrito de Compras
   </h2>    
 </div> 
 
 
-<div class="row ml-2">
+<div class="row ml-2 justify-content-center">
   <img src="{{asset('img/10.png')}}" alt="" style="width: 50px;">
   <h2 class="ml-2">
     Pedido
@@ -28,7 +28,7 @@
     ?>
 
 @foreach(Cart::content() as $c)
-<div class="row"  style="background-color: #968F8F; padding-bottom: 30px;">
+<div class="row text-center"  style="background-color: #968F8F; padding-bottom: 30px;">
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
     <img src="{{asset('img/'.$c->options->img)}}" class="card-img-top" alt="..." height="75" width="150">
   </div>
@@ -108,7 +108,7 @@
                     @if(count(Cart::content()) > 0)
 <div class="row mb-5 justify-content-center" style="text-align: center; margin-top: 10px;">
 
-                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Confirmar</h6></a>
+                  <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 30%;"><h6 style="color: #FFFFFF">Confirmar</h6></a>
                     @endif
 
 </div>
