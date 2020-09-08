@@ -1,6 +1,6 @@
 <div class="d-md-none">
   
-<div class="container-fluid fixed-top" style="z-index: 1; background-color: #FFF">
+<div class="container-fluid fixed-top" style="z-index: 1; background-color: #FFF;">
 
 <div class="row"> 
 
@@ -92,7 +92,7 @@
 </div>
 </div>
 
-<div class="container-fluid" style="margin-top:100px;">
+<div class="container-fluid" style="margin-top:150px;">
   
  @yield('content')
   
