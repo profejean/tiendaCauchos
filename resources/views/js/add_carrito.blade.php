@@ -1,7 +1,7 @@
 <script>
 	var cantidad_carrito = $('#cantidad_producto').val();
 
-	for (var i = 0; i <= cantidad_carrito; i++) {
+	for (var i = 0; i < cantidad_carrito; i++) {
 
 		$('#enviar_'+i+'').click(function(){
 
@@ -13,3 +13,5 @@
 		});
 	}
 </script>
+
+

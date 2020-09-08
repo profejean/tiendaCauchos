@@ -248,7 +248,7 @@
    <?php  $acce =0?>   
     @foreach($productos as $p)
 
-      {!! Form::open(array('url'=>'agregar_carrito_accesorios', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+      {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
 
   {{Form::token()}} 
 
@@ -267,6 +267,7 @@
 
 @push('scripts')
 @include('js.incrementar_cantidad')
+@include('js.incrementar_cantidad_modal')
 @include('js.add_carrito_caucho')
 @endpush
 
