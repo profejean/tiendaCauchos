@@ -26,22 +26,22 @@
 <div class="row"  style="background-color: #968F8F;">
  
 
-  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
     <h6 class="text-center" style="color: #FFFFFF;">Nombre</h6>
     <h6 class="text-center" style="color: #FFFFFF;">{{$a->name}}</h6>
   </div>
 
-  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
     <h6 class="text-center" style="color: #FFFFFF;">Email</h6>
     <h6 class="text-center" style="color: #FFFFFF;">{{$a->email}}</h6>
   </div>
 
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
     <h6 class="text-center" style="color: #FFFFFF;">Rol</h6>
     <h6 class="text-center" style="color: #FFFFFF;">{{$a->rol}}</h6>
   </div>
   
-  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
       <a href="{{URL::action('UsuarioController@edit',$a->id)}}">
         <button class="btn btn-danger"><h6>Ver Detalle</h6></button>
       </a>
@@ -50,15 +50,13 @@
 <br>
  @endforeach 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5" style="text-align: center;">
+ <div class="row justify-content-center mb-5">
 
-                <div class="form-group">
+   <a class="btn btn-danger" href="{{url('home')}}" role="button"><h5>Regresar</h5></a>
+   
+ </div>
 
-                    <a class="btn btn-danger" href="{{url('home')}}" role="button"><h5>Regresar</h5></a>
-
-                </div>
-
-            </div>
+            
 
 
  @push('scripts')

@@ -189,46 +189,34 @@
        
 
           @endif
-                    <div class="row mt-3">
+        <div class="row justify-content-center mt-3 mb-5">
 
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-5">
+                        
 
-                            <div class="form-group">
-                                <button class="btn btn-danger" type="submit" style="float: right;"><h5>Guardar</h5></button>
+                         
+                <button class="btn btn-danger mr-5" type="submit" style="float: right;"><h5>Guardar</h5></button>
 
-                            </div>
-
-                        </div>
-
+                       
 
 
          {{Form::close()}}
 
+    
+
             @if($usuarios->rol != 'Cliente')
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-5">
-
-                <div class="form-group">
-
+           
                     <a class="btn btn-danger" href="{{url('usuarios')}}" role="button"><h5>Regresar</h5></a>
 
-                </div>
-
-            </div>
-
+           
             @else
       
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-5">
-
-                <div class="form-group">
-
+       
                     <a class="btn btn-danger" href="{{url('home')}}" role="button"><h5>Regresar</h5></a>
 
-                </div>
-
-            </div>
+          
 
             @endif
         </div> 
