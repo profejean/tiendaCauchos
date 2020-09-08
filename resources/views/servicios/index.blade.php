@@ -39,7 +39,7 @@
     {{ $servicios->render()}}  
   </div>
 
-<div class="row" style="text-align: center;">
+<div class="row" style="text-align: center; margin-bottom: 90px;">
   
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 

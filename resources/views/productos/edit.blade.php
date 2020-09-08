@@ -47,7 +47,7 @@
                 <h6 style="color: #FFF;">Descripción:</h6>
                     <div class="form-group row">
 
-                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;">{{$productos->descripcion}}</textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción">{{$productos->descripcion}}</textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -355,10 +355,11 @@
 
 
 
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-                            <div class="form-group">
-                                <button class="btn btn-danger" type="submit" style="float: right;"><h5>Guardar</h5></button>
+                            <div class="form-group mb">
+                                <button class="btn btn-danger" type="submit"><h5>Guardar</h5></button>
+                                <a class="btn btn-danger" href="{{url('productos')}}" role="button"><h5>Regresar</h5></a>
 
                             </div>
 
@@ -369,16 +370,6 @@
          {{Form::close()}}
 
 
-      
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                <div class="form-group">
-
-                    <a class="btn btn-danger" href="{{url('productos')}}" role="button"><h5>Regresar</h5></a>
-
-                </div>
-
-            </div>
         </div> 
 @push('scripts')
 
