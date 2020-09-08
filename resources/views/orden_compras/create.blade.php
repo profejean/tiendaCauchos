@@ -3,11 +3,11 @@
 @section ('content')
 
 
-<div class="container mt-5" >
+<div class="container mt-5">
 
-    <div class="row justify-content-center mb-2">
+    <div class="row justify-content-center mb-2" >
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-            <h2 class="font-weight-bold">
+            <h2 class="font-weight-bold" style="margin-top: 50px;">
                 Orden de pedido
             </h2>    
         </div>
@@ -26,16 +26,16 @@
     </div>
 
     @foreach(Cart::content() as $c)
-    <div class="row justify-content-center mt-5">
+    <div class="row mt-5">
         <div class="col-lg-2 col-md-2 col-sm-12"></div>      
-        <div class="col-lg-2 col-md-2 col-sm-12"> 
+        <div class="col-lg-2 col-md-2 col-sm-12 text-center"> 
            <img src="{{asset('img/'.$c->options->img)}}" class="card-img-top mr-4" alt="..." style="width: 150px;">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">        
-           <h6 class="mr-5" style="color: #FFF;">Nombre del producto:<span class="ml-3">{{$c->name}}<span></span></h6>
+           <h6 class="text-center" style="color: #FFF;">{{$c->name}}</h6>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12">
-           <h6 class="" style="color: #FFF;">cantidad:<span class="ml-3">{{$c->qty}}</span></h6>  
+           <h6 class="text-center" style="color: #FFF;">cantidad:<span class="ml-3">{{$c->qty}}</span></h6>  
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12"></div>   
     </div>
@@ -116,7 +116,9 @@
                 </div>
 
             </div>
-        </div>                
+        </div>  
+
+</div>              
 
         {{Form::token()}}
 @push('scripts')
