@@ -79,22 +79,29 @@
 
 @endforeach
 
-<div class="row justify-content-center"style="background-color: #968F8F;">
+<div class="row"style="background-color: #968F8F;">
 
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-12">
-          <h6 class="text-center" style="color: #FFFFFF;">Nombre:</h6>
-          <h6 class="text-center" style="color: #FFFFFF;">CI:</h6>
-          <h6 class="text-center" style="color: #FFFFFF;">Forma de Pago:</h6>
-          <h6 class="text-center" style="color: #FFFFFF;">Teléfono:</h6>
-          <h6 class="text-center" style="color: #FFFFFF;">Dirección:</h6>
+        <div class="col-lg-8 col-md-8 col-sm-12 mt-12 text-center">
+
+          <h6 class="" style="color: #FFFFFF;">Nombre: 
+            <span style="margin-left: 100px;">{{$orden_compras->nombre}}</span>
+          </h6>
+
+          <h6 class="" style="color: #FFFFFF;">CI: 
+            <span style="margin-left: 150px;">{{$orden_compras->ci}}</span>
+          </h6>
+
+          <h6 class="" style="color: #FFFFFF;">Forma de Pago: 
+            <span style="margin-left: 50px;">{{$orden_compras->forma_pago}}</span>
+          </h6>
+          <h6 class="" style="color: #FFFFFF;">Teléfono: 
+            <span style="margin-left: 100px;">{{$orden_compras->tlf}} </span>
+          </h6>
+          <p class="" style="color: #FFFFFF;">Dirección: 
+            <span style="margin-left: 100px;">{{$orden_compras->direccion}}</span>
+          </p>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-12">
-          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->nombre}} </h6>          
-          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->ci}} </h6> 
-          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->forma_pago}} </h6>                    
-          <h6 class="text-left" style="color: #FFFFFF;"> {{$orden_compras->tlf}} </h6> 
-          <p class="text-left" style="color: #FFFFFF;"> {{$orden_compras->direccion}} </p> 
-        </div>
+      
 
         <div class="col-lg-4 col-md-4 col-sm-12 mt-12 text-center">
           <h4 style="color: #FFFFFF;">TOTAL $:</h4>         
@@ -107,29 +114,25 @@
 
 
 
-    <div class="row m-4">
+    <div class="row justify-content-center mb-5 mt-5">
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+   
 
-            <div class="form-group">
+                <button class="btn btn-danger mr-5" type="submit" style="float: right;"><h6>Guardar</h6></button>
 
-                <button class="btn btn-danger" type="submit" style="float: right;"><h6>Guardar</h6></button>
+  
 
-            </div>
 
-        </div>
 
         {{ Form::close() }}
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-
-            <div class="form-group">
+      
 
                 <a class="btn btn-danger" href="{{url('orden_compras')}}" role="button"><h6>Regresar</h6></a>
 
-            </div>
+        
 
-        </div>
+   
     </div>
 
 

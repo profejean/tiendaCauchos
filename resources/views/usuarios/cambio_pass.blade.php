@@ -4,15 +4,15 @@
 
 @include('css.input_select_center_bg')
   
-<div class="row mt-5">
+<div class="row justify-content-center mt-5">
 
-  <div class="col-lg-5 col-md-5 col-sm-12"></div>
+ 
 
-  <img src="{{asset('img/person.png')}}" class="text-center" style="width: 5%;">
+  <img src="{{asset('img/person.png')}}" class="text-center" style="width: 80px;">
 
   <h3 class="text-center mt-3">Mi Cuenta</h3>
 
-  <div class="col-lg-7 col-md-7 col-sm-12"></div>
+
 
 </div>
 
