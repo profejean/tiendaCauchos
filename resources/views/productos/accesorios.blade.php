@@ -49,7 +49,7 @@
     @foreach($productos as $p)
     <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
       <div class="card mb-2" style="width: 18rem;">
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
         </div>
@@ -103,16 +103,24 @@
 
   </div>
 
-
    <div class="row justify-content-center mb-5">
   
     {{ $productos->withQueryString()->links() }}
   </div>
+         <?php  $acce =0?>   
+    @foreach($productos as $p)
+
+      {!! Form::open(array('url'=>'agregar_carrito_accesorios', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+
+  {{Form::token()}} 
+
+@include('productos.modal_accesorios')
+     {{Form::close()}}
+         <?php  $acce = $acce + 1;  ?>
+    @endforeach
 
 </div>
-
 </div>
-
 
 
 @push('scripts')

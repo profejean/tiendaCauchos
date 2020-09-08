@@ -13,7 +13,6 @@
         </div>
     </div>
 
-
 </div>
 
         {!! Form::open(array('url'=>'orden_compras', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
@@ -25,13 +24,20 @@
     <div class="row justify-content-center">
         <h6 class="mt-3 text-white" style="color: #FFF;">Productos del pedido</h6> 
     </div>
+
     @foreach(Cart::content() as $c)
     <div class="row justify-content-center mt-5">
-      
+        <div class="col-lg-2 col-md-2 col-sm-12"></div>      
+        <div class="col-lg-2 col-md-2 col-sm-12"> 
            <img src="{{asset('img/'.$c->options->img)}}" class="card-img-top mr-4" alt="..." style="width: 150px;">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">        
            <h6 class="mr-5" style="color: #FFF;">Nombre del producto:<span class="ml-3">{{$c->name}}<span></span></h6>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
            <h6 class="" style="color: #FFF;">cantidad:<span class="ml-3">{{$c->qty}}</span></h6>  
-    
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12"></div>   
     </div>
     @endforeach
 
@@ -105,7 +111,7 @@
 
                 <div class="form-group" style="text-align: center;">
 
-                    <button type="submit" class="btn btn-danger">Finalizar</button>
+                    <button type="submit" class="btn btn-danger"><h6>Finalizar</h6></button>
 
                 </div>
 

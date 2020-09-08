@@ -20,7 +20,7 @@
 
   <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #968F8F">
     <h6 class="text-center" style="color: #FFFFFF;">NOMBRE DEL SERVICIO</h6>
-    <h6 class="text-center" style="color: #FFFFFF;">{{$a->fecha_creacion}}</h6>
+    <h6 class="text-center" style="color: #FFFFFF;">{{$a->nombre}}</h6>
   </div>  
 
 

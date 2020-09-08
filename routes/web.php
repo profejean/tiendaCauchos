@@ -21,8 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'InicioController@index');
 
 // Rutas Productos
-Route::POST('tipo', 'ProductoController@tipo')->name('tipo');
 Route::post('cargar_productos','ProductoController@store')->name('cargar_productos');
+Route::get('tipo/{tipo}', 'ProductoController@tipo')->name('tipo');
 Route::get('cauchos','InicioController@cauchos')->name('cauchos');
 Route::get('accesorios','InicioController@accesorios')->name('accesorios');
 Route::get('servicios_ver','InicioController@servicios_ver')->name('servicios_ver');
@@ -54,7 +54,7 @@ Route::post('resumen_compras','OrdenCompraController@resumen')->name('resumen');
 Route::resource('orden_compras', 'OrdenCompraController');
 Route::get('ya_he_comprado','InicioController@ya_he_comprado')->name('ya_he_comprado');
 Route::get('primera_vez','InicioController@primera_vez')->name('primera_vez');
-Route::get('fin_pedido','OrdenCompraController@finpedido')->name('finpedido');
+Route::post('fin_pedido','OrdenCompraController@finpedido')->name('finpedido');
 Route::get('pregunta','InicioController@pregunta')->name('pregunta');
 Route::post('login_cliente','InicioController@login_cliente')->name('login_cliente');
 Route::post('crear_cliente','InicioController@crear_cliente')->name('crear_cliente');

@@ -67,7 +67,30 @@ class ServicioController extends Controller
                     $date = Carbon::now('America/Caracas');
                     $servicios->fecha_edicion=$date->toDateTimeString();               
 
-                   
+                    if ($request->hasFile('imagen_1')){
+                    $file=$request->file('imagen_1');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $general->imagen_1=$name;
+
+                    } 
+                    if ($request->hasFile('imagen_2')){
+                    $file=$request->file('imagen_2');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $general->imagen_2=$name;
+
+                    }                                         
+                    if ($request->hasFile('imagen_3')){
+                    $file=$request->file('imagen_3');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $general->imagen_3=$name;
+
+                    } 
 
                     $servicios->save(); 
 
@@ -119,6 +142,16 @@ class ServicioController extends Controller
                      $servicios->usuario_editor=$user;
                      $date = Carbon::now('America/Caracas');
                      $servicios->fecha_edicion=$date->toDateTimeString();        
+
+                    if ($request->hasFile('imagen')){
+                    $file=$request->file('imagen');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $servicios->imagen_1=$name;
+
+                    } 
+
 
                      $servicios->save();
 

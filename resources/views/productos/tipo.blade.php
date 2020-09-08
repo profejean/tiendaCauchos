@@ -3,54 +3,37 @@
 @section ('content')
 
 
-            <div class="jumbotron jumbotron-fluid">
-              <div class="container" style="text-align: center;">
-                <h2>{{ __('Cauchos y Accesorios') }}</h2>
-
-              </div>
+        <div class="row justify-content-center mt-5 mb-2">      
+          <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
+          <h2 class="ml-2">
+            Cauchos y Accesorios
+          </h2> 
         </div>
-<div class="container" style="background-color: #968F8F">
 
-<br>    
-
-        {!! Form::open(array('url'=>'tipo', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
-
-        {{Form::token()}}
-
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
-
-            <div class="form-group" style="text-align: center;">
-                <input type="hidden" name="tipo" value="Cauchos">
-                <button type="submit" class="btn btn-danger">
-                    <h5>Caucho</h5>
-                </button>
+        <div class="row justify-content-center" style="background-color: #968F8F"> 
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-5 mb-5">
+                <div class="form-group">
+                    <a href="{{URL::action('ProductoController@tipo','Cauchos')}}" class="ml-2 btn btn-danger" style="width: 100%;"><h5>Cauchos</h5></a>
+                </div>
             </div>
-
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div> 
         </div>
-         {{Form::close()}}
 
-        {!! Form::open(array('url'=>'tipo', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+        <div class="row justify-content-center" style="background-color: #968F8F"> 
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-        {{Form::token()}}
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-            <div class="form-group" style="text-align: center;">
-                <input type="hidden" name="tipo" value="Accesorios">
-                <button type="submit" class="btn btn-danger">
-                    <h5>Accesorio o Repuesto</h5>
-                </button>
-
+                <div class="form-group">
+                    <a href="{{URL::action('ProductoController@tipo','Accesorios')}}" class="ml-2 btn btn-danger" style="width: 100%;"><h5>Accesorios y Autopartes</h5></a>
+                </div>
             </div>
-
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
         </div>
 
-         {{Form::close()}}
-<br><br><br>        
+       
   
 
-</div>
         <div class="row mt-5">
       
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

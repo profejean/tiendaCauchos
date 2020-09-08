@@ -78,7 +78,7 @@
 
   <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-5">
     <h6 style="color: #FFFFFF">Precio $</h6>
-    <h6 style="color: #FFFFFF">{{formato_Numero($c->price)}}</h6>
+    <h6 style="color: #FFFFFF">{{formato_Numero($c->price * $c->qty)}}</h6>
   </div>
 
   
@@ -97,12 +97,19 @@
 
     @endforeach
 
+              <div class="row mt-5 justify-content-center">
+                    @if(count(Cart::content()) > 0)
+                    <h6 class="text-center">Por favor, pulsa el boton "actualizar", si modificaste la cantidad de productos que deseas, antes de pulsar "Confirmar" <br> (Esto únicamente si deseas ver el total de cada producto) </h6>
+                    @else
+                    <h6 class="text-center">El carrito esta vacio, por favor agrega productos para continuar.</h6>
+                    @endif
+                </div>
 
-
+                    @if(count(Cart::content()) > 0)
 <div class="row mb-5 justify-content-center" style="text-align: center; margin-top: 10px;">
 
                   <a href="{{url('pregunta')}}" class="btn btn-danger" style="width: 10%;"><h6 style="color: #FFFFFF">Confirmar</h6></a>
-
+                    @endif
 
 </div>
 

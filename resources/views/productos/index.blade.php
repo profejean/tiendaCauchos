@@ -10,7 +10,10 @@
           <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
           <h2 class="ml-2">
             Cauchos y Accesorios
-          </h2>    
+          </h2> 
+            <span style="float: right;"><a href="{{url('productos/create')}}" class="btn btn-danger ml-5"><h6>Crear Producto</h6></a></span>
+
+
         </div>
 
 

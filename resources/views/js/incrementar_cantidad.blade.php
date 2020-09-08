@@ -1,8 +1,8 @@
 <script>
 
-	var cantidad = $('#cantidad_producto').val();
-
-	for (var i = 0; i <= cantidad; i++) {
+	var cantidad_producto = $('#cantidad_producto').val();
+	
+	for (var i = 0; i <= cantidad_producto; i++) {
 		
 	
 	$('#incrementar_'+i+'').click(function(){ 

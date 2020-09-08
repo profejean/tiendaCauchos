@@ -10,7 +10,7 @@
     <div class="row mb-2">
 
 
-      <img src="{{asset('img/velocidad.png')}}" alt="" style="width: 50px;">
+      <img src="{{asset('img/10.png')}}" alt="" style="width: 50px;">
       <h2 class="ml-2">
         Fin del Pedido
     </h2>    

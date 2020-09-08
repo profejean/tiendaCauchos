@@ -45,9 +45,9 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF;">Descripción:</h6>
-                    <div class="form-group row" style="margin-left: 5px;">
+                    <div class="form-group row">
 
-                        <textarea class="@error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;">{{$productos->descripcion}}</textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;">{{$productos->descripcion}}</textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -97,6 +97,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF;">Imagen 1:</h6>            
                 <div class="input-group mb-3">
+                <img src="{{asset('img/'.$productos->imagen_1)}}" alt="" width="150" height="150">
                     <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" id="imagen_1" placeholder="Cargar Imagen 1" value="{{$productos->imagen_1}}">
                         @error('imagen_1')
                         <span class="invalid-feedback" role="alert">
@@ -113,6 +114,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF;">Imagen 2:</h6>            
                 <div class="input-group mb-3">
+                <img src="{{asset('img/'.$productos->imagen_2)}}" alt="" width="150" height="150">
                     <input type="file" name="imagen_2" class="form-control @error('imagen_2') is-invalid @enderror" id="imagen_2" placeholder="Cargar Imagen 2" value="{{$productos->imagen_2}}">
                         @error('imagen_2')
                         <span class="invalid-feedback" role="alert">
@@ -129,6 +131,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 style="color: #FFF;">Imagen 2:</h6>            
                 <div class="input-group mb-3">
+                <img src="{{asset('img/'.$productos->imagen_3)}}" alt="" width="150" height="150">
                     <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3" value="{{$productos->imagen_3}}">
                         @error('imagen_3')
                         <span class="invalid-feedback" role="alert">
@@ -196,8 +199,8 @@
         <div class="col-lg-3 col-md-3 col-sm-12"></div>
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <h6 style="color: #FFF;">Descripción:</h6>
-                    <div class="form-group row" style="margin-left: 110px;">
-                        <textarea class="@error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;">value="{{$productos->descripcion}}"</textarea>
+                    <div class="form-group row">
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;">{{$productos->descripcion}}</textarea>
 
                         @error('descripcion')
                         <span class="invalid-feedback" role="alert">

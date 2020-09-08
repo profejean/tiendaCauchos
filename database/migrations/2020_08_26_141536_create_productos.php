@@ -21,10 +21,10 @@ class CreateProductos extends Migration
             $table->longText('descripcion');
             $table->decimal('precio_dolar', 20,2);
             $table->integer('inventario');
-            $table->text('marca');
-            $table->text('ancho');
-            $table->text('diametro');
-            $table->text('perfil');
+            $table->text('marca')->nullable();
+            $table->text('ancho')->nullable();
+            $table->text('diametro')->nullable();
+            $table->text('perfil')->nullable();
             $table->text('imagen_1')->nullable();
             $table->text('imagen_2')->nullable();
             $table->text('imagen_3')->nullable();

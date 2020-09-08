@@ -20,12 +20,9 @@ class CreateDetalleCompras extends Migration
             $table->integer('producto_id');            
             $table->decimal('precio_dolar', 20,2);
             $table->integer('cantidad');
-            $table->text('imagen');
 
-            $table->date('fecha_creacion');
-            $table->date('fecha_edicion');
-            $table->text('usuario_editor');
-            $table->text('usuario_creador');
+
+
  
             $table->timestamps();
         });

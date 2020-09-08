@@ -13,11 +13,8 @@ $factory->define(DetalleCompra::class, function (Faker $faker) {
         'producto_id' => $number ++,
     	'precio_dolar' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 10, $max = 1000),
     	'cantidad' => $faker->numberBetween($min = 1, $max = 100),
-    	'imagen' => $faker->name,
 
-        'usuario_creador' => $faker->name,
-    	'usuario_editor' => $faker->name,
-    	'fecha_creacion' => $faker->date($format = 'Y-m-d', $max = 'now'),
-    	'fecha_edicion' => $faker->date($format = 'Y-m-d', $max = 'now')
+
+
     ];
 });

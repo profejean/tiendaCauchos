@@ -2,21 +2,39 @@
 
 @section ('content')
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container" style="text-align: center;">
-                <h2>{{ __('Cauchos y Accesorios') }}</h2>
-            </div>
-        </div>
+@include('css.input_select_center_bg')
+
+<div class="row justify-content-center mt-5 mb-2">
+      <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
+        <h2 class="ml-2">
+            Cauchos y Accesorios
+        </h2> 
+</div>
 
 <div class="container-fluid" style="background-color: #968F8F">
 
-{!! Form::open(array('url'=>'cargar_productos', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
+{!! Form::open(array('url'=>'productos', 'method'=>'POST', 'autocomplete'=>'off', 'files'=>'true')) !!}
      {{Form::token()}}
 
-        @if(($tipo) == 'accesorios')
+     <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+
+            <div class="input-group mb-3">
+                <input type="text" name="categoria" class="form-control @error('categoria') is-invalid @enderror" id="categoria" placeholder="{{$tipo}}" value="{{$tipo}}" readonly>
+                @error('categoria')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+    </div>
+
+
+        @if(($tipo) == 'Accesorios')
 
         <div class="col-12 text-center">
-          <h4>Accesorio o Repuestos</h4>
+          <h4 style="color:#FFF;">Accesorio o Repuestos</h4>
         </div> 
 
         <div class="row">
@@ -39,9 +57,9 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
 
-                    <div class="form-group row" style="margin-left: 5px;">
+                    <div class="form-group row">
 
-                        <textarea class="@error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;"></textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción"></textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -118,31 +136,30 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
     </div>
 
-        <div class="row">
+    <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-
                 <div class="input-group mb-3">
 
-                    <input type="text" name="categoria" class="form-control @error('categoria') is-invalid @enderror" id="categoria" placeholder="{{$tipo}}" value"{{$tipo}}" readonly>
-                 @error('categoria')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                    <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
+                        @error('imagen_3')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        </div>
+    </div>
 
-@elseif ($tipo == 'cauchos') 
+@elseif ($tipo == 'Cauchos') 
 
 <div class="col-12 text-center">
-  <h4>Cauchos</h4>
+  <h4 style="color:#FFF">Cauchos</h4>
 </div> 
 
          <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="input-group mb-3">
@@ -154,27 +171,15 @@
                     @enderror
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                <div class="input-group mb-3">
-                    <input type="text" name="categoria" class="form-control @error('categoria') is-invalid @enderror" id="categoria" placeholder="{{$tipo}}" value"{{$tipo}}" readonly>
-                 @error('categoria')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-12"></div>                                
-        </div>
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+</div>
 
         <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12"></div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group row" style="margin-left: 110px;">
+                    <div class="form-group row">
 
-                        <textarea class="@error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;"></textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;"></textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -299,13 +304,27 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12"></div>
         </div>                  
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="input-group mb-3">
 
+                    <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
+                        @error('imagen_3')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            </div>
 @endif
 
 </div>
 <br>
 
-                    <div class="row">
+                    <div class="row" style="margin-bottom: 40px;">
 
 
 

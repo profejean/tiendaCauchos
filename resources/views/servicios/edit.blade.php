@@ -39,7 +39,7 @@
 
         <div class="form-group row">
 
-            <textarea class=" @error('descripcion') is-invalid @enderror" type="text" name="descripcion" id="descripcion" placeholder="Descripción" style="width: 100%;"></textarea>
+            <textarea class=" @error('descripcion') is-invalid @enderror" type="text" name="descripcion" id="descripcion" placeholder="Descripción" style="width: 100%;">{{$servicios->descripcion}}</textarea>
 
             @error('descripcion')
             <span class="invalid-feedback" role="alert">

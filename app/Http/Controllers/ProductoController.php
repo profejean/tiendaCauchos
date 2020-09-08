@@ -70,7 +70,30 @@ class ProductoController extends Controller
                     $date = Carbon::now('America/Caracas');
                     $productos->fecha_edicion=$date->toDateTimeString();               
 
-                   
+                    if ($request->hasFile('imagen_1')){
+                    $file=$request->file('imagen_1');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_1=$name;
+
+                    } 
+                    if ($request->hasFile('imagen_2')){
+                    $file=$request->file('imagen_2');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_2=$name;
+
+                    }                                         
+                    if ($request->hasFile('imagen_3')){
+                    $file=$request->file('imagen_3');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_3=$name;
+
+                    }                    
 
                     $productos->save(); 
 
@@ -100,7 +123,7 @@ class ProductoController extends Controller
 
         $inicio = General::findOrFail(1);
 
-        return view('productos.tipo','cantidad_carrito','inicio');
+        return view('productos.tipo', compact('cantidad_carrito','inicio'));
 
         }
 
@@ -108,8 +131,7 @@ class ProductoController extends Controller
      public function store(ProductoRequest $request)
     {
 
-        try {
-                 DB::beginTransaction();
+
 
                     $productos=new Producto($request->all());
 
@@ -123,18 +145,34 @@ class ProductoController extends Controller
                      $date = Carbon::now('America/Caracas');
                      $productos->fecha_edicion=$date->toDateTimeString();        
 
+                    if ($request->hasFile('imagen_1')){
+                    $file=$request->file('imagen_1');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_1=$name;
+
+                    } 
+                    if ($request->hasFile('imagen_2')){
+                    $file=$request->file('imagen_2');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_2=$name;
+
+                    }                                         
+                    if ($request->hasFile('imagen_3')){
+                    $file=$request->file('imagen_3');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(public_path().'/img/', $name);
+                    $productos->imagen_3=$name;
+
+                    } 
                      $productos->save();
 
 
-                 DB::commit();
 
-            }catch (\Exception $e) {
-
-                 \DB::rollBack();
-
-                 return Redirect::back();
- 
-            }
 
         return Redirect::to('productos');
     }
@@ -167,11 +205,9 @@ public function show($id){
             
         }
 
-  public function tipo(Request $request)
+  public function tipo($tipos)
     {
-          
-        $tipo=$request->get('tipo');
-
+        $tipo=$tipos;
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;

@@ -110,8 +110,7 @@ class OrdenCompraController extends Controller
      public function store(OrdenCompraRequest $request)
     {
 
-
-             try {
+            try {
                  DB::beginTransaction();
        
 
@@ -133,14 +132,6 @@ class OrdenCompraController extends Controller
            
                   
 
-                    if ($request->hasFile('img')){
-                      $file=$request->file('img');
-                      $cadena=time().$file->getClientOriginalName();
-                      $name =str_replace(' ', '', $cadena);
-                      $file->move(base_path().'/../comprobante/', $name);
-                      $orden_compras->img=$name;
-
-                    }
 
                      $user = $request->get('nombre');
                      $orden_compras->usuario_creador=$user;
@@ -164,7 +155,7 @@ class OrdenCompraController extends Controller
                         $detalle->producto_id= $c->id;
                         $detalle->cantidad= $c->qty;
                         $detalle->precio_dolar= $c->price;
-                        $detalle->img=$c->options->img;
+
 
                         $detalle->save(); 
 
@@ -178,15 +169,14 @@ class OrdenCompraController extends Controller
 
                       $borrar_carrito = Cart::destroy();
 
-
-               DB::commit();
+                 DB::commit();
 
             }catch (\Exception $e) {
 
                  \DB::rollBack();
 
-                return view('orden_compras.pregunta_compra', compact('cantidad_carrito','inicio'));
  
+        return view('orden_compras.pregunta_compra', compact('cantidad_carrito','inicio'));
             } 
 
         
