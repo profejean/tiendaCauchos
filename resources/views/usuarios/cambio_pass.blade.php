@@ -45,20 +45,37 @@
 
     
 
-    <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-5" style="text-align: center;">
+    <div class="row justify-content-center mt-3 mb-5">
 
-            
-              <button class="btn btn-outline-danger" type="submit"><h5>Guardar</h5></button>
-            
-    {{Form::close()}}
 
-                    <a class="btn btn-outline-danger" href="{{url('usuarios')}}" role="button"><h5>Regresar</h5></a>
 
-                
-            </div> 
+                        
 
-    </div>
+                         
+                <button class="btn btn-danger mr-5" type="submit" style="float: right;"><h5>Guardar</h5></button>
+
+                       
+
+
+         {{Form::close()}}
+
+    
+
+            @if($usuarios->rol != 'Cliente')
+
+           
+                    <a class="btn btn-danger" href="{{url('usuarios')}}" role="button"><h5>Regresar</h5></a>
+
+           
+            @else
+      
+       
+                    <a class="btn btn-danger" href="{{url('home')}}" role="button"><h5>Regresar</h5></a>
+
+          
+
+            @endif
+        </div> 
  @push('scripts')
  
 
