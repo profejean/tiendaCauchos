@@ -189,7 +189,7 @@
         <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
-        </div>
+        
         <ul class="list-group">
                  
           <li class="list-group-item" style="border-bottom: none;">Precio $: {{formato_numero($p->precio_dolar)}}</li>
@@ -220,6 +220,8 @@
             </span>
           </div>
         </div>
+
+      </div>
 
       <div class="card-body" style="text-align: center;">
         <button type="button" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">

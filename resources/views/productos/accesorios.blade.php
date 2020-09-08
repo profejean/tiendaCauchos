@@ -52,7 +52,7 @@
         <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
-        </div>
+        
         <ul class="list-group">
                  
           <li class="list-group-item" style="border-bottom: none;">Precio $: {{formato_numero($p->precio_dolar)}}</li>
@@ -72,7 +72,7 @@
               <i class="fas fa-plus" style="color: #4169E1;" data-container="body" data-toggle="popover" data-placement="top" data-content="1.Haz click e incrementa tu pedido" id="plus_{{$cont}}"></i>                
             </span>
           </div>
-          <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="0" style="width: 60px;" data="{{$cont}}">
+          <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="0" style="width: 40px;" data="{{$cont}}">
           <input type="hidden" id="producto_id_{{$cont}}" name="producto_id"  value="{{$p->id}}">
           <input type="hidden" id="inventario_{{$cont}}" name="inventario"  value="{{$p->inventario}}">
           <input type="hidden" id="precio_dolar{{$cont}}" name="precio_dolar"  value="{{$p->precio_dolar}}">
@@ -83,7 +83,7 @@
             </span>
           </div>
         </div>
-
+      </div>
       <div class="card-body" style="text-align: center;">
         <button type="button" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">
         Agregar al carrito
