@@ -17,6 +17,8 @@ class UsuarioController extends Controller
 {
     public function index(){
 
+        if(Auth::user()->rol == 'Gerente'){
+
         $usuarios = User::orderBy('id','asc')->paginate(20);
 
         $cantidad_carrito = 0;
@@ -26,12 +28,18 @@ class UsuarioController extends Controller
         $inicio = General::findOrFail(1);
 
         return view('usuarios.index', compact('usuarios','cantidad_carrito','inicio'));
+
+        }else{
+            return Redirect::to('home');
+        }
+
+        
     }
     
     public function edit($id)
 
     { 
-
+        if((Auth::user()->id) == $id or (Auth::user()->rol)== 'Gerente'){
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
@@ -42,6 +50,11 @@ class UsuarioController extends Controller
     	   		
 
          return view('usuarios.edit',compact('usuarios','cantidad_carrito','inicio'));
+
+         }else{
+            return Redirect::to('home');
+
+        }
 
    }
 	public function update(UsuarioRequest $request, $id)
@@ -99,7 +112,7 @@ class UsuarioController extends Controller
      public function create()
 
     {        
-
+        if(Auth::user()->rol == 'Gerente'){
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
@@ -107,6 +120,10 @@ class UsuarioController extends Controller
         $inicio = General::findOrFail(1);
 
         return view('usuarios.create', compact('cantidad_carrito','inicio'));
+
+        }else{
+            return Redirect::to('home');
+        }
     }
 
     public function store(UsuarioRequest $request)
@@ -125,12 +142,17 @@ class UsuarioController extends Controller
     public function destroy($id)
 
     {  
-
+         if(Auth::user()->rol == 'Gerente'){
+            
        $usuarios=User::findOrFail($id);
 
        $usuarios->delete();
 
          return Redirect::to('usuarios');
+
+        }else{
+            return Redirect::to('home');
+        }
 
     }
 
@@ -151,6 +173,8 @@ class UsuarioController extends Controller
  
     public function cambio_pass($id)
     {  
+
+
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
