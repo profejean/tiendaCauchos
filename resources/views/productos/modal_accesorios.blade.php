@@ -73,8 +73,3 @@
   </div>
 </div>
 
-@push('scripts')
-@include('js.incrementar_cantidad')
-@include('js.add_carrito_caucho')
-@include('js.incrementar_cantidad_carrito')
-@endpush

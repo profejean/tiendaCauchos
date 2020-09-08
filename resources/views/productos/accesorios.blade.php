@@ -115,6 +115,7 @@
   {{Form::token()}} 
 
 @include('productos.modal_accesorios')
+
      {{Form::close()}}
          <?php  $acce = $acce + 1;  ?>
     @endforeach
@@ -125,6 +126,7 @@
 
 @push('scripts')
 @include('js.incrementar_cantidad')
+@include('js.incrementar_cantidad_modal')
 @include('js.add_carrito_caucho')
 @endpush
 

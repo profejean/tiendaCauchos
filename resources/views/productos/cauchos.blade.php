@@ -244,6 +244,20 @@
     {{ $productos->withQueryString()->links() }}
   </div>
 
+
+   <?php  $acce =0?>   
+    @foreach($productos as $p)
+
+      {!! Form::open(array('url'=>'agregar_carrito_accesorios', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+
+  {{Form::token()}} 
+
+@include('productos.modal_accesorios')
+
+     {{Form::close()}}
+         <?php  $acce = $acce + 1;  ?>
+    @endforeach
+
 </div>
 
 
