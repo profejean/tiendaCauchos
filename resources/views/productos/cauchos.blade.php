@@ -179,7 +179,7 @@
 </div>
 </div>
 
-<div class="col-lg-9 col-md-9 col-sm-12">
+<div class="col-lg-9 col-md-9 col-sm-12 text-center">
   <div class="row mt-2">
     <input type="hidden" id="cantidad_producto"  value="{{count($productos)}}">
     <?php $cont = 0; ?>
