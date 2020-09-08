@@ -73,29 +73,21 @@
 
 </div>
 
-    <div class="row m-4">
+    <div class="row mt-2">
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-            <div class="form-group">
+            <div class="form-group text-center">
 
-                <button class="btn btn-danger" type="submit" style="float: right;"><h6>Guardar</h6></button>
+                <button class="btn btn-danger" type="submit"><h6>Guardar</h6></button>
 
+                <a class="btn btn-danger" href="{{url('servicios')}}" role="button"><h6>Regresar</h6></a>
             </div>
 
         </div>
 
         {{ Form::close() }}
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-            <div class="form-group">
-
-                <a class="btn btn-danger" href="{{url('servicios')}}" role="button"><h6>Regresar</h6></a>
-
-            </div>
-
-        </div>
     </div>
 
 

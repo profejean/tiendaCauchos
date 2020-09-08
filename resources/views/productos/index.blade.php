@@ -52,9 +52,9 @@
 
 <div class="row" style="text-align: center;">
   
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5"> 
 
-            <div class="form-group">
+            <div class="form-group mb" style="margin-bottom: 50px;">
 
                 <a class="btn btn-danger" href="{{url('home')}}" role="button"><h6> Regresar</h6></a>
 

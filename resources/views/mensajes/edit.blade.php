@@ -43,11 +43,12 @@
 
     <div class="row justify-content-center mb-5">
 
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
             <div class="form-group">
 
-                <button class="btn btn-danger" type="submit" style="float: right;">Guardar</button>
+                <button class="btn btn-danger" type="submit">Guardar</button>
+                <a class="btn btn-danger" href="{{url('mensajes')}}" role="button">Regresar</a>
 
             </div>
 
@@ -55,15 +56,7 @@
 
         {{ Form::close() }}
 
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 
-            <div class="form-group">
-
-                <a class="btn btn-danger" href="{{url('mensajes')}}" role="button">Regresar</a>
-
-            </div>
-
-        </div>
     </div>
 
 
