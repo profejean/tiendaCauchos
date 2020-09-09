@@ -4,8 +4,8 @@
 
 
   <div class="row justify-content-center mt-5">
-    <img src="{{asset('img/mensajes.png')}}" alt="" style="width: 50px;">
-    <h2 class="ml-2">
+    <img src="{{asset('img/mensajes.png')}}" alt="" style="width: 50px;margin-top: 50px;">
+    <h2 class="ml-2" style="margin-top: 50px;">
       Mensajes
     </h2>    
   </div>

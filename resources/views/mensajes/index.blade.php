@@ -6,7 +6,7 @@
 
 
     <div class="row justify-content-center">
-      <h2 style="text-align: center;">
+      <h2 style="text-align: center;margin-top: 50px;">
             Mi Cuenta
           </h2> 
     </div>

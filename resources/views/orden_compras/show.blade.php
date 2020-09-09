@@ -70,25 +70,30 @@
 
 <div class="row"style="background-color: #968F8F;">
 
-        <div class="col-lg-8 col-md-8 col-sm-12 mt-12 text-center">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-12"></div>
 
-          <h6 class="" style="color: #FFFFFF;">Nombre: 
-            <span style="margin-left: 100px;">{{$orden_compras->nombre}}</span>
-          </h6>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-12">
 
-          <h6 class="" style="color: #FFFFFF;">CI: 
-            <span style="margin-left: 150px;">{{$orden_compras->ci}}</span>
+          <h6  style="color: #FFFFFF;">Nombre: 
+            <span>{{$orden_compras->nombre}}</span>
           </h6>
 
-          <h6 class="" style="color: #FFFFFF;">Forma de Pago: 
-            <span style="margin-left: 50px;">{{$orden_compras->forma_pago}}</span>
+          <h6  style="color: #FFFFFF;">CI: 
+            <span >{{$orden_compras->ci}}</span>
           </h6>
-          <h6 class="" style="color: #FFFFFF;">Teléfono: 
-            <span style="margin-left: 100px;">{{$orden_compras->tlf}} </span>
+
+          <h6  style="color: #FFFFFF;">Forma de Pago:
+            <span >{{$orden_compras->forma_pago}} </span>
           </h6>
-          <p class="" style="color: #FFFFFF;">Dirección: 
-            <span style="margin-left: 100px;">{{$orden_compras->direccion}}</span>
+
+         
+          <h6  style="color: #FFFFFF;">Teléfono: 
+            <span >{{$orden_compras->tlf}} </span>
+          </h6>
+          <p  style="color: #FFFFFF;">Dirección: 
+            <span style="text-align: justify;">{{$orden_compras->direccion}}</span>
           </p>
+
         </div>
       
 

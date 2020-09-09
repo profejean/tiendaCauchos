@@ -5,8 +5,8 @@
 @include('css.input_select_center_bg')
 
 <div class="row justify-content-center mt-5 mb-2">
-      <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;">
-        <h2 class="ml-2">
+      <img src="{{asset('img/cauchos.png')}}" alt="" style="width: 50px;margin-top: 50px;margin-bottom:20px;">
+        <h2 class="ml-2" style="margin-top: 50px;margin-bottom:20px;">
             Cauchos y Accesorios
         </h2> 
 </div>
@@ -42,7 +42,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="input-group mb-3">
-                    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
+                    <input  required type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
                  @error('nombre')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
 
                     <div class="form-group row">
 
-                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción"></textarea>
+                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" required></textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -78,7 +78,7 @@
 
                 <div class="input-group mb-3">
 
-                    <input min="0" step=".01" type="number" name="precio_dolar" class="form-control @error('precio_dolar') is-invalid @enderror" id="precio_dolar" placeholder="Precio $ x Unidad" />
+                    <input min="0" required step=".01" type="number" name="precio_dolar" class="form-control @error('precio_dolar') is-invalid @enderror" id="precio_dolar" placeholder="Precio $ x Unidad" />
                  @error('precio_dolar')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-                    <input type="text" name="inventario" class="form-control @error('inventario') is-invalid @enderror" id="inventario" placeholder="Cantidad Disponible" />
+                    <input type="text" name="inventario" class="form-control @error('inventario') is-invalid @enderror" id="inventario" placeholder="Cantidad Disponible" required />
                  @error('inventario')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
 
-                    <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" id="imagen_1" placeholder="Cargar Imagen 1">
+                    <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" id="imagen_1" required placeholder="Cargar Imagen 1">
                         @error('imagen_1')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -163,7 +163,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="input-group mb-3">
-                    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
+                    <input type="text" required name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" />
                  @error('nombre')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -179,7 +179,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group row">
 
-                        <textarea class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;"></textarea>
+                        <textarea required class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion" rows="4" id="descripcion" placeholder="Descripción" style="width: 95%;"></textarea>
 
                             @error('descripcion')
                             <span class="invalid-feedback" role="alert">
@@ -197,7 +197,7 @@
 
                 <div class="input-group mb-3">
 
-                    <input min="0" step=".01" type="number" name="precio_dolar" class="form-control @error('precio_dolar') is-invalid @enderror" id="precio_dolar" placeholder="Precio $ x Unidad" />
+                    <input min="0" required step=".01" type="number" name="precio_dolar" class="form-control @error('precio_dolar') is-invalid @enderror" id="precio_dolar" placeholder="Precio $ x Unidad" />
                  @error('precio_dolar')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -237,7 +237,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-                    <input type="text" name="inventario" class="form-control @error('inventario') is-invalid @enderror" id="inventario" placeholder="Cantidad Disponible" />
+                    <input type="text" name="inventario" class="form-control @error('inventario') is-invalid @enderror" id="inventario" placeholder="Cantidad Disponible" required />
                  @error('inventario')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -283,7 +283,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
 
-                    <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" id="imagen_1" placeholder="Cargar Imagen 1">
+                    <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" required id="imagen_1" placeholder="Cargar Imagen 1">
                         @error('imagen_1')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\InicioRequest;
+use App\Http\Requests\CrearUsuarioRequest;
 use App\General;
 use App\User;
 use App\Servicio;
@@ -185,7 +186,7 @@ public function primera_vez()
 
     }
 
-    public function crear_cliente(Request $request){
+    public function crear_cliente(CrearUsuarioRequest $request){
 
          $users=new User($request->all());
          $users->password = Hash::make($request->get('password'));    

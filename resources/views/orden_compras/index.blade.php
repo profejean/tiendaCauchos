@@ -5,8 +5,8 @@
         <div class="row justify-content-center mb-2 mt-5">
           
 
-          <img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;">
-          <h2 class="ml-2">
+          <img src="{{asset('img/pedidos.png')}}" alt="" style="width: 50px;margin-top: 50px;">
+          <h2 class="ml-2" style="margin-top: 50px;">
             Pedidos
           </h2>    
         </div>

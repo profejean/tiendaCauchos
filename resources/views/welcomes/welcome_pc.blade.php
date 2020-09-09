@@ -38,8 +38,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; width: 100%;">
   
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>  &nbsp; Menú
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -110,9 +110,42 @@
         <h6 class="mt-3 ml-5">Síguenos:</h6>  
     <span class="ml-1 mt-1 mb-1">
 
-      <a target="_blank" href="https://www.instagram.com/juancaucho2018"><img src="{{asset('img/instagram.png')}}" height="40" alt=""></a> 
-      <a target="_blank" href="https://www.facebook.com/JUAN-Caucho-2018-CA-110198903916526"><img src="{{asset('img/facebook.png')}}"  height="40"alt=""></a> 
-      <a target="_blank" href="https://vm.tiktok.com/ZSPxqKU3"><img src="{{asset('img/tik-tok.png')}}"  height="40"alt=""></a> 
+      @if($inicio->pregunta_twitter == 'SI')
+
+      <a target="_blank" href="{{$inicio->twitter}}"><img src="{{asset('img/twitter.png')}}"  height="40"alt=""></a>
+
+      @endif
+
+      @if($inicio->pregunta_facebook == 'SI')
+
+      <a target="_blank" href="{{$inicio->facebook}}"><img src="{{asset('img/facebook.png')}}"  height="40"alt=""></a> 
+
+      @endif
+
+
+      @if($inicio->pregunta_instagram == 'SI')
+
+      <a target="_blank" href="{{$inicio->instagram}}"><img src="{{asset('img/instagram.png')}}" height="40" alt=""></a> 
+
+      @endif
+
+      @if($inicio->pregunta_tiktok == 'SI')
+
+      <a target="_blank" href="{{$inicio->tiktok}}"><img src="{{asset('img/tik-tok.png')}}"  height="40"alt=""></a> 
+
+      @endif
+
+      @if($inicio->pregunta_whatsapp == 'SI')
+
+       <a target="_blank" href="{{$inicio->whatsapp}}"><img src="{{asset('img/whatsapp.png')}}"  height="40"alt=""></a>
+
+      @endif
+
+      
+      
+      
+      
+     
       
     </span>
 
@@ -122,3 +155,6 @@
 
 </div>
 </div>
+
+
+ 

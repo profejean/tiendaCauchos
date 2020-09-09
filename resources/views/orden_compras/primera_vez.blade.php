@@ -52,7 +52,7 @@
             <div class="input-group mb-3">
                 <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" id="cedula_rif" placeholder="Cédula - RIF" required />
                 @error('cedula_rif')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback text-white" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror  
@@ -100,7 +100,7 @@
             <div class="input-group mb-3">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Contraseña"  required/>
                 @error('email')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback text-white" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror

@@ -24,7 +24,9 @@ class OrdenCompraRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
         ];
     }
+
+     
 }
