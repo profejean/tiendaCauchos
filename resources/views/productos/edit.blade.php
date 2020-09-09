@@ -25,12 +25,14 @@
           <h4 style="color: #FFF;">Accesorio o Repuestos</h4>
         </div> 
 
+   
+
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <h6 style="color: #FFF;">Nombre:</h6>
+
                 <div class="input-group mb-3">
-                    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" value="{{$productos->nombre}}">
+                    <input type="text" required name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" value="{{$productos->nombre}}" />
                  @error('nombre')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -38,7 +40,33 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="destacado">Destacado</label>
+                </div>
+                <select class="custom-select" id="destacado" name="destacado">
+                    <option value="{{$productos->destacado}}">{{$productos->destacado}}</option>
+                    @if($productos->destacado != 'No')
+                    <option value="No">No</option>
+                    @endif
+                    @if($productos->destacado != 'Si')
+                    <option value="Si">Si</option>
+                    @endif
+                   
+                </select>
+                @error('destacado')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+
+
+        </div>
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
         </div>
 
         <div class="row">

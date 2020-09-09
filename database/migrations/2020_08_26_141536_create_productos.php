@@ -18,6 +18,7 @@ class CreateProductos extends Migration
 
             $table->text('categoria');
             $table->text('nombre');
+            $table->text('destacado');
             $table->longText('descripcion');
             $table->decimal('precio_dolar', 20,2);
             $table->integer('inventario');

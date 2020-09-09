@@ -98,6 +98,95 @@
   
 </div>  
 
+<div class="container-fluid mt-5 mb-5">
+
+   <div class="swiper-container">
+    <div class="swiper-wrapper">
+    <input type="hidden" id="cantidad_producto"  value="{{count($productos)}}">
+<?php $cont = 0; ?>
+      @foreach($productos as $p)
+
+      <div class="card swiper-slide mb-2" style="width: 100%; height: 600px;">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
+        <div class="card-body">
+          <h5 class="card-title">{{$p->nombre}}</h5>
+        
+        <ul class="list-group">
+                 
+          <li class="list-group-item" style="border-bottom: none;border-style:none;">Precio $: {{formato_numero($p->precio_dolar)}}</li>
+          
+          <li class="list-group-item" style="border-style:none;">Inventario Disponible: {{$p->inventario}}</li>        
+        </ul>
+
+        {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_'.$cont, 'files'=>'true')) !!}
+
+        {{Form::token()}} 
+
+        <!--  codigo para controlar la cantidad de productos -->
+
+        <div class="input-group justify-content-center mb-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="incrementar_{{$cont}}" data="{{$cont}}">                  
+              <i class="fas fa-plus" style="color: #4169E1;" data-container="body" data-toggle="popover" data-placement="top" data-content="1.Haz click e incrementa tu pedido" id="plus_{{$cont}}"></i>                
+            </span>
+          </div>
+          <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="0" style="width: 60px;" data="{{$cont}}">
+          <input type="hidden" id="producto_id_{{$cont}}" name="producto_id"  value="{{$p->id}}">
+          <input type="hidden" id="inventario_{{$cont}}" name="inventario"  value="{{$p->inventario}}">
+          <input type="hidden" id="precio_dolar{{$cont}}" name="precio_dolar"  value="{{$p->precio_dolar}}">
+
+          <div class="input-group-append">
+            <span class="input-group-text" id="disminuir_{{$cont}}" data="{{$cont}}">                   
+              <i class="fas fa-minus text-danger" style="color: #4169E1;"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-body" style="text-align: center;">
+        <button type="button" class="btn btn-danger" id="add_carrito_{{$cont}}" data-container="body" data-toggle="popover" data-placement="bottom" data-content="agrega un producto." data="{{$cont}}">
+        Agregar al carrito
+        <span class="badge badge-light">{{$cantidad_carrito}}</span>
+          <span class="sr-only">unread messages</span>
+      </button>
+      </div>
+
+
+
+      {{Form::close()}}          
+       
+      </div>
+
+ <?php  $cont = $cont + 1;  ?>
+      @endforeach
+
+
+
+
+   <?php  $acce =0?>   
+    @foreach($productos as $p)
+
+      {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+
+  {{Form::token()}} 
+
+@include('productos.modal_accesorios')
+
+     {{Form::close()}}
+         <?php  $acce = $acce + 1;  ?>
+    @endforeach
+      
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  
+</div>
+
 <div class="container-fluid" style="background-color: #968F8F; margin-bottom: 50px;">
   <div class="row">
     @foreach($servicios as $s)

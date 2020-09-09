@@ -20,6 +20,7 @@ $factory->define(Producto::class, function (Faker $faker) {
         'imagen_1' => 'caucho_1.jpg',
         'imagen_2' => 'caucho_1.jpg',
         'imagen_3' => 'caucho_1.jpg',
+        'destacado' => 'Si',
 
 
         'usuario_creador' => $faker->name,

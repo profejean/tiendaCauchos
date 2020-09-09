@@ -159,7 +159,7 @@
 </div> 
 
          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
 
                 <div class="input-group mb-3">
@@ -171,8 +171,30 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12"></div>
-</div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="destacado">Destacado</label>
+                </div>
+                <select class="custom-select" id="destacado" name="destacado">
+
+                    <option value="No">No</option>
+                    <option value="Si">Si</option>
+                   
+                </select>
+                @error('destacado')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+
+
+        </div>
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
+        </div>
 
         <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12"></div>

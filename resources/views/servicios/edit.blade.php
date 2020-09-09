@@ -51,29 +51,51 @@
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
 </div>
 
-<div class="row">
+<div class="row justify-content-center">
+    
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
     <div class="col-lg-4 col-md-4 col-sm-12">
+        <h4 class="text-white">Imagen</h4>
 
         <div class="input-group mb-3 justify-content-center">
-          <img src="{{asset('img/'.$servicios->imagen)}}" alt="" width="150" height="150">
-      <input type="file" name="imagen" class="form-control ml-2 @error('imagen') is-invalid @enderror" id="imagen" placeholder="" value="{{$servicios->imagen}}" style="background-color: #FFF; color: #968F8F;">
-      @error('imagen')
-      <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-    @enderror
-      </div>
-</div>
+              <img src="{{asset('img/'.$servicios->imagen)}}" alt="" width="150" height="150">
+              <input type="file" name="imagen" class="form-control ml-2 @error('imagen') is-invalid @enderror" id="imagen" placeholder="" value="{{$servicios->imagen}}" style="background-color: #FFF; color: #968F8F;">
+              @error('imagen')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
+</div>
+
+<div class="row justify-content-center">
+  
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+          <h4 class="text-white">Icono</h4>
+
+        <div class="input-group mb-3 justify-content-center">
+              <img src="{{asset('img/'.$servicios->icono)}}" alt="" width="150" height="150">
+              <input type="file" name="icono" class="form-control ml-2 mb-5 @error('icono') is-invalid @enderror" id="icono" placeholder="" value="{{$servicios->icono}}" style="background-color: #FFF; color: #968F8F;">
+              @error('icono')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12"></div>
+</div>
+   
 
 </div>    
 
 
 </div>
 
-    <div class="row mt-2">
+    <div class="row mt-2 mb-5">
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 

@@ -1,6 +1,6 @@
 <script>
 
-	
+	$('.modal ').insertAfter($('body'));
 
 	var cantidad = $('#cantidad_producto').val();  
 	for (var i = 0; i < cantidad; i++) {		

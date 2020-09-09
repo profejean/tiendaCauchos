@@ -1,10 +1,10 @@
 
 <!-- Modal -->
-<div class="modal fade" id="modal_accesorios_{{$acce}}" tabindex="-1"  aria-hidden="true" aria-labelledby="exampleModalLabel">
+<div class="modal fade" id="modal_accesorios_{{$acce}}" tabindex="-1"  aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Accesorios y Autopartes</h5>
+        <h5 class="modal-title">Accesorios y Autopartes</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,7 +14,7 @@
             <div class="row no-gutters">
               <div class="col-md-6">
 
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators_{{$acce}}" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
