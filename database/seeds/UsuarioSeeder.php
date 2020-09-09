@@ -23,7 +23,7 @@ class UsuarioSeeder extends Seeder
         	'password'  =>  bcrypt('tikery.27')
      	
         ]);
-        User::create([
+       /* User::create([
         	'name'  =>  'leonel',
             'rol'  =>  'Gerente',
             'cedula_rif'  =>  '125',
@@ -42,6 +42,6 @@ class UsuarioSeeder extends Seeder
             'email'  =>  'cliente@gmail.com',
             'password'  =>  bcrypt('1234')
         
-        ]);
+        ]);*/
     }
 }

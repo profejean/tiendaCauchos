@@ -74,7 +74,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_1');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_1=$name;
 
                     } 
@@ -82,7 +82,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_2');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_2=$name;
 
                     }                                         
@@ -90,7 +90,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_3');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_3=$name;
 
                     }                    
@@ -149,7 +149,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_1');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_1=$name;
 
                     } 
@@ -157,7 +157,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_2');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_2=$name;
 
                     }                                         
@@ -165,7 +165,7 @@ class ProductoController extends Controller
                     $file=$request->file('imagen_3');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $productos->imagen_3=$name;
 
                     } 

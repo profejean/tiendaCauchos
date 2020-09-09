@@ -1,6 +1,6 @@
 
 <!-- Modal -->
-<div class="modal fade" id="modal_accesorios_{{$acce}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modal_accesorios_{{$acce}}" tabindex="-1"  aria-hidden="true" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">

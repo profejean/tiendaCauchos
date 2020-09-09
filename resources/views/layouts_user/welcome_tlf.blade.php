@@ -4,32 +4,32 @@
 
 <div class="row"> 
 
-  <div class="col-4"> 
-    <div style="width: 100%;background: white;">
+  <div style="width: 40%;"> 
+   
       <a class="navbar-brand" href="{{url('/')}}">
-        <img class="cabecera" src="{{asset('img/cauchotlf.png')}}" style="max-width: 200px;">
+        <img src="{{asset('img/'.$inicio->logo)}}" style="max-width: 120px;margin-top:20px;">
       </a> 
-    </div>
+
   </div>
 
 
 
-  <div class="col-4 text-center contactanos"> 
-    <div style="width: 100%;background: white;">
-      <h6 class="text-contactanos">  Contáctanos:</h6>
-      <h6 class="text-contactanos"> (0212-632-8106) / (0414-197-8215) / (0412-900-5163)</h6>
+  <div class="" style="width: 30%;background: white;"> 
+   
+      <h6 class="text-contactanos mt-2">  Contáctanos:</h6>
+      <h6 class="text-contactanos">{{$inicio->contactanos}}</h6>
                    
-    </div>
+
   </div>         
 
-  <div class="col-4" style="text-align: right;"> 
-    <div style="width: 100%;background: white;">
+  <div  style="width: 30%;background: white;text-align: right;"> 
+
       <a class="navbar-brand" href="{{url('carrito')}}">
-        <img src="{{asset('img/carro.png')}}" style="max-width: 100px; max-height: 70px;">
+        <img src="{{asset('img/'.$inicio->icono_carrito)}}" style="max-width: 100px; max-height: 70px;">
           <span class="badge badge-light">{{$cantidad_carrito}}</span>
           <span class="sr-only">unread messages</span>
       </a> 
-    </div>
+
   </div>
 
 </div>

@@ -7,7 +7,7 @@
   <div class="col-4"> 
     <div style="width: 100%;background: white;">
       <a class="navbar-brand" href="{{url('/')}}">
-        <img src="{{asset('img/caucho.png')}}" style="max-width: 200px;">
+        <img src="{{asset('img/'.$inicio->logo)}}" style="max-width: 200px;">
       </a> 
     </div>
   </div>
@@ -17,7 +17,7 @@
   <div class="col-4 text-center"> 
     <div style="width: 100%;background: white;">
       <h6>  Contáctanos:</h6>
-      <h6> (0212-632-8106) / (0414-197-8215) / (0412-900-5163)</h6>
+      <h6> {{$inicio->contactanos}}</h6>
                    
     </div>
   </div>         
@@ -25,7 +25,7 @@
   <div class="col-4" style="text-align: right;"> 
     <div style="width: 100%;background: white;">
       <a class="navbar-brand" href="{{url('carrito')}}">
-        <img src="{{asset('img/carro.png')}}" style="max-width: 100px; max-height: 70px;">
+        <img src="{{asset('img/'.$inicio->icono_carrito)}}" style="max-width: 100px; max-height: 70px;">
           <span class="badge badge-light">{{$cantidad_carrito}}</span>
           <span class="sr-only">unread messages</span>
       </a> 

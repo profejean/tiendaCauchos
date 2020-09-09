@@ -55,7 +55,7 @@ class GeneralController extends Controller
                     $file=$request->file('logo');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(public_path().'/img/', $name);
+                    $file->move(base_path().'//img/', $name);
                     $general->logo=$name;
 
                     }                     
