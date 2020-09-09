@@ -18,7 +18,8 @@ class CreateServicios extends Migration
             $table->text('nombre');
             $table->longText('descripcion');
             $table->text('imagen');
-            
+            $table->text('icono');
+
             $table->date('fecha_creacion');
             $table->date('fecha_edicion');
             $table->text('usuario_editor');

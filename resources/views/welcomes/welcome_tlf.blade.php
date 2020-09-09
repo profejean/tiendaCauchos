@@ -98,6 +98,25 @@
   
 </div>  
 
+<div class="container-fluid" style="background-color: #968F8F; margin-bottom: 50px;">
+  <div class="row">
+    @foreach($servicios as $s)
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="card" style="width: 100%; height: 100%; background-color: #968F8F;">
+        <div class="text-center">
+        <img src="{{asset('img/'.$s->icono)}}" alt="" style="width: 30%; height: 170px;">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-white"> <strong>{{$s->nombre}}</strong></h5>
+          <p class="card-text justify-content-center text-white">{{$s->descripcion}}</p>
+        </div>
+      </div>
+    </div>
+    @endforeach
+
+  </div>
+</div>
+
    <div class="container-fluid fixed-bottom" style="background: #FFF;z-index: 1;">
 
   

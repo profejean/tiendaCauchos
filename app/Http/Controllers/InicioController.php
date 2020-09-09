@@ -24,12 +24,12 @@ class InicioController extends Controller
     public function index()
     {
     	$inicio = General::findOrFail(1);
-
+        $servicios = Servicio::orderBy('id','desc')->get(); 
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){
         $cantidad_carrito += $c->qty;
         }
-        return view('welcome', compact('inicio','cantidad_carrito'));
+        return view('welcome', compact('inicio','cantidad_carrito', 'servicios'));
     }
 
     public function cauchos()
@@ -91,7 +91,7 @@ class InicioController extends Controller
         }
         $inicio = General::findOrFail(1);
 
-        $servicios = Servicio::findOrFail(1);
+        $servicios = Servicio::orderBy('id', 'asc')->get();
         return view('servicios.show', compact('servicios','cantidad_carrito','inicio'));
             
     }
