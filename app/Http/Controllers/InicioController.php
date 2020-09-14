@@ -24,7 +24,7 @@ class InicioController extends Controller
     public function index()
     {
     	$inicio = General::findOrFail(1);
-        $productos = Producto::where('destacado','=','Si')->get();
+        $productos = Producto::where('destacado', '=', 'Si')->get();
         $servicios = Servicio::orderBy('id','desc')->get(); 
         $cantidad_carrito = 0;
         foreach(Cart::content() as $c){

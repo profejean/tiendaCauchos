@@ -198,29 +198,61 @@
             <div class="col-lg-2 col-md-2 col-sm-12"></div>
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <h6 style="color: #FFF;">Nombre:</h6>
-                    <div class="input-group mb-3">
-                        <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" value="{{$productos->nombre}}">
-                        @error('nombre')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre del Producto" value="{{$productos->nombre}}">
+                    @error('nombre')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+            </div>
+        </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                        <h6 style="color: #FFF;">Categoría:</h6>
-                        <select class="form-control @error('categoria') is-invalid @enderror" name="categoria" id="categoria">
-                              <option value="{{$productos->categoria}}">{{$productos->categoria}}</option>
-                              @if(($productos->categoria) != 'Cauchos')
-                              <option value="Cauchos">Cauchos</option>
-                              @endif
-                              @if(($productos->categoria) != 'Por Preparar')
-                              <option value="accesorios">Accesorios</option>
-                              @endif                  
-                          </select>
-                </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h6 style="color: #FFF;">Categoría:</h6>
+                    <select class="form-control @error('categoria') is-invalid @enderror" name="categoria" id="categoria">
+                          <option value="{{$productos->categoria}}">{{$productos->categoria}}</option>
+                          @if(($productos->categoria) != 'Cauchos')
+                          <option value="Cauchos">Cauchos</option>
+                          @endif
+                          @if(($productos->categoria) != 'Por Preparar')
+                          <option value="accesorios">Accesorios</option>
+                          @endif                  
+                      </select>
+            </div>
             <div class="col-lg-2 col-md-2 col-sm-12"></div>                                
+        </div>
+
+        <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="destacado">Destacado</label>
+                    </div>
+                    <select class="custom-select" id="destacado" name="destacado">
+                        <option value="{{$productos->destacado}}">{{$productos->destacado}}</option>
+                        @if(($productos->destacado) != 'No')
+                        <option value="No">No</option>
+                        @endif
+                        @if(($productos->destacado) != 'Si')
+                        <option value="Si">Si</option>
+                       @endif
+                    </select>
+                    @error('destacado')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+            <div class="col-lg-4 col-md-4 col-sm-12"></div>
+        </div>
+
+
+
+
+            <div class="col-lg-2 col-md-2 col-sm-12"></div>
         </div>
 
         <div class="row">
