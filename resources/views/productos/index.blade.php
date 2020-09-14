@@ -46,7 +46,7 @@
 
 
   <hr style="border:10px; background: #FFF;">
-
+ @include('productos.modal')
     @endforeach  
 
      <div class="row justify-content-center">
@@ -68,8 +68,8 @@
 
 </div>
 
- @include('productos.modal_delete_accesorios')
- @include('productos.modal_delete_cauchos')
+
+
  @push('scripts')
  
  @endpush
