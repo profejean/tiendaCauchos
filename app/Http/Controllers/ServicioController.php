@@ -72,7 +72,16 @@ class ServicioController extends Controller
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
                     $file->move(base_path().'/../img/', $name);
-                    $general->imagen_1=$name;
+                    $servicios->imagen=$name;
+
+                    } 
+
+                    if ($request->hasFile('icono')){
+                    $file=$request->file('icono');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(base_path().'/../img/', $name);
+                    $servicios->icono=$name;
 
                     } 
                     
