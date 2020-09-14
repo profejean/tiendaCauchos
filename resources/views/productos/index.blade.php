@@ -38,6 +38,9 @@
 
   <div class="col-lg-3 col-md-3 col-sm-12" style="background-color: #968F8F">
     <a class="btn btn-danger mt-2 mb-2"  href="{{URL::action('ProductoController@edit',$a->id)}}" role="button"><h6>Ver / Modificar</h6></a>
+    <a href="" data-target="#modal-delete-{{$a->id}}" data-toggle="modal" data-backdrop="false">
+        <button class="btn btn-danger" role="button"><h6>Eliminar</h6></button>
+      </a>
   </div>
   </div>
 
@@ -65,6 +68,8 @@
 
 </div>
 
+ @include('productos.modal_delete_accesorios')
+ @include('productos.modal_delete_cauchos')
  @push('scripts')
  
  @endpush
