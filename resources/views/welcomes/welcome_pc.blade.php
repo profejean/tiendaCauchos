@@ -36,37 +36,39 @@
 
 <div class="row">
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; width: 100%;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background:  #f9f800; width: 100%;">
   
   <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>  &nbsp; Menú
+    <span class="navbar-toggler-icon"></span>  &nbsp; MENÚ
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav mr-auto">
+     <li><h5 style="font-size: 24px;">"Hoy más que nunca somos juan caucho..."</h5></li>
+    </ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #FFFFFF">Inicio</h5><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #000;font-size: 18px;">INICIO</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #FFFFFF">Cauchos</h5></a>
+        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #000;font-size: 18px;">CAUCHOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #FFFFFF">Accesorios y Autopartes</h5></a>
+        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #000;font-size: 18px;">ACCESORIOS Y AUTOPARTES</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #FFFFFF">Servicios</h5></a>
+        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #000;font-size: 18px;">SERVICIOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
+        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #000;font-size: 18px;">MI CUENTA</h5></a>
       </li>  
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #FFFFFF">Ir al carrito</h5>
+        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #000;font-size: 18px;">IR AL CARRITO</h5>
 
         </a>
       </li>
@@ -76,7 +78,7 @@
        <li class="nav-item">
         <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();"><h5 style="color:#FFFFFF; margin-top: 5px;">{{ __('Salir') }}</h5>
+        document.getElementById('logout-form').submit();"><h5 style="color:#000; margin-top: 5px;font-size: 18px;">{{ __('SALIR') }}</h5>
       </a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
@@ -203,6 +205,12 @@
     </div>
     @endforeach
 
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d62772.75709503507!2d-66.91276855005636!3d10.477211686326124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d10.4625685!2d-66.8677563!4m5!1s0x8c2a5909c93b2389%3A0xc3fac215877f0e55!2sCauchera%20Juan%20Cauchos%202018%20c.a%2C%20Avenida%20La%20Rambla%2C%20Caracas%201041%2C%20Distrito%20Capital!3m2!1d10.4819383!2d-66.90130599999999!5e0!3m2!1ses-419!2sve!4v1600210213182!5m2!1ses-419!2sve" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
   </div>
 </div>
    <div class="container-fluid fixed-bottom" style="background: #FFF;z-index: 1;">

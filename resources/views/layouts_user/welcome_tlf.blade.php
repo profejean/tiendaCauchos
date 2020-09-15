@@ -36,37 +36,37 @@
 
 <div class="row">
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background:  #d9534f; width: 100%;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background:  #f9f800; width: 100%;">
   
   <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span> &nbsp; Menú
+    <span class="navbar-toggler-icon"></span> &nbsp; MENÚ
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #FFFFFF">Inicio</h5><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #000">INICIO</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #FFFFFF">Cauchos</h5></a>
+        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #000">CAUCHOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #FFFFFF">Accesorios y Autopartes</h5></a>
+        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #000">ACCESORIOS Y AUTOPARTES</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #FFFFFF">Servicios</h5></a>
+        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #000">SERVICIOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #FFFFFF">Mi cuenta</h5></a>
+        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #000">MI CUENTA</h5></a>
       </li>  
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #FFFFFF">Ir al carrito</h5>
+        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #000">IR AL CARRITO</h5>
 
         </a>
       </li>
@@ -76,7 +76,7 @@
        <li class="nav-item">
         <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();"><h5 style="color:#FFFFFF; margin-top: 5px;">{{ __('Salir') }}</h5>
+        document.getElementById('logout-form').submit();"><h5 style="color:#000; margin-top: 5px;">{{ __('SALIR') }}</h5>
       </a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
