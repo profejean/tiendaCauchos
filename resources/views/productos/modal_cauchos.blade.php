@@ -48,9 +48,9 @@
                   <h5 class="card-title justify-content-center">{{formato_numero($p->precio_dolar)}} $</h5>
                   <p class="card-text" style="white-space: pre-line; text-align: justify;">{{$p->descripcion}}</p>
 
-                  {!! Form::open(array('url'=>'agregar_carrito_accesorios', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+                  {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
 
-                      {{Form::token()}}
+                      {{Form::token()}} 
                     <div class="input-group justify-content-center mb-2">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="incrementar_modal_{{$acce}}" data="{{$acce}}">                  
@@ -58,7 +58,7 @@
                         </span>
                       </div>
 
-                       
+                      
                       <input type="number" class="text-center" name="cantidad" id="cantidad_modal_{{$acce}}" data="{{$acce}}" value="0" style="width: 60px;">
                       <input type="hidden" id="producto_id_modal_{{$acce}}" name="producto_id"  value="{{$p->id}}">
                       <input type="hidden" id="inventario_{{$acce}}" name="inventario"  value="{{$p->inventario}}">

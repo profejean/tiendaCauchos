@@ -2,7 +2,7 @@
 
 	var cantidad_producto = $('#cantidad_producto').val();
 	
-	for (var i = 0; i <= cantidad_producto; i++) {
+	for (var i = 0; i <= cantidad_producto; i++) { 
 		
 	
 	$('#incrementar_'+i+'').click(function(){ 

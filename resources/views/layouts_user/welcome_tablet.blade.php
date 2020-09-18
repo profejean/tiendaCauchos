@@ -1,6 +1,6 @@
 <div class="d-none d-md-block d-lg-none">
   
-<div class="container-fluid fixed-top" style="z-index: 1; background-color: #FFF">
+<div class="container-fluid fixed-top" style="z-index: 10; background-color: #FFF">
 
 <div class="row"> 
 
@@ -38,35 +38,38 @@
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background:  #f9f800; width: 100%;">
   
-  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>  &nbsp; MENÚ
   </button>
 
+  <h5 style="font-size: 16px;">"Hoy más que nunca somos juan caucho..."</h5>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav mr-auto">     
+    </ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #000">INICIO</h5><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{url('/')}}"><h5 style="color: #000;font-size: 11px;">INICIO</h5><span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #000">CAUCHOS</h5></a>
+        <a class="nav-link" href="{{url('cauchos')}}"><h5 style="color: #000;font-size: 11px;">CAUCHOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #000">ACCESORIOS Y AUTOPARTES</h5></a>
+        <a class="nav-link" href="{{url('accesorios')}}"><h5 style="color: #000;font-size: 11px;">ACCESORIOS Y AUTOPARTES</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #000">SERVICIOS</h5></a>
+        <a class="nav-link" href="{{url('servicios_ver')}}"><h5 style="color: #000;font-size: 11px;">SERVICIOS</h5></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #000">MI CUENTA</h5></a>
+        <a class="nav-link" href="{{url('login')}}"><h5 style="color: #000;font-size: 11px;">MI CUENTA</h5></a>
       </li>  
 
       <li class="nav-item">
-        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #000">IR AL CARRITO</h5>
+        <a class="nav-link" href="{{url('carrito')}}"><h5 style="color: #000;font-size: 11px;">IR AL CARRITO</h5>
 
         </a>
       </li>
@@ -76,7 +79,7 @@
        <li class="nav-item">
         <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();"><h5 style="color:#000; margin-top: 5px;">{{ __('SALIR') }}</h5>
+        document.getElementById('logout-form').submit();"><h5 style="color:#000; margin-top: 5px;font-size: 11px;">{{ __('SALIR') }}</h5>
       </a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf

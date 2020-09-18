@@ -3,7 +3,8 @@
 	$('.modal ').insertAfter($('body'));
 
 	var cantidad = $('#cantidad_producto').val();  
-	for (var i = 0; i < cantidad; i++) {		
+	for (var i = 0; i < cantidad; i++) {
+
 	
 	$('#add_carrito_'+i+'').click(function() {	
 		var indice = $(this).attr('data');
@@ -31,7 +32,12 @@
 		
 	});
 
+
+
 	}
+
+
+
 
 
 

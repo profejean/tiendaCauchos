@@ -29,7 +29,7 @@ and (min-width: 70px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 510px;
+		height: 480px;
 		width: auto;
 		background-size: 280px 510px; 
 		position: relative;
@@ -66,7 +66,7 @@ and (min-width: 270px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 510px;
+		height: 480px;
 		width: auto;
 		background-size: 280px 510px; 
 		position: relative;
@@ -103,7 +103,7 @@ and (min-width: 350px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 510px;
+		height: 480px;
 		width: auto;
 		background-size: 360px 510px; 
 		position: relative;
@@ -138,7 +138,7 @@ and (min-width: 410px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 600px;
+		height: 480px;
 		width: auto;
 		background-size: 411px 600px; 
 		position: relative;
@@ -173,7 +173,7 @@ and (min-width: 411px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 700px;
+		height: 480px;
 		width: auto;
 		background-size: 411px 700px; 
 		position: relative;
@@ -208,7 +208,7 @@ and (min-width: 411px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 700px;
+		height: 480px;
 		width: auto;
 		background-size: 411px 700px; 
 		position: relative;
@@ -243,7 +243,7 @@ and (min-width: 511px)
 /* baner*/	
 	.baner_tel{
 		background: url({{asset('img/'.$inicio->banner)}}) center;
-		height: 620px;
+		height: 480px;
 		width: auto;
 		background-size: 540px 620px; 
 		position: relative;

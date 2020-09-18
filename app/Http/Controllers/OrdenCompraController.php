@@ -26,6 +26,8 @@ class OrdenCompraController extends Controller
        
     public function index()
     {
+
+      if(Auth::user()->rol == 'Gerente'){
     	$orden_compras = OrdenCompra::paginate(20);
 
         $cantidad_carrito = 0;
@@ -35,6 +37,20 @@ class OrdenCompraController extends Controller
         $inicio = General::findOrFail(1);
 
         return view('orden_compras.index', compact('orden_compras','cantidad_carrito','inicio'));
+
+      }else{
+
+        $orden_compras = OrdenCompra::where('usuario_id','=',Auth::id())->paginate(20);
+
+        $cantidad_carrito = 0;
+        foreach(Cart::content() as $c){
+        $cantidad_carrito += $c->qty;
+        }
+        $inicio = General::findOrFail(1);
+
+        return view('orden_compras.index', compact('orden_compras','cantidad_carrito','inicio'));
+
+      }
     }
 
     public function edit($id)

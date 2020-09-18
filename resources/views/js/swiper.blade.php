@@ -14,4 +14,14 @@
         prevEl: '.swiper-button-prev',
       },
     });
+
+
+    var swiper_tlf = new Swiper('.tlf', {
+      slidesPerView: 1, 
+      spaceBetween: 50,     
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+    
+    });
   </script>

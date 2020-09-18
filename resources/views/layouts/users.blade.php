@@ -17,6 +17,9 @@
 @include('css.baner')
 @include('css.baner_tablet')
 @include('css.baner_tlf')
+@include('css.cambiar_danger')
+
+
 
 </head>
 

@@ -55,7 +55,7 @@
     
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
     <div class="col-lg-4 col-md-4 col-sm-12">
-        <h4 class="text-white">Imagen</h4>
+        <h4 class="text-white">Imagen (ancho 500px, altura 170px)</h4>
 
         <div class="input-group mb-3 justify-content-center">
               <img src="{{asset('img/'.$servicios->imagen)}}" alt="" width="150" height="150">
@@ -74,7 +74,7 @@
   
     <div class="col-lg-4 col-md-4 col-sm-12"></div>
     <div class="col-lg-4 col-md-4 col-sm-12">
-          <h4 class="text-white">Icono</h4>
+          <h4 class="text-white">Icono (170px)</h4>
 
         <div class="input-group mb-3 justify-content-center">
               <img src="{{asset('img/'.$servicios->icono)}}" alt="" width="150" height="150">

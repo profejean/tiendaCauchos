@@ -108,7 +108,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 1 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" id="imagen_1" required placeholder="Cargar Imagen 1">
                         @error('imagen_1')
                         <span class="invalid-feedback" role="alert">
@@ -124,7 +124,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 2 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_2" class="form-control @error('imagen_2') is-invalid @enderror" id="imagen_2" placeholder="Cargar Imagen 2">
                         @error('imagen_2')
                         <span class="invalid-feedback" role="alert">
@@ -140,7 +140,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 3 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
                         @error('imagen_3')
                         <span class="invalid-feedback" role="alert">
@@ -305,7 +305,7 @@
             <div class="col-lg-2 col-md-2 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 1 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_1" class="form-control @error('imagen_1') is-invalid @enderror" required id="imagen_1" placeholder="Cargar Imagen 1">
                         @error('imagen_1')
                         <span class="invalid-feedback" role="alert">
@@ -316,7 +316,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 2 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_2" class="form-control @error('imagen_2') is-invalid @enderror" id="imagen_2" placeholder="Cargar Imagen 2">
                         @error('imagen_2')
                         <span class="invalid-feedback" role="alert">
@@ -331,7 +331,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12"></div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="input-group mb-3">
-
+                    <label for="">Imagen 3 (Ancho 500px, altura 300 px)</label>
                     <input type="file" name="imagen_3" class="form-control @error('imagen_3') is-invalid @enderror" id="imagen_3" placeholder="Cargar Imagen 3">
                         @error('imagen_3')
                         <span class="invalid-feedback" role="alert">

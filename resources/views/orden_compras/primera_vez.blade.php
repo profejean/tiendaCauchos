@@ -98,7 +98,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="input-group mb-3">
-                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Contraseña"  required/>
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="email"  required/>
                 @error('email')
                 <span class="invalid-feedback text-white" role="alert">
                     <strong>{{ $message }}</strong>

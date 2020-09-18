@@ -23,6 +23,8 @@ class CreateOrdenCompras extends Migration
             $table->text('llave');
             $table->longtext('direccion');
             $table->text('status');
+            $table->integer('usuario_id');
+
 
    
                        

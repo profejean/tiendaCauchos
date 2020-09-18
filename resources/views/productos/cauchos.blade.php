@@ -170,7 +170,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 		<div class="form-group">
-			<button class="btn btn-danger" type="haiden"><h6>Buscar</h6></button>
+			<button class="btn btn-danger" type="submit"><h6>Buscar</h6></button>
 
 		</div>
 
@@ -185,8 +185,8 @@
     <?php $cont = 0; ?>
     @foreach($productos as $p)
     <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-      <div class="card mb-2" style="width: 100%; height: 600px;">
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="200" height="200" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
+      <div class="card mb-2" style="width: 100%; height: auto;">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="250" height="150" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
         
@@ -254,13 +254,13 @@
 <?php  $acce =0?>   
     @foreach($productos as $p)
 
-      {!! Form::open(array('url'=>'agregar_carrito_cauchos', 'method'=>'POST', 'autocomplete'=>'off','id'=>'agregar_carrito_modal_'.$acce, 'files'=>'true')) !!}
+
 
   {{Form::token()}} 
 
-@include('productos.modal_accesorios')
+@include('productos.modal_cauchos')
 
-     {{Form::close()}}
+
          <?php  $acce = $acce + 1;  ?>
     @endforeach
 

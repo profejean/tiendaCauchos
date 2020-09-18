@@ -22,6 +22,7 @@
 @include('css.baner_tlf')
 @include('css.input_number_control')
 @include('css.swiper')
+@include('css.cambiar_danger')
 </head>
 
 <body>
@@ -41,8 +42,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     @include('js.swiper')
-    @include('js.incrementar_cantidad')    
-    @include('js.add_carrito_caucho')
-    @stack('scripts')
+    @include('js.add_carrito_caucho_welcome')
+    @include('js.incrementar_cantidad_welcome')    
+    @include('js.incrementar_cantidad_modal_welcome') 
+    
+ 
   </body>
 </html>

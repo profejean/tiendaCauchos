@@ -55,10 +55,27 @@ class GeneralController extends Controller
                     $file=$request->file('logo');
                     $cadena=time().$file->getClientOriginalName();
                     $name =str_replace(' ', '', $cadena);
-                    $file->move(base_path().'//img/', $name);
+                    $file->move(base_path().'/../img/', $name);
                     $general->logo=$name;
 
-                    }                     
+                    }  
+                    if ($request->hasFile('banner')){
+                    $file=$request->file('banner');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(base_path().'/../img/', $name);
+                    $general->banner=$name;
+
+                    }  
+
+                    if ($request->hasFile('icono_carrito')){
+                    $file=$request->file('icono_carrito');
+                    $cadena=time().$file->getClientOriginalName();
+                    $name =str_replace(' ', '', $cadena);
+                    $file->move(base_path().'/../img/', $name);
+                    $general->icono_carrito=$name;
+
+                    }                    
 
                     $general->save(); 
 

@@ -31,7 +31,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label for="logo" class="mr-2">{{ __('Cargar logo') }}</label>                    
+                    <label for="logo" class="mr-2">{{ __('Cargar logo (200px ancho máximo, altura 70px)') }}</label>                    
                 </div>
 
                 
@@ -53,10 +53,10 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="input-group mb-3 justify-content-center">
                     <div class="input-group-prepend">
-                        <label for="ver_banner" class="mr-2">{{ __('Banner') }}</label>
+                        <label for="ver_banner" class="mr-2">{{ __('Banner(altura 480px, ancho 1280px)') }}</label>
                         
                     </div>
-                    <img src="{{asset('img/'.$inicio->banner)}}" height="100" width="100">
+                    <img src="{{asset('img/'.$inicio->banner)}}" height="128" width="128">
                 </div>  
             </div>
         </div>
@@ -384,7 +384,7 @@
     <div class="col-lg-6 col-md-6 col-sm-12">
          <div class="input-group mb-3 justify-content-center">
         <div class="input-group-prepend">
-                <label for="icono_carrito" class="mr-2">{{ __('Cargar icono') }}</label>
+                <label for="icono_carrito" class="mr-2">{{ __('Cargar icono (max-ancho: 100px; max-altura: 70px)') }}</label>
                 
             </div>
        

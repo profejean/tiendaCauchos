@@ -31,11 +31,15 @@
         <div class="col-lg-2 col-md-2 col-sm-12 text-center"> 
            <img src="{{asset('img/'.$c->options->img)}}" class="card-img-top mr-4" alt="..." style="width: 150px;">
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">        
+        <div class="col-lg-2 col-md-2 col-sm-12">        
            <h6 class="text-center" style="color: #FFF;">{{$c->name}}</h6>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12">
            <h6 class="text-center" style="color: #FFF;">cantidad:<span class="ml-3">{{$c->qty}}</span></h6>  
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12">
+           <h6 style="color: #FFFFFF">Precio $: {{formato_Numero($c->price * $c->qty)}}</h6>
+          
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12"></div>   
     </div>
@@ -93,6 +97,8 @@
 
         
 </div>
+
+<input type="hidden" name="usuario_id" value="{{Auth::user()->id}}">
 
  <div class="row justify-content-center">
         <h4 class="text-white">Total $: {{Cart::total()}}</h4> 

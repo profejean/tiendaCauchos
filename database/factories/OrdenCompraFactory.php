@@ -17,7 +17,8 @@ $factory->define(OrdenCompra::class, function (Faker $faker) {
         'tlf' => $faker->name,
         'llave' => $faker->name,
         'direccion' => $faker->name,
-        'status' => $faker->randomElement($array = array ('Solicitado', 'Entregado', 'Anulado')),   
+        'status' => $faker->randomElement($array = array ('Solicitado', 'Entregado', 'Anulado')),  
+        'usuario_id' => 1, 
 
    
 
