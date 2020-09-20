@@ -37,7 +37,7 @@
                 
 
 
-                    <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" id="logo" class="centerip" placeholder="" value="{{$inicio->logo}}">
+                    <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" id="logo" class="centerip" placeholder="">
                     @error('logo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                 
 
 
-                    <input type="file" name="banner" class="form-control @error('banner') is-invalid @enderror" id="banner" class="centerip" placeholder="" value="{{$inicio->banner}}">
+                    <input type="file" name="banner" class="form-control @error('banner') is-invalid @enderror" id="banner" class="centerip" placeholder="">
                     @error('banner')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -115,7 +115,7 @@
                     <div class="input-group-prepend">
                         <label for="twitter" class="mr-2">{{ __('twitter') }}</label>
                     </div>
-                    <input type="text" name="twitter" class="form-control @error('twitter') is-invalid @enderror" id="twitter" placeholder="" />
+                    <input type="text" name="twitter" class="form-control @error('twitter') is-invalid @enderror" id="twitter" placeholder="" value="{{$inicio->twitter}}" />
                     @error('twitter')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -162,7 +162,7 @@
                 <div class="input-group-prepend">
                     <label for="instagram" class="mr-2">{{ __('Instagram') }}</label>
                 </div>
-                <input type="text" name="instagram" class="form-control @error('instagram') is-invalid @enderror" id="instagram" placeholder="" />
+                <input type="text" name="instagram" class="form-control @error('instagram') is-invalid @enderror" id="instagram" placeholder="" value="{{$inicio->instagram}}"/>
                 @error('instagram')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -209,7 +209,7 @@
                 <div class="input-group-prepend">
                     <label for="facebook" class="mr-2">{{ __('Facebook') }}</label>
                 </div>
-                <input type="text" name="facebook" class="form-control @error('facebook') is-invalid @enderror" id="facebook" placeholder="" />
+                <input type="text" name="facebook" class="form-control @error('facebook') is-invalid @enderror" id="facebook" placeholder="" value="{{$inicio->facebook}}"/>
                 @error('facebook')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -255,7 +255,7 @@
             <div class="input-group-prepend">
                 <label for="whatsapp" class="mr-2">{{ __('Whatsapp') }}</label>
             </div>
-            <input type="text" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp" placeholder="" />
+            <input type="text" name="whatsapp" class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp" placeholder="" value="{{$inicio->whatsapp}}"/>
             @error('whatsapp')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -304,7 +304,7 @@
             <div class="input-group-prepend">
                 <label for="tiktok" class="mr-2">{{ __('Tiktok') }}</label>
             </div>
-            <input type="text" name="tiktok" class="form-control @error('tiktok') is-invalid @enderror" id="tiktok" placeholder="" />
+            <input type="text" name="tiktok" class="form-control @error('tiktok') is-invalid @enderror" id="tiktok" placeholder="" value="{{$inicio->tiktok}}"/>
             @error('tiktok')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -355,7 +355,7 @@
                 <div class="input-group-prepend">
                     <label for="contactanos" class="mr-2">{{ __('Contáctanos') }}</label>
                 </div>
-                <input type="text" name="contactanos" class="form-control @error('contactanos') is-invalid @enderror" id="contactanos" placeholder="" />
+                <input type="text" name="contactanos" class="form-control @error('contactanos') is-invalid @enderror" id="contactanos" placeholder="" value="{{$inicio->contactanos}}" />
                 @error('contactanos')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -390,7 +390,7 @@
        
 
 
-            <input type="file" name="icono_carrito" class="form-control @error('icono_carrito') is-invalid @enderror" id="icono_carrito" class="centerip" placeholder="" value="{{$inicio->icono_carrito}}">
+            <input type="file" name="icono_carrito" class="form-control @error('icono_carrito') is-invalid @enderror" id="icono_carrito" class="centerip" placeholder="">
             @error('icono_carrito')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

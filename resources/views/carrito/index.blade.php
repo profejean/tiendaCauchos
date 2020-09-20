@@ -52,7 +52,7 @@
 
               <input type="number" class="text-center" name="cantidad" id="cantidad_{{$cont}}"  value="{{$c->qty}}" style="width: 60px;" data="{{$cont}}">
               <input type="hidden" id="pc_producto_id" name="producto_id"  value="{{$c->id}}"> 
-              <input type="hidden" id="inventario_{{$cont}}" value="$c->options->inventario"> 
+              <input type="hidden" id="inventario_{{$cont}}" value="{{$c->options->inventario}}"> 
 
               <div class="input-group-prepend">
                 <span class="input-group-text" id="incrementar_{{$cont}}" data="{{$cont}}">                  
