@@ -31,7 +31,7 @@ and (min-width: 70px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 280px 510px; 
+	
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -68,7 +68,7 @@ and (min-width: 270px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 280px 510px; 
+
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -105,7 +105,7 @@ and (min-width: 350px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 360px 510px; 
+
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -140,7 +140,7 @@ and (min-width: 410px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 411px 600px; 
+
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -175,7 +175,7 @@ and (min-width: 411px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 411px 700px; 
+	
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -210,7 +210,7 @@ and (min-width: 411px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 411px 700px; 
+
 		position: relative;
 		background-repeat: no-repeat;
 	}
@@ -245,7 +245,7 @@ and (min-width: 511px)
 		background: url({{asset('img/'.$inicio->banner)}}) center;
 		height: 480px;
 		width: auto;
-		background-size: 540px 620px; 
+	
 		position: relative;
 		background-repeat: no-repeat;
 	}

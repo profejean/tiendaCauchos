@@ -60,6 +60,13 @@
 
         <div class="input-group input-group-sm">
           <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+          </div>
+          <input type="text" class="form-control" name="email" value="{{Auth::user()->email}}">
+        </div>
+
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Cédula o rif</span>
           </div>
           <input type="text" class="form-control" name="ci" value="{{Auth::user()->cedula_rif}}">
@@ -101,7 +108,7 @@
 <input type="hidden" name="usuario_id" value="{{Auth::user()->id}}">
 
  <div class="row justify-content-center">
-        <h4 class="text-white">Total $: {{Cart::total()}}</h4> 
+        <h4 class="text-white">Total $: {{Cart::subtotal()}}</h4> 
 
      
     </div>

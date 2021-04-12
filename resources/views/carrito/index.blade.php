@@ -66,7 +66,7 @@
 
               <div class="input-group-append">
                 <span class="input-group-text">                   
-                  <button id="enviar_{{$cont}}" data="{{$cont}}" class="btn btn-outline-danger">Actualizar</button>
+                  <button id="enviar_{{$cont}}" data="{{$cont}}" class="btn boton">Actualizar</button>
                 </span>
               </div>
 

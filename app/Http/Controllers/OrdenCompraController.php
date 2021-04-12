@@ -143,7 +143,7 @@ class OrdenCompraController extends Controller
                     $orden_compras=new OrdenCompra($request->all());
 
                     $orden_compras->llave = $llave;
-                    $orden_compras->total = floatval(Cart::total());
+                    $orden_compras->total = floatval(Cart::subtotal());
                     $orden_compras->status = 'Solicitado';
            
                   
@@ -170,7 +170,7 @@ class OrdenCompraController extends Controller
                         $detalle->pedido_id= $orden_compras_nuevo[0]->id;
                         $detalle->producto_id= $c->id;
                         $detalle->cantidad= $c->qty;
-                        $detalle->precio_dolar= $c->price;
+                        $detalle->precio_dolar= $c->price * $c->qty;
 
 
                         $detalle->save(); 

@@ -109,7 +109,7 @@
       @foreach($productos as $p)
 
       <div class="card swiper-slide mb-2" style="width: 100%; height: 600px;">
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="500" height="300" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." style="width: 100%;height: auto;" data-toggle="modal" data-target="#modal_cauchos_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
         

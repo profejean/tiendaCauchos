@@ -2,10 +2,10 @@
      
 <!-- Modal -->
 <div class="modal fade" id="modal_accesorios_tablet_{{$acce}}" tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog modal-xl"> 
+  <div class="modal-dialog modal-dialog-scrollable modal-xl"> 
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Accesorios y Autopartes</h5>
+        <h5 class="modal-title">CAUCHOS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,13 +23,13 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators_tablet_{{$acce}}" role="button" data-slide="prev">
@@ -100,10 +100,10 @@
 
 <!-- Modal -->
 <div class="modal fade" id="modal_accesorios_tlf_{{$acce}}" tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Accesorios y Autopartes</h5>
+        <h5 class="modal-title">CAUCHOS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -121,13 +121,13 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators_tlf_{{$acce}}" role="button" data-slide="prev">
@@ -199,10 +199,10 @@
 
 <!-- Modal -->
 <div class="modal fade" id="modal_accesorios_solo" tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Accesorios y Autopartes</h5>
+        <h5 class="modal-title">CAUCHOS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -220,13 +220,13 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" style="width:100%;height:auto;">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators_solo" role="button" data-slide="prev">

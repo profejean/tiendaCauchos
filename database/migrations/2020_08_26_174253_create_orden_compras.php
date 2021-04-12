@@ -19,6 +19,7 @@ class CreateOrdenCompras extends Migration
             $table->text('forma_pago');
             $table->text('nombre');
             $table->text('ci');
+            $table->text('email');
             $table->text('tlf');
             $table->text('llave');
             $table->longtext('direccion');

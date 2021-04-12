@@ -1,11 +1,11 @@
 
 <!-- Modal -->
-<div class="modal fade" id="modal_accesorios_{{$acce}}" tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+<div class="modal fade" id="modal_cauchos_{{$acce}}" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Accesorios y Autopartes</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">CAUCHOS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cerrar_arriba_{{$acce}}" data="{{$acce}}">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -22,13 +22,13 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_2)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" width="500" height="300">
+                      <img src="{{asset('img/'.$p->imagen_3)}}" class="d-block" alt="" style="width: 100%;height: auto;">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators_{{$acce}}" role="button" data-slide="prev">
@@ -89,7 +89,7 @@
           </div>                
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary close" data-dismiss="modal" id="cerrar_abajo">Cerrar</button>
       </div>
     </div>
   </div>

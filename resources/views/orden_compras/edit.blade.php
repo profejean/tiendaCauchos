@@ -15,7 +15,7 @@
 
 {{Form::token()}} 
 
-<div class="row text-center" style="background-color: #d9534f">
+<div class="row text-center" style="background-color: #968F8F;">
 
   <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
@@ -70,7 +70,7 @@
 
   <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Precio $:</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_dolar)}} </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_dolar)}}  </h6>
   </div>
   
 </div>
@@ -79,26 +79,30 @@
 
 @endforeach
 
-<div class="row"style="background-color: #968F8F;">
+<div class="row justify-content-center"style="background-color: #968F8F;">
 
         <div class="col-lg-8 col-md-8 col-sm-12 mt-12 text-center">
 
           <h6 class="" style="color: #FFFFFF;">Nombre: 
-            <span style="margin-left: 100px;">{{$orden_compras->nombre}}</span>
+            <span style="">{{$orden_compras->nombre}}</span>
+          </h6>
+
+          <h6 class="" style="color: #FFFFFF;">Email: 
+            <span style="">{{$orden_compras->email}}</span>
           </h6>
 
           <h6 class="" style="color: #FFFFFF;">CI: 
-            <span style="margin-left: 150px;">{{$orden_compras->ci}}</span>
+            <span style="">{{$orden_compras->ci}}</span>
           </h6>
 
           <h6 class="" style="color: #FFFFFF;">Forma de Pago: 
-            <span style="margin-left: 50px;">{{$orden_compras->forma_pago}}</span>
+            <span style="">{{$orden_compras->forma_pago}}</span>
           </h6>
           <h6 class="" style="color: #FFFFFF;">Teléfono: 
-            <span style="margin-left: 100px;">{{$orden_compras->tlf}} </span>
+            <span style="">{{$orden_compras->tlf}} </span>
           </h6>
           <p class="" style="color: #FFFFFF;">Dirección: 
-            <span style="margin-left: 100px;">{{$orden_compras->direccion}}</span>
+            <span style="">{{$orden_compras->direccion}}</span>
           </p>
         </div>
       

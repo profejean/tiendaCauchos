@@ -19,6 +19,7 @@ $factory->define(OrdenCompra::class, function (Faker $faker) {
         'direccion' => $faker->name,
         'status' => $faker->randomElement($array = array ('Solicitado', 'Entregado', 'Anulado')),  
         'usuario_id' => 1, 
+        'email' => $faker->name,
 
    
 

@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\User;
+use Illuminate\Database\Seeder;
 
 class UsuarioSeeder extends Seeder
 {
@@ -14,34 +13,15 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         User::create([
-        	'name'  =>  'Jean',
-            'rol'  =>  'Gerente',  
-            'cedula_rif'  =>  '123',   
-            'direccion'  =>  '124',
-            'telefono'  =>  '124',
-        	'email'  =>  'profesorjeandiaz@gmail.com',
-        	'password'  =>  bcrypt('tikery.27')
-     	
+            'name'       => 'Jean',
+            'rol'        => 'Gerente',
+            'cedula_rif' => '123',
+            'direccion'  => '124',
+            'telefono'   => '124',
+            'email'      => 'pruebadecodigo@gmail.com',
+            'password'   => bcrypt('123456.456'),
+
         ]);
-       /* User::create([
-        	'name'  =>  'leonel',
-            'rol'  =>  'Gerente',
-            'cedula_rif'  =>  '125',
-            'direccion'  =>  '124',
-            'telefono'  =>  '124',
-        	'email'  =>  'leonel.camero@gmail.com',
-        	'password'  =>  bcrypt('Password09')
-     	
-        ]);
-        User::create([
-            'name'  =>  'cliente',
-            'rol'  =>  'Cliente',
-            'cedula_rif'  =>  '124',
-            'direccion'  =>  '124',
-            'telefono'  =>  '124',
-            'email'  =>  'cliente@gmail.com',
-            'password'  =>  bcrypt('1234')
-        
-        ]);*/
+
     }
 }

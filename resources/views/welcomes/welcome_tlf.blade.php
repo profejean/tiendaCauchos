@@ -92,9 +92,9 @@
 </div>
 </div>
 
-<div class="container-fluid baner_tel" style="margin-top:100px;">
+<div class="" style="margin-top:130px;">
   
-
+      <img src="{{asset('img/'.$inicio->banner)}}" alt="" style="width: 100%;height: auto;">
   
 </div>  
 
@@ -112,7 +112,7 @@
         $conteer='solo';
         ?>
 
-        <img src="{{asset('img/'.$producto_ultimo->imagen_1)}}" class="d-block" alt="" width="500" height="300" data-toggle="modal" data-target="#modal_accesorios_solo">
+        <img src="{{asset('img/'.$producto_ultimo->imagen_1)}}" class="d-block" alt=""  data-toggle="modal" data-target="#modal_accesorios_solo" style="width: 100%;height: auto;">
 
           <div class="card-body">
           <h5 class="card-title">{{$producto_ultimo->nombre}}</h5>
@@ -169,7 +169,7 @@
       <div class="carousel-item text-center">
 
        
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt="" width="500" height="300" data-toggle="modal" data-target="#modal_accesorios_tlf_{{$conte}}">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="d-block" alt=""  data-toggle="modal" data-target="#modal_accesorios_tlf_{{$conte}}" style="width: 100%;height: auto;">
 
 
           <div class="card-body">
@@ -293,9 +293,9 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
   <div class="row justify-content-center">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d31386.374127109633!2d-66.89525862376036!3d10.47725532192602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d10.4625685!2d-66.8677563!4m5!1s0x8c2a5909c93b2389%3A0xc3fac215877f0e55!2sCauchera%20Juan%20Cauchos%202018%20c.a%2C%20Avenida%20La%20Rambla%2C%20Caracas%201041%2C%20Distrito%20Capital!3m2!1d10.4819383!2d-66.90130599999999!5e0!3m2!1ses-419!2sve!4v1600222902268!5m2!1ses-419!2sve" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15692.949811282291!2d-66.901306!3d10.4819383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc3fac215877f0e55!2sCauchera%20Juan%20Cauchos%202018%20c.a!5e0!3m2!1ses-419!2sve!4v1601243828713!5m2!1ses-419!2sve" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
   </div>
 </div>
 

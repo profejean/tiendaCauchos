@@ -186,7 +186,7 @@
     @foreach($productos as $p)
     <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
       <div class="card mb-2" style="width: 100%; height: auto;">
-        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." width="250" height="150" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
+        <img src="{{asset('img/'.$p->imagen_1)}}" class="card-img-top" alt="..." style="width: 100%;height: auto;" data-toggle="modal" data-target="#modal_accesorios_{{$cont}}">
         <div class="card-body">
           <h5 class="card-title">{{$p->nombre}}</h5>
         
@@ -256,7 +256,7 @@
 
 
 
-  {{Form::token()}} 
+
 
 @include('productos.modal_cauchos')
 
@@ -275,6 +275,17 @@
 @include('js.incrementar_cantidad')
 @include('js.incrementar_cantidad_modal')
 @include('js.add_carrito_caucho')
+<script>
+
+
+   
+  $('.close').click(function(){
+    var indice = $(this).attr('data'); alert(indice);
+    $('#modal_cauchos_'+indice+'').modal('hide');
+  });
+   
+  
+</script>
 
 
 @endpush

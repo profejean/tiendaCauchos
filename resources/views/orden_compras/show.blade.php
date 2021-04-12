@@ -22,7 +22,7 @@
   
 
 
-<div class="row text-center" style="background-color: #d9534f">
+<div class="row text-center" style="background-color:#968F8F;">
 
   <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Nº PEDIDO</h6>
@@ -58,7 +58,7 @@
 
   <div class="col-lg-4 col-md-4 col-sm-12">
     <h6 class="text-center" style="color: #FFFFFF;">Precio $:</h6>
-    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_total_dolares)}} </h6>
+    <h6 class="text-center" style="color: #FFFFFF;"> {{formato_numero($b->precio_dolar)}} </h6>
   </div>
 
 </div>
@@ -71,11 +71,15 @@
 <div class="row"style="background-color: #968F8F;">
 
         <div class="col-lg-4 col-md-4 col-sm-12 mt-12"></div>
-
+ 
         <div class="col-lg-4 col-md-4 col-sm-12 mt-12">
 
           <h6  style="color: #FFFFFF;">Nombre: 
             <span>{{$orden_compras->nombre}}</span>
+          </h6>
+
+          <h6  style="color: #FFFFFF;">Email: 
+            <span>{{$orden_compras->email}}</span>
           </h6>
 
           <h6  style="color: #FFFFFF;">CI: 
